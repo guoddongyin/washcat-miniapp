@@ -1,0 +1,52 @@
+/* pages/attention/attention.wxss */
+/* .row-1 image{
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  padding: 20rpx;
+} */
+.item-hui{
+  width: 100%;
+  height: 20rpx;
+  background-color: #f5f5f5;
+}
+
+.pinglun{
+  font-size: 30rpx;
+	color: #333333;
+}
+/* .pinglun-ima image{
+  width: 124rpx;
+  height: 150rpx;
+} */
+.pinglun-ima{
+  text-align: center;
+}
+ .pinglun-row{
+  display: flex;
+  /* height: 200rpx; */
+  margin: 40rpx 100rpx;
+} 
+ .pinglun-row image{
+   width: 100%;
+   height: 300rpx;
+ }
+.btn{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #64c4c7;
+  color: #fff;
+}
+ .money-cell{
+  width: 85%;
+  margin: auto;
+  margin-bottom: 123rpx;
+}
+.zhang{
+	font-size: 30rpx;
+	letter-spacing: 1rpx;
+	color: #333;
+  display: block;
+
+} 

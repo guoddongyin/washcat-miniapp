@@ -1,0 +1,44 @@
+<!--pages/invoicedetail/invoicedetail.wxml-->
+<view class="info_list" wx:for="{{invoiceList}}" wx:key="invoiceList">
+    <text class='dd-info'>发票信息</text> 
+   <view class="weui_cell">
+      <view class="weui_cell_bd">开具类型</view>
+      <view class="weui_cell_ft" wx:if="{{item.invoiceTypes==1}}">个人</view>
+      <view class="weui_cell_ft" wx:if="{{item.invoiceTypes==2}}">企业</view>
+   </view>
+   <view class="weui_cell">
+      <view class="weui_cell_bd">订单编号</view>
+      <view class="weui_cell_ft">{{item.id}}</view>
+   </view>
+      <view class="weui_cell">
+      <view class="weui_cell_bd">申请时间</view>
+      <view class="weui_cell_ft">{{item.createTime}}</view>
+   </view>
+   <view class="weui_cell">
+      <view class="weui_cell_bd">发票性质</view>
+      <view class="weui_cell_ft" wx:if="{{item.bill==1}}">电子</view>
+      <view class="weui_cell_ft" wx:if="{{item.bill==2}}">纸质</view>
+   </view>
+   <view class="weui_cell">
+      <view class="weui_cell_bd">发票类型</view>
+      <view class="weui_cell_ft" wx:if="{{item.name==1}}">增值税普通发票</view>
+      <view class="weui_cell_ft" wx:if="{{item.name==2}}">值税专用发票</view>
+   </view>
+   <view class="weui_cell">
+      <view class="weui_cell_bd">发票抬头</view>
+      <view class="weui_cell_ft">{{item.invoiceTitle}}</view>
+   </view>
+   <view class="weui_cell">
+      <view class="weui_cell_bd">发票税号</view>
+      <view class="weui_cell_ft">{{item.invoiceNumber}}</view>
+   </view>
+    <!-- <view class="weui_cell">
+      <view class="weui_cell_bd">发票税号</view>
+      <view class="weui_cell_ft">{{item.bankName}}</view>
+   </view> -->
+   
+   <view class='row btn-buttom'>
+   <view class='row-3'><button class='btn1' bindtap='cardexchange'>查看预览</button></view>
+   <view class='row-3'><button class='btn2' bindtap='paidcard'>发送至邮箱</button></view>
+  </view>
+</view>

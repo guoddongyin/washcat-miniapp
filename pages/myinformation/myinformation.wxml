@@ -1,0 +1,60 @@
+<!--pages/myinformation/myinformation.wxml-->
+<view class='infor'>
+  <view class="info_list">
+      <view class="weui_cell">
+        <view class="weui_cell_hd">头像</view>
+          <view class='phont' bindtap='choosephoto'>
+           <image src="{{userinfo.avatar==null?'../../images/icon_moren.png':portrait}}" mode='aspectFill' binderror="errorFunction"></image>
+          </view>
+          <!-- <view class="weui_cell_bd weui_cell_bd_p">{{item.dec}}dddd</view> -->
+         <!-- <view class="with_arrow"></view> -->
+      </view>
+  </view>
+  <view class="info_list">
+    <view class="weui_cell">
+      <view class="weui_cell_hd">昵称</view>
+      <view class="weui_cell_bd weui_cell_bd_p ni">{{userinfo.nickname}}</view>
+    </view>
+  </view>
+    <view class="info_list">
+    <view class="weui_cell">
+      <view class="weui_cell_hd">性别</view>
+      <view class="weui_cell_bd weui_cell_bd_p">男</view>
+      <view class="with_arrow"></view>
+    </view>
+  </view>
+    <view class="info_list">
+    <view class="weui_cell">
+      <view class="weui_cell_hd">手机号</view>
+      <view class="weui_cell_bd weui_cell_bd_p" bindtap='bindphone'>{{userinfo.mobile==''?'绑定手机号':userinfo.mobile}}</view>
+      <view class="with_arrow"></view>
+    </view>
+  </view>
+    <view class="info_list">
+    <view class="weui_cell">
+      <view class="weui_cell_hd">地区</view>
+        <view class="weui_cell_bd weui_cell_bd_p">{{userinfo.city}}</view>
+      <view class="with_arrow"></view>
+    </view>
+  </view>
+    <view class="info_list">
+    <view class="weui_cell">
+      <view class="weui_cell_hd">生日</view>
+        <view class="weui_cell_bd weui_cell_bd_p" bindtap="showDatePicker">{{date}}</view>
+      <view class="with_arrow"></view>
+      <date-picker
+            id="date-picker"
+            value="{{datePickerValue}}" 
+            isShow="{{datePickerIsShow}}"
+            bindsureclick="datePickerOnSureClick"
+            bindcancelclick="datePickerOnCancelClick" />
+    </view>
+  </view>
+    <view class="info_list">
+    <view class="weui_cell" bindtap='invoicemanage'>
+      <view class="weui_cell_hd">发票信息</view>
+        <view class="weui_cell_bd weui_cell_bd_p" ></view>
+      <view class="with_arrow"></view>
+    </view>
+  </view>
+</view>

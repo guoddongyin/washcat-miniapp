@@ -1,0 +1,30 @@
+<!--pages/attention/attention.wxml-->
+<view class='container'>
+  <view class='pagebody'>
+    <image class='imagess' src='/images/xiangq.png'></image>
+    <view class='userlist'>
+      <view class='item2 row'>
+        <view class='row' bindtap='integral'>
+          <text class='item-jifen'>请确认以下安全事项</text>
+        </view>
+      </view>
+      <view class='pinglun-row'>
+      <image src='/images/zhuy.png'></image>
+      </view>
+      <view class='item-hui'></view>
+      <view class='item2 row'>
+          <text class='item-jifen'>洗车注意事项</text>
+      </view>
+      <view class='money-cell'>
+          <text class='zhang'>1.请将车停在黄线内，并回正方向盘，以免刮擦;</text>
+          <text class='zhang'>2.洗车期间，严禁打卡车窗或车</text>
+          <text class='zhang'>3.请勿倒车进入，以免影响洗车效果；</text>
+          <text class='zhang'>4.洗车期间，请坐在车内或站在洗车机外。</text>
+      </view>
+      <view class='row btn-buttom'>
+        <button class='btn' bindtap='paidcard'>确认车辆已停到位</button>
+      </view>
+    </view>
+  </view>
+</view>
+

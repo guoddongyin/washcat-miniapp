@@ -1,0 +1,44 @@
+<!--pages/personal/personal.wxml-->
+<view class='container'>
+ <view class='pagebody'>
+      <image class='imagess' src='/images/bg3.png'></image>
+    <view class='info-left row' bindtap='information'>
+      <view class='info'>
+           <image src="{{portrait}}"></image>
+      </view>
+      <view class='info1 row-4'>
+        <text class='info-title'>{{userinfo.nickname}}</text>
+        <text class='info-dec'>个人用户</text>
+      </view>
+    </view>
+    <view class='userlist'>
+      <view class='item2 row'>
+        <view class='cell' bindtap='integral'>
+          <text class='item-jifen'>112222</text>
+          <text class='jifen'>当前积分</text>
+        </view>
+        <view class='cell' bindtap='balance'>
+          <text class='item-jifen'>112222</text>
+          <text class='jifen'>余额（元）</text>
+        </view>
+      </view>
+      <view class='item-hui'></view>
+      <view class='adver'>
+        <image src='/images/adver.png'></image>
+      </view>
+       <view class='item-hui'></view>
+
+      <view class="info_list">
+          <block wx:for="{{userListInfo}}" wx:key="userInfoListId">
+              <navigator url='{{item.url}}'><view class="weui_cell">
+                  <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
+                  <view class="weui_cell_bd">
+                      <view class="weui_cell_bd_p"> {{item.text}} </view>
+                  </view>
+                  <view class="with_arrow"></view>
+              </view></navigator>
+          </block>
+      </view>
+    </view>
+  </view>
+</view>

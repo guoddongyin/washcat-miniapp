@@ -1,0 +1,26 @@
+<!-- stationlist.wxml -->
+<view class='container'>
+  <view class='top'>
+    <view class='city' bindtap='choosecity'>
+      <view class='txt1'>{{cityname}}</view>
+      <image class='img' src='../../images/xia-icon.png'></image>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='left'>
+      <block wx:for="{{listqu}}" wx:key="{{item.id}}">
+        <view class="item1 {{clickpos==index?'bai':'hui'}}" bindtap='choosequ' data-id='{{index}}'>
+          <view class="txt2 {{clickpos==index?'lan':'hei'}}">{{item.county}}</view>
+        </view>
+      </block>
+    </view>
+    <view class='right'>
+      <block wx:for="{{listwei}}" wx:key="{{item.id}}">
+        <view class='item' data-id='{{index}}' bindtap='godetail'>
+          <view class='name'>{{item.devAddr}}</view>
+          <view class='address'>{{item.devAddr}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,82 @@
+<!--pages/mylist/mylist.wxml-->
+<view class="top-tab flex-wrp flex-tab">
+  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName"             data-idx="{{idx}}" bindtap="switchTab">
+    {{itemName}}
+  </view>
+</view>
+<scroll-view scroll-y="true" class="container notify withtab" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll"             scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
+      <view class="info_list">
+          <view class="weui_cell" bindtap='listdetail'>
+              <view class="weui_cell_hd"><image src="../../images/icon-card.png"></image></view>
+                <view class="weui_cell_bd">
+                  <view class="weui_cell_bd_p"> 玩美洗车服务 </view>
+                  <view class="weui_cell_bd_dec">两江新区创富中心店 </view>
+                </view>
+              <view class="text-list">2018-01-22 12:31:1</view>
+          </view>
+           <view class="weui_cell" style='border-bottom:0'>
+              <view class="bottom-btn">
+                <text class='tuikuan'>申请退款</text>
+                <text class='tuikuan' bindtap='evaluation'>立即评价</text>
+              </view>
+          </view>
+          <view class='cc'></view>
+      </view>
+      <!-- <view class="info_list">
+          <view class="weui_cell">
+              <view class="weui_cell_hd"><image src="../../images/icon-card.png"></image></view>
+                <view class="weui_cell_bd">
+                  <view class="weui_cell_bd_p"> 玩美洗车服务 </view>
+                  <view class="weui_cell_bd_dec">两江新区创富中心店 </view>
+                </view>
+              <view class="text-list">2018-01-22 12:31:1</view>
+          </view>
+           <view class="weui_cell" style='border-bottom:0'>
+              <view class="bottom-btn">
+                <text class='tuikuan'>申请退款</text>
+                <text class='tuikuan'>申请退款</text>
+              </view>
+          </view>
+          <view class='cc'></view>
+      </view> -->
+  </view>
+  <view class="ctnt1 placehold" hidden="{{currentNavtab==1 ? '' : true}}">
+    <view class="info_list">
+          <view class="weui_cell">
+              <view class="weui_cell_hd"><image src="../../images/icon-card.png"></image></view>
+                <view class="weui_cell_bd">
+                  <view class="weui_cell_bd_p"> 玩美洗车服务 </view>
+                  <view class="weui_cell_bd_dec">两江新区创富中心店 </view>
+                </view>
+              <view class="text-list">2018-01-22 12:31:1</view>
+          </view>
+           <view class="weui_cell" style='border-bottom:0'>
+              <view class="bottom-btn">
+                <text class='tuikuan'>申请退款</text>
+                <text class='tuikuan' bindtap='evaluation'>立即评价</text>
+              </view>
+          </view>
+          <view class='cc'></view>
+      </view>
+  </view>
+  <view class="ctnt2 placehold" hidden="{{currentNavtab==2 ? '' : true}}">
+    <view class="info_list">
+          <view class="weui_cell">
+              <view class="weui_cell_hd"><image src="../../images/icon-card.png"></image></view>
+                <view class="weui_cell_bd">
+                  <view class="weui_cell_bd_p"> 玩美洗车服务 </view>
+                  <view class="weui_cell_bd_dec">两江新区创富中心店 </view>
+                </view>
+              <view class="text-list">2018-01-22 12:31:1</view>
+          </view>
+           <view class="weui_cell" style='border-bottom:0'>
+              <view class="bottom-btn">
+                <text class='tuikuan'>申请退款</text>
+                <text class='tuikuan' bindtap='evaluation'>立即评价</text>
+              </view>
+          </view>
+          <view class='cc'></view>
+      </view>
+  </view>
+</scroll-view>

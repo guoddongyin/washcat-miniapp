@@ -1,0 +1,62 @@
+<!--pages/shareduser/shareduser.wxml-->
+<view class='container'>
+  <view class='pagebody'>
+    <view class='top-banner'>
+      <image class='imagess' src='/images/banner-gx.png'></image>
+    </view>
+    <view class='userlist'>
+      <view class='item2 row'>
+          <text class='item-jifen'>产品优势</text>
+      </view> 
+      <view class="info_list">
+          <view class="weui_cell">
+              <view class="weui_cell_hd"><image src="../../images/icon-sw.png"></image></view>
+                <view class="weui_cell_bd">
+                  <view class="weui_cell_bd_p"> 玩美洗车服务 </view>
+                  <view class="weui_cell_bd_dec">申请企业用户，充值金额，随时随地转赠洗车卡给
+                      员工，让员工享有消费权限，工作之余更好的生活。</view>
+                </view>
+          </view>
+           <view class="weui_cell">
+              <view class="weui_cell_hd"><image src="../../images/icon-tx.png"></image></view>
+                <view class="weui_cell_bd">
+                  <view class="weui_cell_bd_p"> 贴心优惠 </view>
+                  <view class="weui_cell_bd_dec">充值金额，享受贴心专属优惠</view>
+                </view>
+          </view>
+           <view class="weui_cell">
+              <view class="weui_cell_hd"><image src="../../images/icon-kj.png"></image></view>
+                <view class="weui_cell_bd">
+                  <view class="weui_cell_bd_p"> 快捷高效 </view>
+                  <view class="weui_cell_bd_dec">三分钟快捷洗车，更加方便快捷。在快节奏生活的
+                    城市，为您节省更多时间。</view>
+                </view>
+          </view>
+      </view>
+      <view class='line'></view>
+      <view class='item2 row'>
+          <text class='item-jifen'>申请流程</text>
+      </view> 
+      <view class='liucheg'><image src='/images/ccc.png'></image></view>
+       <view class='line'></view>
+      <view class='item2 row'>
+          <text class='item-jifen'>申请流程</text>
+      </view> 
+      <form bindsubmit="binduser" class='form-sub'>
+        <view class="txt">
+          <!-- <view class="ima"></view> -->
+          <view class="txt2">申请人</view>
+         <view  class="txt3"><input placeholder="请输入姓名"  class="txt3" bindchange="name" name="name2"/></view>
+         </view>
+        <view class="txt">
+          <!-- <view class="ima"></view> -->
+          <view class="txt2">联系电话</view>
+          <view  class="txt3"><input type="idcard" placeholder="请输入联系电话" bindchange="ID_num"                           maxlength="11" name="ID_num2"/></view>
+        </view>
+        <!-- <view style="clear:both"></view> -->
+        <button class="btn" form-type="submit" hover-class="none">提交申请</button>
+      </form>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "次数明细",
+  "usingComponents": {
+    "date-picker": "../../components/date-picker/date-picker"
+  }
+}

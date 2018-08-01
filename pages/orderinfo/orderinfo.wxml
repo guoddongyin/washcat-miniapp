@@ -1,0 +1,102 @@
+<!--pages/orderinfo/orderinfo.wxml-->
+<!--pages/orderinfo/orderinfo.wxml-->
+<view class='container'>
+  <scroll-view class='scroll' scroll-y="true" scroll-x="false">
+    <view class='pagebody'>
+    <view class='item2'>
+      <view class='title2'>仓位费</view>
+      <view class='lantxt'>{{datadetail.money}}元/月</view>
+    </view>
+    <view class='item2'>
+      <view class='title2'>门禁卡</view>
+      <view class='lantxt'>{{datadetail.moneyDoor}}元/张</view>
+    </view>
+    <view class='item1'>
+      <view class='title'>门<text class='zhan'>占</text>店</view>
+      <view class='huitxt'>{{datadetail.village}}</view>
+    </view>
+    <view class='item1'>
+      <view class='title'>仓<text class='zhan'>占</text>型</view>
+      <view class='huitxt'>{{tiji}}平米小仓</view>
+    </view>
+    <view class='item1'>
+      <view class='title'>规<text class='zhan'>占</text>格</view>
+      <view class='huitxt'>长{{datadetail.lengths}}mx宽{{datadetail.width}}mx高{{datadetail.height}}m</view>
+    </view>
+    <view class='item1'>
+      <view class='title'>单<text class='zhan'>占</text>价</view>
+      <view class='huitxt'>{{datadetail.money}}元/月</view>
+    </view>
+    <view class='item1'>
+      <view class='title'>押<text class='zhan'>占</text>金</view>
+      <view class='huitxt'>{{datadetail.moneyDeposit}}元</view>
+    </view>
+    <view class='item1'>
+      <view class='title'>门禁卡</view>
+      <view class='huitxt'>{{doorcardnum}}个</view>
+    </view>
+
+    <view class='item3'>
+      <view class='title'>门禁卡</view>
+      <view class='lantxt'>50元</view>
+
+      <view class='choose'>
+        <view class='bigjian' bindtap='jian'>
+          <view class='jian' data-name='jian' >-</view>
+        </view>
+        <view class='num'>{{doorcardnum}}</view>
+        <view class='bigjia' bindtap='jia'>
+          <view class='jia' data-name='jia'>+</view>
+        </view>
+      </view>
+    </view>
+    <view class='item1'>
+      <view class='title'>使用时间</view>
+      <view class='dada'>
+        <picker range='{{timelist}}' bindchange="bindPickerChange">
+          <input  disabled="true" value="{{monthnum}}个月" placeholder="请选择" placeholder-class='placeholder'></input>
+          
+        </picker>
+      </view>
+    </view>
+    <view class='item4'>
+      <view class='title'>备<text class='zhan'>占</text>注</view>
+      <input class='input' placeholder-class="lgin_place" placeholder="请添加您想备注的事情" bindinput="beizhu"></input>
+    </view> 
+
+    <view class='item1'>
+      <view class='title'>地<text class='zhan'>占</text>址</view>
+      <view class='huitxt'>{{datadetail.address}}</view>
+    </view>
+    <view class='item1'>
+      <view class='title'>服<text class='zhan'>占</text>务</view>
+      <view class='huitxt'>7x24小时自助存取</view>
+    </view>
+
+
+
+     <view class='xieyi' bindtap='choosexieyi'>
+      <image class='xuanzhong' src="{{isxuan?'../../images/icon_xuan.png':'../../images/icon_xuanzhongwei.png'}}"></image>
+      <view class='xuantxt'>已阅读并同意《<text class='yanse' catchtap='xieyi'>用户协议</text>》</view>
+    </view>
+    <view class='bottom'>
+    <view class="boleft">
+      <view class='total'>合计：<text class='money'>{{totalmoney}}</text></view>
+    </view>
+    <view class="boright" bindtap='sureorder'>
+       确认支付
+    </view>
+  </view>
+  </view>
+  </scroll-view>
+
+  <view class='mengban' wx:if="{{show}}" catchtap='clickhidden'>
+    <view class='zhongjian'>
+      <view class='chenggong'>恭喜您预定成功</view>
+      <view class='tishi1'>我们的客服会尽快与您取得联系</view>
+      <view class='tishi1'>确认并解决您的任何问题。</view>
+      <view class='chakan'>查看我的考拉仓</view>
+      <view class='yindao'>使用引导</view>
+    </view>
+  </view>
+</view>

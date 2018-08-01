@@ -1,0 +1,16 @@
+<!--pages/bindphone/bindphone.wxml-->
+<form bindsubmit="bindphone" bindreset="formReset" report-submit='true' class='form-sub'>
+  <view class="txt">
+    <view class="txt2">手机号</view>
+    <view  class="txt3">
+    <input placeholder="请输入手机号" maxlength="11" class="txt3" name="phone" bindinput="phonenum"/></view>
+    </view>
+  <view class="txt">
+    <view class="txt2">验证码</view>
+    <!-- <view  class="txt3"> -->
+      <input type="idcard" placeholder="请输入验证码" name="pass" bindinput="passnum"/>
+    <!-- </view> -->
+      <button type="button" class="{{sendmsg}}" bindtap="sendmessg" disabled="{{disable}}">{{getmsg}}</button>
+  </view>
+  <button class="btn" formType="submit" hover-class="none">确定</button>
+</form>

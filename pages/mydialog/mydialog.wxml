@@ -1,0 +1,47 @@
+<!--pages/mydialog/mydialog.wxml-->
+<!-- <button bindtap='showCompomentDialog'>自定义组件</button>
+<my-component-dialog bind:determineevent="onMyEvent" bind:cancleevent="cancleBtn" dialog-hidden="{{isHidden}}" title-msg="{{titleMsg}}" input-hidden="{{inputHidden}}" cancle-btn="{{cancleBtn}}" input-place-halder="{{inputPlaceHolder}}" /> -->
+<!-- 
+<view class="star" style="display:flex;flex-direction:row;">
+    <view class="star-description">走心指数</view>
+    <view  class="star-content" style="display:flex;flex-direction:row;">
+        <view class="starsHas  {{starFlag>=1? '': 'starNo'}}"  bindtap="changeOne"></view>
+        <view class="starsHas  {{starFlag>=2? '': 'starNo'}}"  bindtap="changeTwo"></view>
+        <view class="starsHas  {{starFlag>=3? '': 'starNo'}}"  bindtap="changeThree"></view>
+        <view class="starsHas  {{starFlag>=4? '': 'starNo'}}"  bindtap="changeFour"></view>
+        <view class="starsHas  {{starFlag>=5? '': 'starNo'}}"  bindtap="changeFive"></view>
+    </view>
+</view>
+
+<text>当前日期：{{date}}</text>
+<view bindtap="showDatePicker" >选择日期</view>
+<date-picker
+    id="date-picker"
+    value="{{datePickerValue}}" 
+    isShow="{{datePickerIsShow}}"
+    bindsureclick="datePickerOnSureClick"
+    bindcancelclick="datePickerOnCancelClick" /> -->
+
+
+<!-- 
+<view class='tj'>
+<form bindsubmit="formSubmit">
+<view class='title'>丫丫上门服务</view>
+<view class='box'><label>姓名:</label> <input type='text' name='xm' value='' /> <view class='clear'></view></view>
+<view class='box'><label>联系方式:</label> <input type='text' name='lxfs' value='' /> <view class='clear'></view> </view>
+<view class='box'><label>需求:</label> <input type='text' name='xq' value='' /> <view class='clear'></view></view>
+<view class='box'><label>小区名字:</label> <input type='text' name='xqmz' value='' /> <view class='clear'></view></view>
+<button formType="submit">提交</button>
+</form>
+</view> -->
+<!--pages/recharge/recharge.wxml-->
+<view class='bg-gray'>
+<view class='main'>
+  <text>选择充值金额</text>
+  <view class='flex between itemBox'>
+      <view class="{{activeIndex == index ? 'active':''}}"  wx:for="{{numArray}}" bindtap='activethis' data-thisindex='{{index}}'>
+      <view>{{item}}元</view></view>
+  </view>
+</view>
+<view class='thisbtn'>立即充值</view>
+</view>

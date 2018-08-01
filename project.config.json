@@ -1,0 +1,226 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.1.1",
+	"appid": "wx00161d06728606cb",
+	"projectname": "%E7%8E%A9%E7%BE%8E%E6%B4%97%E8%BD%A6%E7%8C%AB",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 30,
+			"list": [
+				{
+					"id": -1,
+					"name": "d",
+					"pathName": "pages/personal/personal",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "e",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "integral",
+					"pathName": "pages/integrallist/integrallist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/myinformation/myinformation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "de",
+					"pathName": "pages/stationdetail/stationdetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "time",
+					"pathName": "pages/time/time",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "banlance",
+					"pathName": "pages/balancelist/balancelist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "help",
+					"pathName": "pages/helpcenter/helpcenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "card",
+					"pathName": "pages/mycard/mycard",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mylist",
+					"pathName": "pages/mylist/mylist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "list",
+					"pathName": "pages/listdetail/listdetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/shareduser/shareduser",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "buy",
+					"pathName": "pages/buycard/buycard",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "enterpriseuser",
+					"pathName": "pages/enterpriseuser/enterpriseuser",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "carddetail",
+					"pathName": "pages/carddetail/carddetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "paidcard",
+					"pathName": "pages/paidcard/paidcard",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "stationdetail",
+					"pathName": "pages/stationdetail/stationdetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mydialog",
+					"pathName": "pages/mydialog/mydialog",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "attention",
+					"pathName": "pages/attention/attention",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "evaluation",
+					"pathName": "pages/evaluation/evaluation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cardexchange",
+					"pathName": "pages/cardexchange/cardexchange",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bindphone",
+					"pathName": "pages/bindphone/bindphone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "no",
+					"pathName": "pages/noinvoice/noinvoice",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "paynow",
+					"pathName": "pages/paynow/paynow",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "liststation",
+					"pathName": "pages/stationlist/stationlist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "auth",
+					"pathName": "pages/authorization/authorization",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "numberdetail",
+					"pathName": "pages/numberdetail/numberdetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "buycardqy",
+					"pathName": "pages/buycardqy/buycardqy",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "invoicemanage",
+					"pathName": "pages/invoicemanage/invoicemanage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "invoicedetail",
+					"pathName": "pages/invoicedetail/invoicedetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "orderinfo",
+					"pathName": "pages/orderinfo/orderinfo"
+				}
+			]
+		}
+	}
+}

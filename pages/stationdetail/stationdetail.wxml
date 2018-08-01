@@ -1,0 +1,39 @@
+<!--pages/stationdetail/stationdetail.wxml-->
+<view class='container'>
+  <view class='pagebody'>
+    <image class='imagess' src='/images/xiangq.png'></image>
+    <view class='userlist'>
+      <view class='item2 row'>
+        <view class='row-4' bindtap='integral'>
+          <text class='item-jifen'>两江新区创富中心店</text>
+        </view>
+        <view class='row-1' bindtap='balance'>
+          <image src='/images/sp-icon.png'></image>
+        </view>
+        <view class='row-1' bindtap='balance'>
+          <image src='/images/fx-icon.png'></image>
+        </view>
+      </view>
+      <view class='item-hui'></view>
+       <view class='row-4' bindtap='integral'>
+          <text class='item-jifen'>用户评论 <text class='tiaoshu'>(20)</text></text>
+        </view>
+        <view class='weui_cell'>
+          <view class="weui_cell_hd"><image src="/images/icon-toux.png"></image></view>
+          <view class="weui_cell_bd"><view class="weui_cell_bd_p">低调的自由者</view> </view>
+          <view class="with_arrows">09:09</view>
+        </view>
+        <view class='pinglun'>不错不错，车洗的很干净</view>
+        <view class='pinglun-row'>
+          <view class='row-2 pinglun-ima'><image                                  src='/images/xiangq.png'></image></view>
+          <view class='row-2 pinglun-ima'><image src='/images/xiangq.png'></image></view>
+          <view class='row-2 pinglun-ima'><image src='/images/xiangq.png'></image></view>
+        </view>
+      <view class='row btn-buttom'>
+        <view class='row-3'>
+        <button class='btn1'>公益基金</button></view>
+        <view class='row-3'><button class='btn2' bindtap='attention'>普通洗车</button></view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+<!--pages/evaluation/evaluation.wxml-->
+<view>
+<view class='my-card'>
+    <view class='cell-hd' bindtap='carddetail'>
+      <text class='cell-hd-text'>洗车猫玩美卡</text>
+      <text class='cell-hd-dec'>最近到期 2018-07-17</text>
+    </view>
+    <view class='cell-ft'>
+      <text class='cell-hd-num'>50<text class='chi'>次</text></text>
+      <view><image src='/images/zz-icon.png'></image></view>
+    </view>
+  </view>
+  <view class='line'></view>
+  <view class='item2 row'><text class='item-jifen'>您的评价</text></view> 
+  <view class="star" style="display:flex;">
+    <view  class="star-content" style="display:flex;">
+        <view class="starsHas  {{starFlag>=1? '': 'starNo'}}"  bindtap="changeOne"></view>
+        <view class="starsHas  {{starFlag>=2? '': 'starNo'}}"  bindtap="changeTwo"></view>
+        <view class="starsHas  {{starFlag>=3? '': 'starNo'}}"  bindtap="changeThree"></view>
+        <view class="starsHas  {{starFlag>=4? '': 'starNo'}}"  bindtap="changeFour"></view>
+        <view class="starsHas  {{starFlag>=5? '': 'starNo'}}"  bindtap="changeFive"></view>
+    </view>
+</view>
+<view class='pinglun'>不错不错，车洗的很干净</view>
+        <view class='pinglun-row'>
+          <view class='row-2 pinglun-ima'><image                                  src='/images/xiangq.png'></image></view>
+          <view class='row-2 pinglun-ima'><image src='/images/xiangq.png'></image></view>
+          <view class='row-2 pinglun-ima'><image src='/images/xiangq.png'></image></view>
+        </view>
+</view>

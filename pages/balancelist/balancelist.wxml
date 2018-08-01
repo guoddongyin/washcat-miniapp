@@ -1,0 +1,38 @@
+<!--pages/balancelist/balancelist.wxml-->
+<view class='container'>
+  <view class='pagebody'>
+    <view class='top-banner'>
+      <image class='imagess' src='/images/bgg2.png'></image>
+      <view class='integral'>1234</view>
+    </view>
+    <view class='userlist'>
+      <view class='item2 row'>
+        <view class='row-5'>
+          <text class='item-jifen'>积分记录</text>
+        </view>
+        <view class='row-1'>
+          <image src='/images/rili-icon.png' bindtap="showDatePicker"></image>
+          <date-picker
+            id="date-picker"
+            value="{{datePickerValue}}" 
+            isShow="{{datePickerIsShow}}"
+            bindsureclick="datePickerOnSureClick"
+            bindcancelclick="datePickerOnCancelClick" />
+        </view>
+      </view>
+      <view class="info_list">
+          <block wx:for="{{userListInfo}}">
+            <navigator url='{{item.url}}'><view class="weui_cell">
+              <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
+                <view class="weui_cell_bd">
+                  <view class="weui_cell_bd_p"> {{item.text}} </view>
+                  <view class="weui_cell_bd_dec"> {{item.dec}} </view>
+                </view>
+              <view class="with_arrows">+10</view>
+            </view></navigator>
+          </block>
+        </view>
+      </view>
+  </view>
+</view>
+

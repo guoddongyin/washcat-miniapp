@@ -1,0 +1,35 @@
+<!--pages/carddetail/carddetail.wxml-->
+<view class='content'>
+  <view class='my-card'>
+    <view class='cell-hd'>
+      <text class='cell-hd-text'>猫卡</text>
+      <text class='cell-hd-dec'>最近到期 {{carddatainfo.top.expireTime}}</text>
+    </view>
+    <view class='cell-ft'>
+      <text class='cell-hd-num'>{{carddatainfo.countNums}}<text class='chi'>次</text></text>
+       <view><image ></image></view> 
+    </view>
+  </view>
+  <view class='line'></view>
+      <view class='item2 row'>
+          <text class='item-jifen'>猫卡信息</text>
+      </view> 
+      <view class="info_list">
+        <view class="weui_cell">
+            <view class="weui_cell_bd">最近一次到期时间</view>
+            <view class="weui_cell_ft">{{carddatainfo.top.expireTime}}</view>
+        </view>
+         <view class="weui_cell">
+            <view class="weui_cell_bd">一个月内到期次数</view>
+            <view class="weui_cell_ft">2018-01-22</view>
+        </view>
+         <view class="weui_cell">
+            <view class="weui_cell_bd" style='color:#ee86a1'>为避免猫卡过期,请尽快使用            </view>
+            <view class="weui_cell_ft"><button class='usernow'>立即使用                           </button></view>
+        </view>
+  </view>
+  <view class='btn-padd'>
+    <button  class="btnone" form-type="submit" hover-class="none">推荐给朋友</button>
+    <button  class="btntwo" form-type="submit" hover-class="none" bindtap='numberdetail'>次数明细</button>
+  </view>
+</view>

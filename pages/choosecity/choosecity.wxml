@@ -1,0 +1,20 @@
+<!--pages/choosecity/choosecity.wxml-->
+<view class='container'>
+  <view>
+    <view class='txt1'>定位/附近城市</view>
+    <view class='dang'>
+      <image class='image' src='../../images/zd.png'></image>
+      <view class='txt2'>{{cityname}}</view>
+    </view>
+  </view>
+  <view>
+    <view class='txt1'>已开通城市</view>
+    <view>
+      <block wx:for="{{list}}" wx:key="{{item.id}}">
+        <view class='item' bindtap='choosecity' data-id='{{item}}'>
+          <view class='city'>{{item.city}}</view>
+        </view>
+      </block>
+    </view> 
+  </view> 
+</view>

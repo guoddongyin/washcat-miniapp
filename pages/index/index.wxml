@@ -1,0 +1,18 @@
+<!--index.wxml-->
+
+<view class='container'>
+  <map
+      id="myMap"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      markers="{{markers}}"
+      covers="{{covers}}"
+      show-location>
+     <cover-view class="image-bnt" bindtap='stationlist'>
+        <cover-image class="cover-image" src="/images/bottom2.png" />
+     </cover-view>
+  </map>
+  <cover-image src="/images/ge-icon.png" class='image-lnt' bindtap='personal'></cover-image>
+  <cover-image src="/images/zdlb-icon.png" class='image-rnt' bindtap='stationlist'></cover-image>
+</view>
+

@@ -1,0 +1,38 @@
+<!--pages/buycard/buycard.wxml-->
+<view class='content'>
+  <view class='my-card'>
+    <view class='cell-hd'>
+      <text class='cell-hd-text'>洗车猫玩美卡</text>
+      <text class='cell-hd-dec'>最近到期 2018-07-17</text>
+    </view>
+    <view class='cell-ft'>
+      <text class='cell-hd-num'>50<text class='chi'>次</text></text>
+       <view><image ></image></view> 
+    </view>
+  </view>
+  <view class='money-cell'>
+    <text  class='money'>￥450</text>
+    <text class='zhang'>100/100张</text>
+  </view>
+  <view class='money-cell'>
+    <image src='/images/yuan-icon.png'></image>
+    <text class='zhang'>购买后不可退</text>
+  </view>
+  <view class='money-cell' style='padding-bottom:30rpx;'>
+    <image src='/images/yuan-icon.png'></image>
+    <text class='zhang'>购买后可分次转赠给好友</text>
+  </view>
+  <view class='line'></view>
+      <view class='item2 row'>
+          <text class='item-jifen'>推荐人</text>
+      </view> 
+  <form bindsubmit="formSubmit" class='form-sub'>
+        <view class="txt">
+          <!-- <view class="ima"></view> -->
+          <view class="txt2">推荐人</view>
+         <view  class="txt3"><input placeholder="输入我的推荐人（非必填）" maxlength="" class="txt3" value="{{mem_name}}"                              bindchange="name" name="name2"/></view>
+         </view>
+        <!-- <view style="clear:both"></view> -->
+  </form>
+  <button  class="btn" form-type="submit" hover-class="none">立即支付</button>
+</view>

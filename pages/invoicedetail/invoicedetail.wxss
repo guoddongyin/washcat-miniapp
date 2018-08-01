@@ -1,0 +1,22 @@
+/* pages/invoicedetail/invoicedetail.wxss */
+.cell-button{
+  width: 100%;
+  height: 100rpx;
+  background: #ddd;
+  position: fixed;
+  bottom: 0
+}
+.btn-buttom{
+  position: fixed;
+  bottom: 0;
+  border-top: 1rpx solid #ededed;
+}
+.btn1{
+  background-color: #fff;
+  color: #64c4c7;
+}
+.btn2{
+  background-color: #64c4c7;
+  color: #fff;
+}
+ 

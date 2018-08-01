@@ -1,0 +1,38 @@
+<!--pages/paidcard/paidcard.wxml-->
+<view class='content'>
+  <view class='item2 row'><text class='item-jifen'>选择充值金额</text></view> 
+  <!-- <view class='row'> -->
+    <view class="row-2 {{activeIndex == index ? 'active':''}}" wx:for="{{moneyArray}}" wx:key="numArray" bindtap='activethis' data-thisindex='{{index}}'>
+      <text class='jine'>{{item.money}}元</text>
+      <text class='cishu'>洗车{{item.washNums}}次卡</text>
+    </view>
+  <!-- </view> -->
+  <view class='line'></view>
+  <view class='item2 row'><text class='item-jifen'>自定义充值金额</text></view> 
+      <form bindsubmit="formSubmit" class='form-sub'>
+        <view class="txt">
+          <view class="txt2">次</view>
+          <view  class="txt3"><input placeholder="输入您想充值的金额" class="txt3" value="{{mem_name}}" bindchange="name" name="name2"/></view>
+        </view>
+      </form>
+   <view class='line'></view>
+  <view class='item2 row'><text class='item-jifen'>购卡说明</text></view> 
+  <view class='money-cell'>
+    <image src='/images/yuan-icon.png'></image>
+    <text class='zhang'>智能洗车卡,有效期365天</text>
+  </view>
+  <view class='money-cell'>
+    <image src='/images/yuan-icon.png'></image>
+    <text class='zhang'>可多次购买，数量不限</text>
+  </view>
+  <view class='money-cell'>
+    <image src='/images/yuan-icon.png'></image>
+    <text class='zhang'>购买后不可退</text>
+  </view>
+  <view class='money-cell' style='padding-bottom:30rpx;'>
+    <image src='/images/yuan-icon.png'></image>
+    <text class='zhang'>适用门店：全国通用</text>
+  </view>
+  <button  class="btn" form-type="submit" hover-class="none" bindtap='paymyself'>确认支付</button>
+</view>
+

@@ -1,0 +1,13 @@
+<!--pages/cardexchange/cardexchange.wxml-->
+<view class='box'>
+  <view class='dot'>
+  <image src='/images/car-bg.png'></image>
+     <form class='panel' bindsubmit="getformdata">
+      <!-- <view class='center-par'> -->
+        <view class='duihuam'><input type='text' placeholder='请输入兑换码' name="code2"></input></view>
+         <view class='zhu'>注：该兑换码为线下实体猫卡兑换码</view> 
+         <button class='btn' form-type="submit">立即兑换</button>
+        <!-- </view> -->
+     </form> 
+  </view>
+</view>

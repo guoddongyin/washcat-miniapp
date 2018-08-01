@@ -1,0 +1,118 @@
+/* pages/askinvoice/askinvoice.wxss */
+.content{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+.with_arrows{
+  position: absolute;
+  top: 44rpx;
+  right: 50rpx;
+  width: 20rpx;
+  height: 20rpx;
+}
+ .weui_cell{
+  position:relative;
+  display:flex;
+  padding:30rpx 0;
+  margin:30rpx;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  border-bottom:1rpx solid #f5f5f5;
+  font-family:PingFang-SC-Medium; 
+  border:2rpx solid #f5f5f5;
+  border-radius:10rpx;
+  background-color: #fff;
+  box-shadow: 6rpx 6rpx 3rpx #ededed;
+
+}
+.weui_cell_hd{
+  display: inline-block;
+  width: 60rpx;
+  margin:0 10rpx;
+  padding-top: 10rpx;
+}
+.weui_cell_hd image{
+  width: 100%;
+  height: 60rpx;
+  vertical-align: -4rpx;
+}
+.weui_cell_bd{
+  display: inline-block;
+  height: 60rpx;
+}
+.weui_cell_bd_p{
+  font-size: 30rpx;
+  color: #333;
+}
+.weui_cell_bd_dec{
+	height: 20px;
+	font-size: 26rpx;
+  /* padding-top: 5rpx; */
+	color: #999;
+}
+.badge{
+  position: absolute;
+  top: 44rpx;
+  right: 80rpx;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  background: #ff0000;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 16rpx;
+}
+.with_arrows{
+	font-size: 20px;
+	color: #64c4c7;
+  margin-right: 20rpx;
+}
+.top-banner{
+  position: relative;
+}
+.integral{
+  position: absolute;
+  top:30%;
+  left: 40%; 
+  color: #fff;
+  font-size: 70rpx;
+  font-weight: 600
+}
+
+.item-jifen{
+  display: block;
+  font-size:36rpx;
+  padding: 30rpx;
+  text-align: left;
+}
+.row-1 image{
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  padding: 30rpx ;
+}
+.cell-button{
+  width: 100%;
+  height: 100rpx;
+  background: #ddd;
+  position: fixed;
+  bottom: 0
+}
+.btn-buttom{
+  position: fixed;
+  bottom: 0;
+  border-top: 1rpx solid #ededed;
+}
+.btn1{
+  background-color: #fff;
+  color: #64c4c7;
+}
+.btn2{
+  background-color: #64c4c7;
+  color: #fff;
+}
+ 

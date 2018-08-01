@@ -1,0 +1,2 @@
+/* pages/numberdetail/numberdetail.wxss */
+@import'../balancelist/balancelist.wxss';

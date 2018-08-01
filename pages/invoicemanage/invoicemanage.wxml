@@ -1,0 +1,19 @@
+<!--pages/invoicemanage/invoicemanage.wxml-->
+<view>
+<view class="info_list">
+  <block wx:for="{{invoiceInfo}}" wx:key="invoiceInfo">
+     <view class="weui_cell" bindtap='goinvoicedetail' data-id='{{index}}'>
+        <view class="weui_cell_hd"><image src="/images/icon-card.png"></image></view>
+          <view class="weui_cell_bd">
+             <view class="weui_cell_bd_p">充值猫卡•
+              <text class="red" wx:if="{{item.status==0}}">正在开票中</text> 
+              <text class="blue" wx:if="{{item.status==1}}">已开票</text> 
+             </view>
+               <view class="weui_cell_bd_dec"> {{item.createTime}} </view>
+            </view>
+          <view class="with_money">{{item.money}}元</view>
+      </view>
+    </block>
+  </view>
+  <button class="btn" form-type="submit" hover-class="none" bindtap='askinvoice'>继续索取发票</button>
+</view>

@@ -1,0 +1,8 @@
+<!--pages/listdetail/listdetail.wxml-->
+<view class="info_list">
+   <text class='dd-info'>订单信息</text>
+   <view class="weui_cell"  wx:for="{{listDetailInfo}}">
+      <view class="weui_cell_bd">{{item.text}}</view>
+      <view class="weui_cell_ft">2018-01-22</view>
+   </view>
+</view>

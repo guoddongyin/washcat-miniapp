@@ -1,0 +1,155 @@
+/* pages/personal/personal.wxss */
+
+.info-left{
+  position: absolute;
+  top: 30rpx;
+  display: flex;
+  /* text-align: center; */
+  align-items: center;
+  margin: 20rpx;
+}
+.info-left .info{
+  width: 120rpx;
+  height: 120rpx;
+  border: solid 10rpx #79d3d9;
+  border-radius: 50%;
+
+}
+.info-left .info image{
+  width: 100%;
+  height: 100%;
+  border-radius:50%;
+}
+.info-title{
+  display: block;
+  color: #ffffff;
+  padding: 10rpx 20rpx;
+  font-size: 40rpx;
+}
+.info-dec{
+  display: block;
+  font-size: 22rpx;
+  margin: 10rpx 20rpx;
+  padding: 12rpx 16rpx;
+  text-align: center;
+  color: #79d3d9;
+  background-color:#cdfdff;
+  width: 110rpx;
+  border-radius: 50rpx;
+}
+.item-jifen{
+  display: block;
+  font-size:40rpx;
+  text-align: center;
+  padding:10rpx 20rpx;
+}
+.jifen{
+  font-size: 25rpx;
+  color: #666;
+}
+.item-hui{
+  width: 100%;
+  height: 20rpx;
+  background-color: #f5f5f5;
+}
+.adver{
+  width: 100%;
+  height: 180rpx;
+}
+.adver image{
+  width: 100%;
+  height: 100%;
+}
+.bg-grey{
+  width: 100%;
+  height: 5rpx;
+  background-color: #f5f5f5;
+}
+.item2{
+height:auto;
+text-align:center;
+border-radius:30rpx 30rpx 0 0;
+background-color: #fff
+}
+.row-list{
+  padding:20rpx;
+  border-bottom: 1rpx solid #f5f5f5
+}
+.row-list .row-1{
+  width: 45rpx;
+  height: 45rpx;
+}
+.row-list .row-1 image{
+  width: 100%;
+  height: 100%;
+}
+ .row-right{
+  width: 40rpx;
+  height: 40rpx;
+  text-align: right
+} 
+.row-right image{
+  width: 100%;
+  height:100%;
+}
+ .weui_cell{
+    position: relative;
+    display: flex;
+    padding: 28rpx 0;
+    /* margin: 0 30rpx; */
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: 1rpx solid #ededed;
+}
+.weui_cell_hd{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+.weui_cell_hd image{
+  width: 100%;
+  /* vertical-align: -4rpx; */
+  max-height:100%;
+  vertical-align:top;
+
+}
+.weui_cell_bd{
+  display: inline-block;
+}
+.weui_cell_bd_p{
+  font-size: 30rpx;
+  color: #333;
+}
+.badge{
+  position: absolute;
+  top: 44rpx;
+  right: 80rpx;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  background: #ff0000;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 16rpx;
+}
+.with_arrow:after {
+    content: " ";
+    display: inline-block;
+    height: 16rpx;
+    width: 16rpx;
+    border-width: 4rpx 4rpx 0 0;
+    border-color: #b2b2b2;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    /* position: relative; */
+    top: -4rpx;
+    position: absolute;
+    top: 50%;
+    margin-top: -8rpx;
+    right: 0rpx;
+    border-radius: 2rpx;
+}

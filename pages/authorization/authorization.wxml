@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="inner">
+    <view class="image">
+      <image src="../../images/accredit.png"></image>
+    </view>
+    <view class="text">您是否要授权登录完美洗车猫</view>
+    <button class="btn" open-type="getUserInfo" bindgetuserinfo='login' >点击授权</button>
+  </view>
+</view>

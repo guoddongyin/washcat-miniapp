@@ -1,0 +1,38 @@
+<!--pages/numberdetail/numberdetail.wxml-->
+<view class='container'>
+  <view class='pagebody'>
+    <view class='top-banner'>
+      <image class='imagess' src='/images/mingx-bg.png'></image>
+      <view class='integral'>1234</view>
+    </view>
+    <view class='userlist'>
+       <view class='item2 row'>
+        <view class='row-5'>
+          <text class='item-jifen'>次数明细</text>
+        </view>
+        <view class="dated">{{date}}</view>
+        <view class='row-1'>
+          <image src='/images/rili-icon.png' bindtap="showDatePicker"></image>
+          <date-picker
+            id="date-picker"
+            value="{{datePickerValue}}" 
+            isShow="{{datePickerIsShow}}"
+            bindsureclick="datePickerOnSureClick"
+            bindcancelclick="datePickerOnCancelClick" />
+        </view>
+      </view> 
+      <view class="info_list">
+          <block wx:for="{{getnumberlist}}" wx:key="getnumberlist">
+            <navigator url='{{item.url}}'><view class="weui_cell">
+              <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
+                <view class="weui_cell_bd">
+                  <view class="weui_cell_bd_p">  {{item.name}} </view>
+                  <view class="weui_cell_bd_dec"> {{item.createTime}} </view>
+                </view>
+              <view class="with_arrows">{{nums}}</view>
+            </view></navigator>
+          </block>
+        </view>
+      </view>
+  </view>
+</view>
