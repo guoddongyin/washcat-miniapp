@@ -7,7 +7,7 @@
   text-align: left;
 }
 .usernow{
-  background-color: #ee86a1;
+  background-color: #e35274;
   color: #fff;
   border-radius: 50rpx;
   font-size: 24rpx;
@@ -16,15 +16,15 @@
   padding: 50rpx;
 }
 .btnone{
-  background-color: #64c4c7;
+  background-color: #1a3064;
   color: #fff;
   border-radius: 50rpx;
   /* box-shadow: 5rpx 10rpx  #64c4c7; */
 }
 .btntwo{
   background-color: #fff;
-  color: #64c4c7;
-  border: solid 1rpx #64c4c7;
+  color: #1a3064;
+  border: solid 1rpx #1a3064;
   border-radius: 50rpx;
   margin-top: 50rpx
 }

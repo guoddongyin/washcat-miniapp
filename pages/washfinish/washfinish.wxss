@@ -1,0 +1,58 @@
+/* pages/washfinish/washfinish.wxss */
+image{
+  width:300rpx;
+  height:280rpx;
+  background-size: 100% 100%;
+}
+.zhu{
+  font-size: 36rpx;
+  color: #333;
+  text-align: center;
+  margin-top: 60rpx;
+}
+.shuoqu{
+  color: #666;
+  font-size: 26rpx;
+  text-align: center;
+  margin: 20rpx;
+
+}
+.btn-buttom{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top:1rpx solid #ededed;
+  color: #1a3064;
+  background-color: #97d5e6
+}
+.viewclass{
+  position: fixed;
+  height: auto;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+  }
+  .jifen{
+    color: #ee86a1
+  }
+  .item-jifen{
+    overflow: hidden;
+    justify-content: left;
+     align-items:left;
+  }
+  .content{
+    padding: 30rpx;
+  }
+  .content text{
+  display: block;
+  font-size: 30rpx;
+  text-indent:60rpx;
+  
+}
+.content image{
+  width: 100%;
+  height: 300rpx;
+  padding:20rpx 0;
+}

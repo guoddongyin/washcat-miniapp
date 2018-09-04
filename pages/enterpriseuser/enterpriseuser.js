@@ -31,6 +31,26 @@ Page({
       username1: e.detail.value
     })
   },
+
+  //点击放大图片
+  previewImage: function (e) {
+    var src = e.currentTarget.dataset.src;//获取data-src
+    var imgList = e.currentTarget.dataset.list;//获取data-list
+    //图片预览
+    wx.previewImage({
+      current: src, // 当前显示图片的http链接
+      urls: imgList // 需要预览的图片http链接列表
+    })
+  },
+  //删除图片
+  deleteImg: function (e) {
+    var pics = this.data.pics;
+    var index = e.currentTarget.dataset.index;
+    pics.splice(index, 1);
+    this.setData({
+      pics: pics
+    });
+  },
    //获取手机号码输入的值
   phone2:function (e) {
     var that = this;
@@ -81,7 +101,7 @@ Page({
           })
           setTimeout(function () {
             wx.navigateTo({
-              url: '/pages/enterpriseuser/enterpriseuser',
+              url: '/pages/buycardqy/buycardqy',
             })
           }, 1000)
         }

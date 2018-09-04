@@ -1,26 +1,65 @@
 // pages/attention/attention.js
 var util = require('../../utils/util.js');
 Page({
-
+  
   /**
    * 页面的初始数据
    */
   data: {
-  
+    devId: '',
+    helplist: '',
+    content: '',
+    backgroundAudioManager:''
   },
-
+  paidnow:function () {
+    var that = this;
+    var id = that.data.devId
+    var data = {
+      devId: that.data.devId
+    }
+    const backgroundAudioManager = wx.getBackgroundAudioManager()
+    backgroundAudioManager.stop()
+    util.request_data("washCarcmd/getWashcarcmd", 'POST', data, function (res) {
+      console.log(res)
+      wx.navigateTo({
+        url: '/pages/paynow/paynow?devId=' + id,
+      })
+    })
+    
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var devId = options.devId
+    this.data.devId = devId
+    this.gethelpList();
+    const backgroundAudioManager = wx.getBackgroundAudioManager()
+    backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/becareful.mp3' // 设置了 src 之后会自动播放 
   },
-
+  //获取帮助信息
+  gethelpList: function () {
+    var that = this;
+    var data = {
+      types: 3
+    }
+    util.request_data('imagetext/getImagetext', 'post', data, function (res) {
+      console.log(res);
+      var helplist = res.data.data
+      var content = helplist.content
+      if (content) {
+        content = content.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
+      }
+      that.setData({
+        helplist: helplist,
+        content: content
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
   },
 
   /**

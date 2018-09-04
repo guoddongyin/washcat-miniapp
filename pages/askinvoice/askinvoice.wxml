@@ -1,19 +1,20 @@
 <!--pages/askinvoice/askinvoice.wxml-->
 <view class='content'>
 <view class="info_list">
-  <block wx:for="{{userListInfo}}">
-     <navigator url='{{item.url}}'><view class="weui_cell">
-        <view class="weui_cell_hd"><image src="/images/icon-card.png"></image></view>
+  <block wx:for="{{invoiceInfo}}" wx:key="invoiceInfo">
+     <view class="{{item.status?'active':'weui_cell'}}" data-id='{{index}}' bindtap='chooseinvoice'>
+        <view class="weui_cell_hd"><image src="/images/icon-czmk.png"></image></view>
           <view class="weui_cell_bd">
-             <view class="weui_cell_bd_p"> {{item.text}}•<text class='blue'>未开票</text> </view>
-               <view class="weui_cell_bd_dec"> {{item.dec}} </view>
+             <view class="weui_cell_bd_p"> {{item.name}} </view>
+               <view class="weui_cell_bd_dec"> {{item.orderSource==1?'普通支付':'公益窗口'}} </view>
             </view>
-          <view class="with_arrows">+10</view>
-      </view></navigator>
+          <view class="with_arrowsdd">{{item.createTime}}</view>
+          <view class="with_arrows">{{item.payPrice}}</view>
+      </view>
     </block>
   </view>
   <view class='row btn-buttom'>
-    <view class='row-3'><button class='btn1' bindtap='cardexchange'>全选</button></view>
-    <view class='row-3'><button class='btn2' bindtap='paidcard'>索取发票</button></view>
+    <view class='row-2'><button class='btn1' bindtap='chooseall'>全选</button></view>
+    <view class='row-4'><button class='btn2' bindtap='paidcard'>索取发票（{{yuan}}元）</button></view>
   </view>
 </view>

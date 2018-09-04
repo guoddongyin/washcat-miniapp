@@ -1,0 +1,31 @@
+<!--pages/noinvoicemes/noinvoicemes.wxml-->
+<view>
+  <view class="zhanwei"  wx:if="{{condition}}">
+      <view class="nodata">
+        <image class="zhanwei-img" src="/images/icon-mao.png"></image>
+        <view class="tips">
+          <text class="tips-p">当前暂无发票信息，请先添加</text>
+        </view> 
+      </view>   
+  </view>
+  <view class="hasdata" wx:else>
+    <view  class="hasList" >
+      <view class="header"></view>
+      <view class="title" data-id='{{item[0].id}}' bindtap="toqrcode">
+        <text >{{item[0].name}}ff</text>
+        <image src="/images/arrow.png" style='width:16px;height:16px;'></image>
+      </view>
+      <view class="tools">
+        <view class="del" data-id='{{item[0].id}}' bindtap="delete">
+          <image src="/images/del.png" style='width:15px;height:15px;'></image>删除
+        </view>  
+        <view class="edit" data-eid='{{item[0].id}}' bindtap="edit">
+          <image src="/images/edit.png" style='width:15px;height:15px;'></image>编辑
+        </view> 
+      </view>
+    </view>
+  </view>
+  <view class="addbtn" >
+    <navigator url='/pages/invoicetype/invoicetype'><view class='shuoqu'>立即添加发票信息</view></navigator>
+  </view>
+</view>

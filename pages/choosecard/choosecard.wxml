@@ -1,0 +1,16 @@
+<!--pages/choosecard/choosecard.wxml-->
+<scroll-view class='content'>
+  <view class="my-card {{activeIndex == index ? 'active':''}}" wx:for="{{carddata}}" wx:key="item.id" data-id="{{index}}" bindtap='choosecard'>
+    <view class='cell-hd' data-id='{{index}}'>
+      <text class='cell-hd-text'>{{item.name}}</text>
+      <text class='cell-hd-dec'>最近到期 {{item.expireTime}}</text>
+    </view>
+    <view class='cell-ft'>
+      <text class='cell-hd-num'>{{item.nums}}<text class='chi'>次</text></text>
+      <view bindtap='carddetail' data-id="{{index}}"><image src='/images/chak.png'></image></view>
+    </view>
+  </view>
+  <view class='row btn-buttom'>
+   <view class='row-6'><button class='btn2' bindtap='paynow'>立即使用</button></view>
+  </view>
+</scroll-view>

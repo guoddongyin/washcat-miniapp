@@ -5,14 +5,27 @@
   overflow: hidden;
   background-color: #f5f5f5;
 }
+.info_list{
+  padding-bottom: 50rpx;
+}
 .with_arrows{
   position: absolute;
-  top: 44rpx;
-  right: 50rpx;
-  width: 20rpx;
+  top: 60rpx;
+  right: 20rpx;
+  width: 50rpx;
   height: 20rpx;
 }
+.with_arrowsdd{
+   position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  width: 150rpx;
+  height: 20rpx;
+  font-size: 26rpx;
+  color: #999
+}
  .weui_cell{
+   height: auto;
   position:relative;
   display:flex;
   padding:30rpx 0;
@@ -22,12 +35,30 @@
   align-items:center;
   border-bottom:1rpx solid #f5f5f5;
   font-family:PingFang-SC-Medium; 
-  border:2rpx solid #f5f5f5;
+  border:1rpx solid #ededed;
   border-radius:10rpx;
   background-color: #fff;
   box-shadow: 6rpx 6rpx 3rpx #ededed;
-
 }
+ .active{
+   height: auto;
+  position:relative;
+  display:flex;
+  padding:30rpx 0;
+  margin:30rpx;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  border-bottom:1rpx solid #f5f5f5;
+  font-family:PingFang-SC-Medium; 
+  border:1rpx solid #64c4c7;
+  border-radius:10rpx;
+  background-color: #fff;
+  box-shadow: 6rpx 6rpx 3rpx #ededed;
+}
+/* .active{
+  border:1rpx solid #64c4c7;
+} */
 .weui_cell_hd{
   display: inline-block;
   width: 60rpx;
@@ -46,9 +77,10 @@
 .weui_cell_bd_p{
   font-size: 30rpx;
   color: #333;
+  padding-bottom: 10rpx
 }
 .weui_cell_bd_dec{
-	height: 20px;
+	/* height: 20px; */
 	font-size: 26rpx;
   /* padding-top: 5rpx; */
 	color: #999;
@@ -68,7 +100,7 @@
 }
 .with_arrows{
 	font-size: 20px;
-	color: #64c4c7;
+	color: #e35274;
   margin-right: 20rpx;
 }
 .top-banner{
@@ -109,10 +141,10 @@
 }
 .btn1{
   background-color: #fff;
-  color: #64c4c7;
+  color: #97d5e6;
 }
 .btn2{
-  background-color: #64c4c7;
-  color: #fff;
+  background-color: #97d5e6;
+  color: #1a3064;
 }
  

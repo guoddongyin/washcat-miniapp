@@ -5,7 +5,19 @@ Page({
   data: {
     latitude: 29.579439,
     longitude: 106.564369,
-    markers: [],
+    markers: '',
+    controls: [{
+      id: 1,
+      iconPath: '/images/dit-icon.png',
+      position: {
+        left: 20,
+        top:400,
+        width: 30,
+        height: 30
+      },
+      clickable: true
+    }],
+    startimg:''
   },
   onLoad: function (options) {
     if (wx.getStorageSync('openid') == null || wx.getStorageSync('openid') == ''){
@@ -14,12 +26,13 @@ Page({
       })
     } 
     var that = this
+    
+    that.getphotodata()
     wx.getLocation({
       success: function (res) {
         console.log(res)
         var latitude = res.latitude
-        var longitude = res.longitude
-
+        var longitude = res.longitude 
         that.setData({
           latitude: latitude,
           longitude: longitude
@@ -28,23 +41,33 @@ Page({
         that.requestdata(latitude, longitude)
       },
     })
-
+    
     //测试用userid
     //wx.setStorageSync('IDID', '1')
     //wx.setStorageSync('openid', 'aabbcc')
-    //  wx.setStorageSync('openid', 'o8WdG4-LbJhrkJmQwbZLVsMDqWDE')
-    // wx.navigateTo({
-    //   url: '../../pages/login/login',
-    // })
   },
-
+  //获取启动页图片
+  getphotodata :  function () {
+    var that = this
+    var data = {
+      mediaType : 2
+    }
+    util.request_data("banner/startImg", 'POST', data, function (res) {
+      console.log(res)
+      var startimg = res.data.data
+      that.setData({
+        startimg: startimg
+      })
+    })
+  },
+  //获取范围内设备信息
   requestdata: function (latitude, longitude) {
     var that = this
     var data = {
       lng: latitude,
       lat: longitude
     }
-    util.request_data("storage/getStorageRange", 'POST', data, function (res) {
+    util.request_data("washcardevStatus/getDevRange", 'POST', data, function (res) {
       console.log(res)
       var botlist = res.data.data
       var markerlist = []
@@ -54,91 +77,46 @@ Page({
           latitude: '',
           longitude: '',
           iconPath: '',
-          width: 20,
+          width: 25,
           height: 30
         }
-        if (botlist[i].num == 0) {
-          model.iconPath = '/images/icon_0.png'
-        } else if (botlist[i].num == 1) {
-          model.iconPath = '/images/icon_1.png'
-        } else if (botlist[i].num == 2) {
-          model.iconPath = '/images/icon_2.png'
-        } else if (botlist[i].num == 3) {
-          model.iconPath = '/images/icon_3.png'
-        } else if (botlist[i].num == 4) {
-          model.iconPath = '/images/icon_4.png'
-        } else if (botlist[i].num == 5) {
-          model.iconPath = '/images/icon_5.png'
-        } else if (botlist[i].num == 6) {
-          model.iconPath = '/images/icon_6.png'
-        } else if (botlist[i].num == 7) {
-          model.iconPath = '/images/icon_7.png'
-        } else if (botlist[i].num == 8) {
-          model.iconPath = '/images/icon_8.png'
-        } else if (botlist[i].num == 9) {
-          model.iconPath = '/images/icon_9.png'
-        } else if (botlist[i].num == 10) {
-          model.iconPath = '/images/icon_10.png'
-        } else {
-          model.iconPath = '/images/icon_10j.png'
-        }
-        model.id = botlist[i].id
-        model.latitude = botlist[i].latitude
-        model.longitude = botlist[i].longitude
-
-        markerlist.push(model)
-      }
-
-      that.setData({
-        markers: markerlist
-      })
-    })
-  },
-
-
-  requestdata: function (latitude, longitude) {
-    var that = this
-    var data = {
-      lng: latitude,
-      lat: longitude
-    }
-
-    util.request_data("washcardevStatus/getDevRange", 'POST', data, function (res) {
-      console.log(res)
-      console.log("ddd");
-      var botlist = res.data.data;
-      console.log(botlist);
-      var markerlist = []
-      for (var i = 0;i< botlist[i].length;i++){
-        var model = {
-          id: '',
-          latitude: '',
-          longitude: '',
-          iconPath: '',
-          width: 20,
-          height: 30
-        }
-        model.iconPath = '/images/dw-icon.png'
+        model.iconPath = '/images/icon-dw.png'
         model.id = botlist[i].devId
         model.latitude = botlist[i].latitude
         model.longitude = botlist[i].longitude
         markerlist.push(model)
+        //console.log(markerlist+"ddd")
       }
-       
       that.setData({
         markers: markerlist
       })
+     // console.log(markers + "ddd")
+    })
+    const backgroundAudioManager = wx.getBackgroundAudioManager()
+    backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/map.mp3' // 设置了 src 之后会自动播放 
+  },
+  clickcontrols:function (){
+    var that = this;
+    wx.getLocation({
+      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      success: function (res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        that.setData({
+          latitude: latitude,//纬度 
+          longitude: longitude,//经度 
+        })
+      }
     })
   },
-
-  // clickmarker: function (e) {
-  //   console.log(e)
-  //   var id = e.markerId
-
-  //   wx.navigateTo({
-  //     url: '../../pages/renrencang/renrencang?storageId=' + id,
-  //   })
-  // },
+  //点击图标跳到站点详情
+  clickmarker: function (e) {
+    console.log(e)
+    var id = e.markerId
+    wx.navigateTo({
+      url: '../../pages/stationdetail/stationdetail?devId=' + id,
+    })
+  },
 
   onReady: function (e) {
     // this.mapCtx = wx.createMapContext('myMap')

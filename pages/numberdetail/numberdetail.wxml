@@ -3,7 +3,7 @@
   <view class='pagebody'>
     <view class='top-banner'>
       <image class='imagess' src='/images/mingx-bg.png'></image>
-      <view class='integral'>1234</view>
+      <view class='integral'>{{}}</view>
     </view>
     <view class='userlist'>
        <view class='item2 row'>
@@ -23,14 +23,17 @@
       </view> 
       <view class="info_list">
           <block wx:for="{{getnumberlist}}" wx:key="getnumberlist">
-            <navigator url='{{item.url}}'><view class="weui_cell">
-              <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
+            <view class="weui_cell">
+              <view class="weui_cell_hd" wx:if="{{item.sourceTypes==1}}"><image src="/images/icon-czmk.png"></image></view>
+              <view class="weui_cell_hd" wx:elif="{{item.sourceTypes==2}}"><image src="/images/icon-hyzz.png"></image></view>
+              <view class="weui_cell_hd" wx:else><image src="/images/icon-fw.png"></image></view>
                 <view class="weui_cell_bd">
                   <view class="weui_cell_bd_p">  {{item.name}} </view>
                   <view class="weui_cell_bd_dec"> {{item.createTime}} </view>
                 </view>
-              <view class="with_arrows">{{nums}}</view>
-            </view></navigator>
+              <view class="with_arrows" wx:if="{{item.detailsTypes==0}}">-{{item.cardNums}}</view>
+              <view class="with_arrows" wx:elif="{{item.detailsTypes==1}}">+{{item.cardNums}}</view>
+            </view>
           </block>
         </view>
       </view>

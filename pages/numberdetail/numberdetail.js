@@ -3,7 +3,7 @@ var util = require('../../utils/util.js');
 var app = getApp()
 Page({
   data: {
-    date: '2018-07-27',
+    date: '',
     datePickerValue: ['', '', ''],
     datePickerIsShow: false,
     getnumberlist: {},
@@ -32,19 +32,7 @@ Page({
       datePickerValue: e.detail.value,
       datePickerIsShow: false,
     });
-    var data = {
-      userId: wx.getStorageSync('IDID'),
-      pageNo: 1,
-      pageSize: 20,
-      time: that.data.data
-    }
-    console.log("参数", data);
-    util.request_data("userCardNumsDetails/getUserCardNumsDetails", 'POST', data, function (res) {
-      console.log(res)
-      that.setData({
-        getnumberlist: res.data.data.list,
-      })
-    })
+    
   },
 
   datePickerOnCancelClick: function (event) {
@@ -66,8 +54,12 @@ Page({
     console.log("参数", data);
     util.request_data("userCardNumsDetails/getUserCardNumsDetails", 'POST', data, function (res) {
       console.log(res)
+      var getnumberlist = res.data.data.list
+      for (var i = 0; i < getnumberlist.length;i++){
+        getnumberlist[i].createTime = util.DateHelper(getnumberlist[i].createTime, 'yyyy-MM-dd HH:mm')
+      }
       that.setData({
-        integrallist: res.data.data.list,
+        getnumberlist: getnumberlist,
       })
     })
   },

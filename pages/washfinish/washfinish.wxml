@@ -1,0 +1,16 @@
+<!--pages/washfinish/washfinish.wxml-->
+<view>
+  <view class='viewclass'>
+    <image src='/images/icon-che.png'></image>
+    <view class='zhu'>您的爱车已经洗干净了哟</view> 
+    <view class='shuoqu'>恭喜你本次洗车获得: <text class='jifen'>10积分</text></view>
+    <view class='line'></view>
+    <view class='item-jifen'>清洗后图片</view>
+      <view class='content'>
+        <image src='/images/xiangq.png'></image>
+        <text>您的爱车已经比全国80%的车要干净了,继续保持哦!分享爱车体验至朋友圈,可赚完美积分,兑换洗车劵。</text>
+      </view>    
+  </view>
+</view>
+<button class='btn-buttom' bindtap='attention' bindtap='evaluation'>立即评价</button>
+

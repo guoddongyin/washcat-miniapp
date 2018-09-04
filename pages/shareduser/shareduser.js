@@ -54,13 +54,10 @@ Page({
           })
           setTimeout(function () {
             wx.navigateTo({
-              url: '/pages/shareduser/shareduser',
+              url: '/pages/buycard/buycard',
             })
           }, 1000)
         }
-        // fail: {
-        //   console.log('cuowu' + ':' + res)
-        // }
       })
     }
   },

@@ -20,8 +20,6 @@
     "pages/buycardqy/buycardqy",
     "pages/carddetail/carddetail",
     "pages/paidcard/paidcard",
-    "components/dialog/dialog",
-    "pages/mydialog/mydialog",
     "pages/attention/attention",
     "pages/evaluation/evaluation",
     "pages/invoicemanage/invoicemanage",
@@ -33,13 +31,28 @@
     "pages/bindphone/bindphone",
     "pages/paynow/paynow",
     "pages/authorization/authorization",
-    "pages/nodata/nodata",
-    "pages/orderinfo/orderinfo"
+    "pages/orderinfo/orderinfo",
+    "pages/paysuccess/paysuccess",
+    "pages/choosecard/choosecard",
+    "pages/paypablic/paypablic",
+    "pages/invoicetype/invoicetype",
+    "pages/typedetail/typedetail",
+    "pages/carwashing/carwashing",
+    "pages/washfinish/washfinish",
+    "pages/paysucesscard/paysucesscard",
+    "pages/noinvoicemes/noinvoicemes",
+    "pages/mycardlq/mycardlq",
+    "pages/xieyi/xieyi",
+    "pages/stationditu/stationditu",
+    "pages/webview/webview",
+    "pages/reports/reports",
+    "pages/tongjibaobiao/tongjibaobiao",
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "完美洗车猫",
+    "navigationBarTitleText": "玩美洗车猫",
     "navigationBarTextStyle": "black"
   }
 }

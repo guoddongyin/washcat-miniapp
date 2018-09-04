@@ -1,0 +1,2 @@
+/* pages/choosecard/choosecard.wxss */
+@import'../mycard/mycard.wxss';

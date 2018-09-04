@@ -1,11 +1,15 @@
 /* pages/invoicemanage/invoicemanage.wxss */
 @import'../balancelist/balancelist.wxss';
+@import'../paysuccess/paysuccess.wxss';
+.shuoqu{
+  color: #1a3064
+}
 .btn{
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: #64c4c7;
-  color: #fff;
+  background-color: #97d5e6;
+  color: #1a3064;
 }
 .with_money{
   position:absolute;
@@ -14,12 +18,12 @@
   width:auto;
   height:20rpx;
 	font-size: 34rpx;
-	color: #64c4c7;
+	color: #e35274;
   margin-right: 0rpx;
 }
 .blue{
-  color: #64c4c7;
+  color: #1a3064;
 }
 .red{
-  color: #ee86a1;
+  color: #e35274;
 }

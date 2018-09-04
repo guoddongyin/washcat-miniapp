@@ -1,0 +1,43 @@
+/* pages/paysucesscard/paysucesscard.wxss */
+image{
+  width:350rpx;
+  height:280rpx;
+  background-size: 100% 100%;
+}
+.zhu{
+  font-size: 36rpx;
+  color: #333;
+  text-align: center;
+  margin-top: 60rpx;
+}
+.shuoqu{
+  color: #666;
+  font-size: 26rpx;
+  text-align: center;
+  margin-top: 10rpx;
+}
+.btn-buttom{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top:1rpx solid #ededed;
+  color: #1a3064;
+  background-color: #97d5e6
+}
+.viewclass{
+  position: fixed;
+  height: 50%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+  }
+  .rexian{
+    position: fixed;
+    bottom:120rpx;
+    display: block;
+    text-align: center;
+    font-size: 26rpx;
+    color: #666;
+  }

@@ -1,0 +1,15 @@
+<!--pages/paysuccess/paysuccess.wxml-->
+<view>
+<view class='viewclass'>
+   <image src='/images/icon-zfcg.png'></image>
+    <view class='zhu'>支付成功</view> 
+    <view class='shuoqu'>点击下方按钮,立即开启洗车机</view>
+    <!-- <text class='rexian'>如有任何问题,请联系客服:400-673-0088</text> -->
+    <view class='line'></view>
+     <view class='item-jifen'>分享爱心</view>
+      <view class='content'>
+        <image src='/images/eweim.png'></image>
+        <button class='btndd' bindtap='mylist'>前往我的订单</button>
+      </view> 
+</view>
+</view>

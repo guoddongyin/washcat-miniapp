@@ -3,10 +3,10 @@
   <view class='pagebody'>
     <view class='top-banner'>
       <image class='imagess' src='/images/jfen.png'></image>
-      <view class='integral'>1244</view>
+      <view class='integral'>{{integral}}</view>
     </view>
     <view class='userlist'>
-       <view class='item2 row'>
+      <view class='item2 row'>
         <view class='row-5'>
           <text class='item-jifen'>积分记录</text>
         </view>
@@ -21,18 +21,33 @@
             bindcancelclick="datePickerOnCancelClick" />
         </view>
       </view> 
-      <view class="info_list">
+      <view>
+        <view class='viewclass' wx:if="{{integrallist.length==0}}">
+          <image src='/images/icon-mao.png'></image>
+          <view class='zhu'>您当前还没有积分哦</view> 
+        </view>
+        <view class="info_list" wx:else>
+        <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"
+    class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
+          <!-- <view wx:if=""></view> -->
           <block wx:for="{{integrallist}}" wx:key="integrallist">
-            <navigator url='{{item.url}}'><view class="weui_cell">
-              <view class="weui_cell_hd"><image src=""></image></view>
+            <view class="weui_cell">
+              <view class="weui_cell_hd"><image src="/images/icon-zdxc.png"></image></view>
                 <view class="weui_cell_bd">
                   <view class="weui_cell_bd_p"> {{item.name}} </view>
                   <view class="weui_cell_bd_dec"> {{item.createTime}} </view>
                 </view>
-              <view class="with_arrows">{{nums}}</view>
-            </view></navigator>
+              <view class="with_arrows">+{{item.nums}}</view>
+            </view>
           </block>
+        </scroll-view>
+        <!-- <view class="body-view">
+          <loading hidden="{{hidden}}"bindchange="loadingChange">
+            加载中...
+          </loading>
+        </view> -->
         </view>
+      </view>
       </view>
   </view>
 </view>

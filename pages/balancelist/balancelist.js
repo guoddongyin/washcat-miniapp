@@ -4,30 +4,29 @@ Page({
     date: '',
     datePickerValue: ['', '', ''],
     datePickerIsShow: false,
+    money:'',
     userInfo: {},
-    userListInfo: [{
-      icon: '../../images/icon-card.png',
-      text: '充值猫卡',
-      dec: '2018-10-01',
-    }, {
-      icon: '../../images/icon-gx.png',
-      text: '共享用户返利',
-      dec: '2018-10-01',
-    }, {
-      icon: '../../images/icon-card.png',
-      text: '充值猫卡',
-      dec: '2018-10-01',
-    }]
+    // userListInfo: [{
+    //   icon: '../../images/icon-card.png',
+    //   text: '充值猫卡',
+    //   dec: '2018-10-01',
+    // }, {
+    //   icon: '../../images/icon-gx.png',
+    //   text: '共享用户返利',
+    //   dec: '2018-10-01',
+    // }, {
+    //   icon: '../../images/icon-card.png',
+    //   text: '充值猫卡',
+    //   dec: '2018-10-01',
+    // }]
   },
 
-  onLoad: function () {
+  onLoad: function (options) {
     var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function (userInfo) {
-      //更新数据
-      that.setData({
-        userInfo: userInfo
-      })
+    var money = options.money
+    that.data.money = money
+    this.setData({
+      money:money
     })
   },
 

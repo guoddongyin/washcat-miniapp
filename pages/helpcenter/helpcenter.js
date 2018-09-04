@@ -7,6 +7,7 @@ Page({
    */
   data: {
     helplist:'',
+    content:''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -14,7 +15,7 @@ Page({
   onLoad: function (options) {
     this.gethelpList();
   },
-
+ //获取帮助信息
   gethelpList:function(){
     var that = this;
     var data={
@@ -23,8 +24,13 @@ Page({
     util.request_data('imagetext/getImagetext', 'post', data, function (res) {
       console.log(res);
       var helplist = res.data.data
+      var content = helplist.content
+      if (content){
+        content = content.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
+      }
       that.setData({
-        helplist: helplist
+        helplist: helplist,
+        content: content
       })
     })
   },

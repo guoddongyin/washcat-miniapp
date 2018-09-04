@@ -1,0 +1,11 @@
+<!--pages/paysucesscard/paysucesscard.wxml-->
+<view>
+<view class='viewclass'>
+   <image src='/images/icon-zfcg.png'></image> 
+    <view class='zhu' wx:if="{{status1}}">支付成功<text>,当前猫卡还可使用{{nums1-1}}次</text> </view>
+    <view class='zhu' wx:else>支付成功</view> 
+    <view class='shuoqu'>点击下方按钮,立即开启洗车机</view>
+    <!-- <text class='rexian'>如有任何问题,请联系客服:400-673-0088</text> -->
+</view>
+<button class='btn-buttom' bindtap='attention' bindtap='carwashing'>立即开启洗车</button>
+</view>

@@ -8,22 +8,24 @@
       </view>
       <view class='info1 row-4'>
         <text class='info-title'>{{userinfo.nickname}}</text>
-        <text class='info-dec'>个人用户</text>
+        <text class='info-dec' wx:if="{{userinfo.types==0}}">个人用户</text>
+        <text class='info-dec' wx:elif="{{userinfo.types==1}}">企业用户</text>
+        <text class='info-dec' wx:else>共享用户</text>
       </view>
     </view>
     <view class='userlist'>
       <view class='item2 row'>
         <view class='cell' bindtap='integral'>
-          <text class='item-jifen'>112222</text>
+          <text class='item-jifen'>{{userinfo.integral}}</text>
           <text class='jifen'>当前积分</text>
         </view>
         <view class='cell' bindtap='balance'>
-          <text class='item-jifen'>112222</text>
+          <text class='item-jifen'>{{userinfo.money}}</text>
           <text class='jifen'>余额（元）</text>
         </view>
       </view>
       <view class='item-hui'></view>
-      <view class='adver'>
+      <view class='adver' bindtap='paycard'>
         <image src='/images/adver.png'></image>
       </view>
        <view class='item-hui'></view>

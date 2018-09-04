@@ -1,4 +1,0 @@
-<!--pages/nodata/nodata.wxml-->
-<view class='panel'>
-  <view class='zhu'>您当前还没有发票哦</view> 
-</view> 

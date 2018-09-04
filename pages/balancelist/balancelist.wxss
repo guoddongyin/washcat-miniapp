@@ -64,16 +64,32 @@
 }
 .top-banner{
   position: relative;
+  height: 30%;
+  top: 0;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
 }
 .integral{
   position: absolute;
-  top:30%;
-  left: 40%; 
+  bottom:30%;
+  /* left: 40%;  */
   color: #fff;
   font-size: 70rpx;
-  font-weight: 600
+  font-weight: 600;
+  text-align: center
 }
-
+/* .integral{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+} */
 .item-jifen{
   display: block;
   font-size:36rpx;

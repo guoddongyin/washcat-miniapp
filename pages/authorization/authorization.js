@@ -57,6 +57,7 @@ Page({
 
           wx.getUserInfo({//授权
             withCredentials: true,
+            lang:'zh_CN',
             success: function (res_user) {
               console.log(res_user)
               var jsonData = {

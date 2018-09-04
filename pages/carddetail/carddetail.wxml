@@ -21,11 +21,11 @@
         </view>
          <view class="weui_cell">
             <view class="weui_cell_bd">一个月内到期次数</view>
-            <view class="weui_cell_ft">2018-01-22</view>
+            <view class="weui_cell_ft">{{}}</view>
         </view>
-         <view class="weui_cell">
-            <view class="weui_cell_bd" style='color:#ee86a1'>为避免猫卡过期,请尽快使用            </view>
-            <view class="weui_cell_ft"><button class='usernow'>立即使用                           </button></view>
+         <view class="weui_cell" wx:if="{{status}}">
+            <view class="weui_cell_bd" style='color:#e35274'>为避免猫卡过期,请尽快使用</view>
+            <view class="weui_cell_ft"><button class='usernow' bindtap='returnindex'>立即使用</button></view>
         </view>
   </view>
   <view class='btn-padd'>

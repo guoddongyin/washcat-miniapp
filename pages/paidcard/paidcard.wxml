@@ -9,11 +9,15 @@
   <!-- </view> -->
   <view class='line'></view>
   <view class='item2 row'><text class='item-jifen'>自定义充值金额</text></view> 
-      <form bindsubmit="formSubmit" class='form-sub'>
+      <form bindsubmit="paymyself" class='form-sub'>
         <view class="txt">
           <view class="txt2">次</view>
-          <view  class="txt3"><input placeholder="输入您想充值的金额" class="txt3" value="{{mem_name}}" bindchange="name" name="name2"/></view>
+          <view  class="txt3">
+            <input type='number' placeholder="输入您想充值的金额" class="txt3" bindchange="name" bindinput='nums2' name="nums2"/>
+          </view>
+          <view style='color:#333'>{{money}}</view>
         </view>
+        <button  class="btn" form-type="submit" hover-class="none">确认支付</button>
       </form>
    <view class='line'></view>
   <view class='item2 row'><text class='item-jifen'>购卡说明</text></view> 
@@ -33,6 +37,5 @@
     <image src='/images/yuan-icon.png'></image>
     <text class='zhang'>适用门店：全国通用</text>
   </view>
-  <button  class="btn" form-type="submit" hover-class="none" bindtap='paymyself'>确认支付</button>
 </view>
 

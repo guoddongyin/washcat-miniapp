@@ -1,0 +1,76 @@
+<!--pages/reports/reports.wxml-->
+<view class='line'></view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">统计日期</view>
+   <view class="weui_cell_ft">{{reportdetail.createTime}}</view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">设备id</view>
+   <view class="weui_cell_ft">{{reportdetail.devId}}</view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">归属城市</view>
+   <view class="weui_cell_ft">{{reportdetail.city}}</view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">归属门店</view>
+   <view class="weui_cell_ft">{{reportdetail.devName}}</view>
+</view>
+<view>
+  <view class="weui_cell">
+    <view class="weui_cell_bd">单次洗车订单金额</view>
+    <view class="weui_cell_ft">{{arrname}}</view>
+  </view>
+  <view class="weui_cell">
+    <view class="weui_cell_bd">单次洗车订单数</view>
+    <view class="weui_cell_ft">{{arrnum}}</view>
+  </view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">办卡用户订单金额</view>
+   <view class="weui_cell_ft">{{card.money}}</view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">办卡用户订单数</view>
+   <view class="weui_cell_ft">{{card.isUse}}</view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">办卡用户洗车数</view>
+   <view class="weui_cell_ft">{{card.num}}</view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">订单总数</view>
+   <view class="weui_cell_ft">{{reportdetail.orderNum}}</view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">订单总收入</view>
+   <view class="weui_cell_ft">{{reportdetail.orderMoney}}</view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">退款订单数</view>
+   <view class="weui_cell_ft">{{reportdetail.refundOrderNum}}</view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">退款金额</view>
+   <view class="weui_cell_ft">{{reportdetail.refundOrderMoney}}</view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">最终营业额</view>
+   <view class="weui_cell_ft">{{reportdetail.profitMoney==null?0:reportdetail.profitMoney}}</view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">成本发生</view>
+   <view class="weui_cell_ft">{{reportdetail.costMoney==null?0:reportdetail.costMoney}}</view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">毛利润</view>
+   <view class="weui_cell_ft">{{maolirun==null?0:maolirun}}</view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">私人账户办卡数</view>
+   <view class="weui_cell_ft">{{privateText.num}}</view>
+</view>
+<view class="weui_cell">
+  <view class="weui_cell_bd">私人账户办卡金额</view>
+   <view class="weui_cell_ft">{{privateText.money}}</view>
+</view>

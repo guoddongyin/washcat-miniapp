@@ -1,0 +1,30 @@
+<!--pages/typedetail/typedetail.wxml-->
+<view class="info_list">
+    <view class='weui_cell'>您选取了1张订单开具发票（若选中多条订单，订单金额将合并开具在一张票据中）</view> 
+   <view class="weui_cell">
+      <view class="weui_cell_bd">开具类型</view>
+      <view class="weui_cell_ft" wx:if="{{item.invoiceTypes==1}}">个人</view>
+      <view class="weui_cell_ft" wx:if="{{item.invoiceTypes==2}}">企业</view>
+   </view>
+   <view class="weui_cell">
+      <view class="weui_cell_bd">发票性质</view>
+      <view class="weui_cell_ft" wx:if="{{item.bill==1}}">电子</view>
+      <view class="weui_cell_ft" wx:if="{{item.bill==2}}">纸质</view>
+   </view>
+   <view class="weui_cell">
+      <view class="weui_cell_bd">发票类型</view>
+      <view class="weui_cell_ft" wx:if="{{item.name==1}}">增值税普通发票</view>
+      <view class="weui_cell_ft" wx:if="{{item.name==2}}">值税专用发票</view>
+   </view>
+   <view class="weui_cell">
+      <view class="weui_cell_bd">发票抬头</view>
+      <view class="weui_cell_ft">{{item.invoiceTitle}}</view>
+   </view>
+   <view class="weui_cell">
+      <view class="weui_cell_bd">发票税号</view>
+      <view class="weui_cell_ft">{{item.invoiceNumber}}</view>
+   </view>
+   <view class='row'>
+ <button class='btn-buttom' bindtap='paidcard'>提交</button>
+  </view>
+</view>

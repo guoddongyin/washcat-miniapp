@@ -48,12 +48,17 @@ Page({
     console.log(e)
     var cityname = e.currentTarget.dataset.id.city
     wx.setStorageSync("cityname2", cityname)
-
     wx.navigateBack({
       delta: 1,
     })
   },
-
+  getcity:function () {
+    var cityname = this.data.cityname
+    wx.setStorageSync("cityname2", cityname)
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
   //输入的关键字
   // inputkey: function (e) {
   //   var inputkey = e.detail.value

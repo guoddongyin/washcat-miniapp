@@ -1,0 +1,28 @@
+<!--pages/paypablic/paypablic.wxml-->
+<!--pages/paynow/paynow.wxml-->
+<view class='container'>
+  <view class='pagebody'>
+    <image class='imagess' src='/images/xiangq.png'></image>
+    <view class='userlist'>
+      <view class='item2 row'>
+        <view class='row-4' bindtap='integral'>
+          <text class='item-jifen'>{{stationlist.devName}}</text>
+          <text class='item-dec'>{{stationlist.devAddr}}</text>
+          <text class='item-dec'>联系电话：{{stationlist.phone}}</text>
+        </view>
+        <view class='money'>{{stationlist.washPriceCharitable}}元</view>
+      </view>
+      <view class='item-hui'></view>
+      <text class='item-jifen'>支付方式</text>
+        <view class='weui_cell' bindtap='weixinpay'>
+          <view class="weui_cell_hd"><image src="/images/icon-weix.png"></image></view>
+          <view class="weui_cell_bd"><view class="weui_cell_bd_p">微信支付</view> </view>
+          <view class="with_arrow"></view>
+        </view>
+        <view class='xieyi' bindtap='choosexieyi'>
+          <image class='xuanzhong' src="{{isxuan?'/images/icon-quan.png':'/images/icon-dj.png'}}"></image>
+          <view class='xuantxt'>已阅读并同意《<text class='yanse' catchtap='xieyi'>服务协议</text>》</view>
+        </view>
+    </view>
+  </view>
+</view>

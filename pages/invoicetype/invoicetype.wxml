@@ -1,0 +1,45 @@
+<!--pages/invoicetype/invoicetype.wxml-->
+<form bindsubmit="bindtype" class='form-sub'>
+  <view class='kaijutype'>开具类型</view>
+  <view class="weui_cell" style='border-bottom:0'>
+   <view class="bottom-btn">
+      <text class="{{geren?'lan':'tuikuan'}}" bindtap='geren'>个 人</text>
+      <text class="{{qiye?'lan':'tuikuan'}}" bindtap='qiye'>企 业</text>
+   </view>
+  </view>
+  <view class="txt">
+    <view class="txt2">发票抬头</view>
+    <view  class="txt3"><input placeholder="请填写营业执照上的全称"  class="txt3" name="invoiceTitle" value='{{invoiceTitle}}'/></view>       
+  </view>
+  <view class='kaijutype'>开具类型</view>
+  <view class="weui_cell" style='border-bottom:0'>
+    <view class="bottom-btn">
+        <text class="{{zhenzhi?'lan':'tuikuan'}}" bindtap='putong'>增值税普通发票</text>
+        <text class="{{zhuanyong?'lan':'tuikuan'}}" bindtap='zhuanyong'>增值税专用发票</text>
+    </view>
+  </view>
+
+  <view class="txt">
+    <view class="txt2">税务登记证号</view>
+    <view  class="txt3"><input placeholder="请输入税务登记证号"  class="txt3" name="invoiceNumber" value='{{invoiceNumber}}'/></view>
+  </view>
+<view wx:if="{{zhuanyong}}">
+  <view class="txt">
+    <view class="txt2">开户银行名称</view>
+      <view  class="txt3"><input type="text" placeholder="请输入开户银行名称"  name="bankName"/></view>
+  </view>
+   <view class="txt">
+    <view class="txt2">开户账号</view>
+      <view  class="txt3"><input type="number" placeholder="请输入开户账号" name="bankNums"/></view>
+  </view>
+   <view class="txt">
+    <view class="txt2">场所地址</view>
+      <view  class="txt3"><input type="text" placeholder="请输入场所地址" name="bankAddress"/></view>
+  </view>
+   <view class="txt">
+    <view class="txt2">固定电话</view>
+      <view  class="txt3"><input type="number" maxlength='11' placeholder="请输入固定电话" name="bankPhone"/></view>
+  </view>
+</view>
+<button class="btn" form-type="submit" hover-class="none">确定</button>
+</form>

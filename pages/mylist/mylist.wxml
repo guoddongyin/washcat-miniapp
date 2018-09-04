@@ -1,79 +1,87 @@
 <!--pages/mylist/mylist.wxml-->
 <view class="top-tab flex-wrp flex-tab">
-  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName"             data-idx="{{idx}}" bindtap="switchTab">
+  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName"             data-idx="{{idx}}" wx:key="navTab" bindtap="switchTab">
     {{itemName}}
   </view>
 </view>
+
 <scroll-view scroll-y="true" class="container notify withtab" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll"             scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-  <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
-      <view class="info_list">
-          <view class="weui_cell" bindtap='listdetail'>
-              <view class="weui_cell_hd"><image src="../../images/icon-card.png"></image></view>
+  <!-- 无数据 -->
+  <view class='viewclass' wx:if="{{orderlistdata.length==0}}">
+    <image src='/images/icon-mao.png'></image>
+      <view class='zhu'>您当前还没有订单哦</view> 
+      <view class='shuoqu'>快去给你的爱车洗洗车吧</view>
+  </view>
+  <!-- 全部订单 -->
+  <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}" wx:else>
+      <view class="info_list" wx:for="{{orderlistdata}}" wx:key="orderlist">
+          <view class="weui_cell" bindtap='listdetail' data-id="{{index}}">
+              <view class="weui_cell_hd"><image src="../../images/icon-zdxc.png"></image></view>
                 <view class="weui_cell_bd">
-                  <view class="weui_cell_bd_p"> 玩美洗车服务 </view>
-                  <view class="weui_cell_bd_dec">两江新区创富中心店 </view>
+                  <view class="weui_cell_bd_p">{{item.name}}</view>
+                  <view class="weui_cell_bd_dec">{{item.devName}}</view>
                 </view>
-              <view class="text-list">2018-01-22 12:31:1</view>
+              <view class="text-list">{{item.createTime}}</view>
           </view>
            <view class="weui_cell" style='border-bottom:0'>
               <view class="bottom-btn">
-                <text class='tuikuan'>申请退款</text>
-                <text class='tuikuan' bindtap='evaluation'>立即评价</text>
+                <text class='tuikuan'  wx:if="{{item.washStatus==0}}">交易中</text>
+                <text class='tuikuan'  wx:elif="{{item.washStatus==1}}">交易成功</text>
+                <text class='tuikuan'  wx:elif="{{item.washStatus==2}}">交易失败</text>
+                <text class='tuikuan'  wx:elif="{{item.washStatus==3}}">退款中</text>
+                <text class='tuikuan'  wx:elif="{{item.washStatus==4}}">退款成功</text>
+                <text class="{{item.evaluateStatus==0?'tuikuan':'hui'}}" bindtap='evaluation' wx:if="{{item.evaluateStatus==0}}" data-id="{{index}}">立即评价</text>
+                <text class="{{item.evaluateStatus==0?'tuikuan':'hui'}}" wx:elif="{{item.evaluateStatus==1}}">已评价</text>
               </view>
           </view>
           <view class='cc'></view>
       </view>
-      <!-- <view class="info_list">
-          <view class="weui_cell">
-              <view class="weui_cell_hd"><image src="../../images/icon-card.png"></image></view>
-                <view class="weui_cell_bd">
-                  <view class="weui_cell_bd_p"> 玩美洗车服务 </view>
-                  <view class="weui_cell_bd_dec">两江新区创富中心店 </view>
-                </view>
-              <view class="text-list">2018-01-22 12:31:1</view>
-          </view>
-           <view class="weui_cell" style='border-bottom:0'>
-              <view class="bottom-btn">
-                <text class='tuikuan'>申请退款</text>
-                <text class='tuikuan'>申请退款</text>
-              </view>
-          </view>
-          <view class='cc'></view>
-      </view> -->
   </view>
+  <!-- 待退款 -->
   <view class="ctnt1 placehold" hidden="{{currentNavtab==1 ? '' : true}}">
-    <view class="info_list">
-          <view class="weui_cell">
-              <view class="weui_cell_hd"><image src="../../images/icon-card.png"></image></view>
+    <view class="info_list" wx:for="{{gettuikuandata}}" wx:key="gettuikuandatass">
+          <view class="weui_cell" bindtap='listdetail' data-id="{{index}}">
+              <view class="weui_cell_hd"><image src="../../images/icon-zdxc.png"></image></view>
                 <view class="weui_cell_bd">
-                  <view class="weui_cell_bd_p"> 玩美洗车服务 </view>
-                  <view class="weui_cell_bd_dec">两江新区创富中心店 </view>
+                  <view class="weui_cell_bd_p"> {{item.name}} </view>
+                  <view class="weui_cell_bd_dec">{{item.devName}} </view>
                 </view>
-              <view class="text-list">2018-01-22 12:31:1</view>
+              <view class="text-list">{{item.createTime}}</view>
           </view>
            <view class="weui_cell" style='border-bottom:0'>
-              <view class="bottom-btn">
-                <text class='tuikuan'>申请退款</text>
-                <text class='tuikuan' bindtap='evaluation'>立即评价</text>
+             <view class="bottom-btn">
+                <text class='tuikuan'  wx:if="{{item.washStatus==0}}">交易中</text>
+                <text class='tuikuan'  wx:elif="{{item.washStatus==1}}" bindtap='tuikuan' data-id="{{index}}">申请退款</text>
+                <text class='tuikuan'  wx:elif="{{item.washStatus==2}}">交易失败</text>
+                <text class='tuikuan'  wx:elif="{{item.washStatus==3}}">退款中</text>
+                <text class='tuikuan'  wx:elif="{{item.washStatus==4}}">退款成功</text>
+                <!-- <text class="{{item.evaluateStatus==0?'tuikuan':'hui'}}" bindtap='evaluation' wx:if="{{item.evaluateStatus==0}}" data-id="{{index}}">立即评价</text>
+                <text class="{{item.evaluateStatus==0?'tuikuan':'hui'}}" wx:elif="{{item.evaluateStatus==1}}">已评价</text> -->
               </view>
           </view>
           <view class='cc'></view>
       </view>
   </view>
+  <!-- 待评价 -->
   <view class="ctnt2 placehold" hidden="{{currentNavtab==2 ? '' : true}}">
-    <view class="info_list">
-          <view class="weui_cell">
-              <view class="weui_cell_hd"><image src="../../images/icon-card.png"></image></view>
+    <view class="info_list" wx:for="{{getpingjdata}}" wx:key="getpingjdata">
+          <view class="weui_cell" bindtap='listdetail' data-id="{{index}}">
+              <view class="weui_cell_hd"><image src="../../images/icon-zdxc.png"></image></view>
                 <view class="weui_cell_bd">
-                  <view class="weui_cell_bd_p"> 玩美洗车服务 </view>
-                  <view class="weui_cell_bd_dec">两江新区创富中心店 </view>
+                  <view class="weui_cell_bd_p"> {{item.name}} </view>
+                  <view class="weui_cell_bd_dec">{{item.devName}} </view>
                 </view>
-              <view class="text-list">2018-01-22 12:31:1</view>
+              <view class="text-list">{{item.createTime}}</view>
           </view>
            <view class="weui_cell" style='border-bottom:0'>
-              <view class="bottom-btn">
-                <text class='tuikuan'>申请退款</text>
-                <text class='tuikuan' bindtap='evaluation'>立即评价</text>
+             <view class="bottom-btn">
+                <text class='tuikuan'  wx:if="{{item.washStatus==0}}">交易中</text>
+                <text class='tuikuan'  wx:elif="{{item.washStatus==1}}">交易成功</text>
+                <text class='tuikuan'  wx:elif="{{item.washStatus==2}}">交易失败</text>
+                <text class='tuikuan'  wx:elif="{{item.washStatus==3}}">退款中</text>
+                <text class='tuikuan'  wx:elif="{{item.washStatus==4}}">退款成功</text>
+                <text class="{{item.evaluateStatus==0?'tuikuan':'hui'}}" bindtap='evaluation' wx:if="{{item.evaluateStatus==0}}" data-id="{{index}}">立即评价</text>
+                <text class="{{item.evaluateStatus==0?'tuikuan':'hui'}}" wx:elif="{{item.evaluateStatus==1}}">已评价</text>
               </view>
           </view>
           <view class='cc'></view>

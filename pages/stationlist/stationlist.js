@@ -10,7 +10,8 @@ Page({
     listwei: [],
     cityname: '',
     clickpos: 0,
-    isfirst: true
+    isfirst: true,
+    status:''
   },
 
   /**
@@ -18,6 +19,11 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    var status = options.status
+    console.log(status)
+    that.setData({
+      status: status
+    })
     //获取当前城市
     var myAmapFun = new amapFile.AMapWX({key:'9197483278da7bb821f345db0c68cc87'});
     myAmapFun.getRegeo({
@@ -49,7 +55,8 @@ Page({
     var data = {
       pageNo: 1,
       pageSize: 999,
-      city: that.data.cityname.replace("市",' ')
+      // city: that.data.cityname.replace("市",' ')
+      city: that.data.cityname
     }
 
     util.request_data("washcardevStatus/getDevCounty", 'POST', data, function (res) {
@@ -76,24 +83,31 @@ Page({
     var position = that.data.clickpos
     if (position == 0) {
       //获取全市
-      county = ''
+      var data = {
+        pageNo: 1,
+        pageSize: 10,
+        city: that.data.cityname
+        //city: that.data.cityname.replace("市", ' '),
+        //county: county,
+      }
+
     } else {
       //获取当前区县
       county = that.data.listqu[position].county
+      var data = {
+        pageNo: 1,
+        pageSize: 10,
+        //city: that.data.cityname.replace("市", ' '),
+        city: that.data.cityname,
+        county: county,
+      }
     }
-    var data = {
-      pageNo: 1,
-      pageSize: 10,
-      // address: that.data.cityname,
-      city: that.data.cityname.replace("市", ' '),
-      county: county,
-    }
+   
 
     util.request_data("washcardevStatus/getDevAddress", 'POST', data, function (res) {
       console.log(res);
       console.log("gggg");
       var botlist = res.data.data.list;
-
       that.setData({
         listwei: botlist,
       })
@@ -108,7 +122,6 @@ Page({
     this.setData({
       clickpos: position
     })
-
     this.getCanglist()
   },
 
@@ -123,9 +136,45 @@ Page({
 
   //详情
   godetail: function (e) {
+    console.log(e)
+    var id = e.currentTarget.dataset.id.devId
     wx.navigateTo({
-      url: '../../pages/stationdetail/stationdetail',
+      url: '../../pages/stationdetail/stationdetail?devId=' + id,
     })
+  },
+  //返回企业用户
+  gobackstation: function (e) {
+    var id = e.currentTarget.dataset.id.devId
+    var name = e.currentTarget.dataset.id.devName
+    console.log(name)
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1];   //当前页面
+    var prevPage = pages[pages.length - 2];  //上一个页面
+    var qycarddata = prevPage.data.qycarddata;
+    qycarddata.devId = id;
+    qycarddata.devName = name;
+    prevPage.setData({
+      qycarddata: qycarddata,
+    })
+    console.log(prevPage)
+    wx.navigateBack();
+  },
+  //返回共享用户
+  gobackstation2: function (e) {
+    var id = e.currentTarget.dataset.id.devId
+    var name = e.currentTarget.dataset.id.devName
+    console.log(name)
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1];   //当前页面
+    var prevPage = pages[pages.length - 2];  //上一个页面
+    var qycarddata = prevPage.data.qycarddata;
+    qycarddata.devId = id;
+    qycarddata.devName = name;
+    prevPage.setData({
+      qycarddata: qycarddata,
+    })
+    console.log(prevPage)
+    wx.navigateBack();
   },
 
   /**
@@ -144,7 +193,7 @@ Page({
       var cityname = wx.getStorageSync('cityname2')
 
       that.setData({
-        cityname: cityname+"市"
+        cityname: cityname
       })
 
       that.requestqulist()

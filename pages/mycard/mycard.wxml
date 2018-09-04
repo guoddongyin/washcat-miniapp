@@ -1,17 +1,53 @@
 <!--pages/mycard/mycard.wxml-->
-<scroll-view class='content'>
-  <view class='my-card' wx:for="{{carddata}}" wx:key="item.id" data-id="index">
-    <view class='cell-hd' bindtap='carddetail' data-id='{{index}}'>
+<view>
+<!-- <view class='zhu' >您当前还没有猫卡</view>  -->
+<view class='viewclass' wx:if="{{carddata.length==0}}">
+   <image src='/images/icon-mao.png'></image>
+    <view class='zhu'>当前暂无猫卡哟~</view> 
+    <!-- <navigator url='/pages/askinvoice/askinvoice'><view class='shuoqu'>立即索取发票</view></navigator> -->
+</view>
+<view class='content' wx:else>
+  <view class="my-card {{currentid == index ? 'active':''}}" wx:for="{{carddata}}" wx:key="item.id" bindtap='choosecard' data-id="{{index}}" >
+    <view class='cell-hd' bindtap='carddetail'>
       <text class='cell-hd-text'>{{item.name}}</text>
       <text class='cell-hd-dec'>最近到期 {{item.expireTime}}</text>
     </view>
     <view class='cell-ft'>
       <text class='cell-hd-num'>{{item.nums}}<text class='chi'>次</text></text>
-      <view><image src='/images/zz-icon.png'></image></view>
+      <view  bindtap="powerDrawer" data-statu="open" data-id="{{index}}"><image src='/images/zhuanz-icon.png'></image></view>
     </view>
   </view>
-  <view class='row btn-buttom'>
+</view>
+<view class='row btn-buttom'>
    <view class='row-3'><button class='btn1' bindtap='cardexchange'>猫卡兑换</button></view>
    <view class='row-3'><button class='btn2' bindtap='paidcard'>充值猫卡</button></view>
   </view>
-</scroll-view>
+</view>
+<!--mask-->  
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>  
+<!--content-->  
+<!--使用animation属性指定需要执行的动画-->  
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">   
+  <view class="drawer_title">请选择转赠次数</view> 
+  <form bindsubmit="formcardnum" bindreset="formReset" report-submit='true'> 
+    <view class="drawer_content">  
+      <view class="number-selector">
+        <image src="/images/add_03.png" data-index="{{index}}" class="number-sub-btn" bindtap="numberSub"></image>
+          <view class="blank-distance">
+            <text class="number-display">{{cardnum}}</text>
+          </view>
+        <image src="/images/add_05.png" data-index="{{index}}" class="number-add-btn"  bindtap='numberAdd'></image>
+      </view>
+    </view>  
+   <!-- <view class="btn_ok" bindtap="powerDrawer" data-statu="close"></view>  -->
+   <button class='next_bottom' formType="submit" type='defualt' data-statu="close" bindtap="powerDrawer"> 确定</button>
+  </form>
+</view> 
+
+<!--mask-->  
+<view class="drawer_screen"  wx:if="{{showfxStatus}}" bindtap='powerDrawer' data-status="close"></view>  
+<!--content-->  
+<view animation="{{animationData}}" class='drawer' wx:if="{{showfxStatus}}">   
+  <image src='/images/tanchu1.png'></image>
+</view> 
+ 

@@ -32,13 +32,25 @@
       <view class="weui_cell_bd">发票税号</view>
       <view class="weui_cell_ft">{{item.invoiceNumber}}</view>
    </view>
-    <!-- <view class="weui_cell">
-      <view class="weui_cell_bd">发票税号</view>
-      <view class="weui_cell_ft">{{item.bankName}}</view>
-   </view> -->
-   
    <view class='row btn-buttom'>
-   <view class='row-3'><button class='btn1' bindtap='cardexchange'>查看预览</button></view>
-   <view class='row-3'><button class='btn2' bindtap='paidcard'>发送至邮箱</button></view>
+   <view class='row-2'><button class='btn1' bindtap='cardexchange'>查看预览</button></view>
+   <view class='row-4'><button class='btn2' bindtap="powerDrawer" data-statu="open" data-id="{{index}}">发送至邮箱</button></view>
   </view>
 </view>
+
+<!--mask-->  
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>  
+<!--content-->  
+<!--使用animation属性指定需要执行的动画-->  
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">   
+  <view class="drawer_title">收票人邮箱地址</view> 
+  <form bindsubmit="formSubmit" bindreset="formReset" report-submit='true'> 
+    <view class="drawer_content">  
+      <view class="top grid">   
+       <input class="input_base input_h30 col-1" name="username" value="" placeholder='请输入邮箱地址'></input>  
+      </view>  
+    </view>  
+   <!-- <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>  -->
+   <button class='next_bottom' formType="submit" type='defualt' > <text class="color">发送</text></button>
+  </form>
+</view>  

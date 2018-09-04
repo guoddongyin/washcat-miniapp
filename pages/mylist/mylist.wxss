@@ -1,7 +1,7 @@
 /* pages/mylist/mylist.wxss */
 @import'../balancelist/balancelist.wxss';
 .container.withtab{
-  margin: 105rpx 0 0 0;
+  margin: 100rpx 0 0 0;
   /*top: 105rpx;*/
 }
 .flex-wrp{
@@ -18,21 +18,21 @@
 }
 .top-tab{
   width:100%;
-height:100rpx;
-background:#fff;
-color:#999;
-font-size:26rpx;
-line-height:100rpx;
-box-shadow: 0px 1px 0px 0px 
-		#f2f2f2;
-margin:0 0 8rpx 0;
-position:fixed;
-top:0;
-z-index:9999;
+  height:100rpx;
+  background:#fff;
+  color:#999;
+  font-size:26rpx;
+  line-height:100rpx;
+  box-shadow: 0px 1px 0px 0px 
+      #f2f2f2;
+  margin:0 0 8rpx 0;
+  position:fixed;
+  top:0;
+  z-index:9999;
 }
 .toptab.active{
-  color: #64c4c7;
-  border-bottom: solid 2px #64c4c7;
+  color: #1a3064;
+  /* border-bottom: solid 2px #1a3064; */
 }
 .placehold{
   font-size: 28rpx
@@ -65,13 +65,13 @@ z-index:9999;
   height: 35rpx;
 	font-size: 24rpx;
 	letter-spacing: 1px;
-	color: #999999;
+	color: #666;
 }
 .bottom-btn text{
   /* display: block; */
   width: 100rpx;
   height: 40rpx;
-  border: 1rpx solid #999999;
+  /*  */
   padding:10rpx 30rpx;
   margin-left: 10rpx;
   border-radius: 30rpx;
@@ -84,3 +84,54 @@ z-index:9999;
   height: 20rpx;
   background-color: #f5f5f5
 }
+.hui{
+  /* border: 1rpx solid #ededed; */
+  background-color: #ededed;
+  color: #666
+}
+.tuikuan{
+border: 1rpx solid #666;
+}
+image{
+  width:350rpx;
+  height:280rpx;
+  background-size: 100% 100%;
+}
+.zhu{
+  font-size: 36rpx;
+  color: #333;
+  text-align: center;
+  margin-top: 60rpx;
+}
+.shuoqu{
+  color: #666;
+  font-size: 26rpx;
+  text-align: center;
+  margin-top: 10rpx;
+}
+.btn-buttom{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top:1rpx solid #ededed;
+  color: #fff;
+  background-color: #64c4c7
+}
+.viewclass{
+  position: fixed;
+  height: 50%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+  }
+  .rexian{
+    position: fixed;
+    bottom:120rpx;
+    display: block;
+    text-align: center;
+    font-size: 26rpx;
+    color: #666;
+
+  }

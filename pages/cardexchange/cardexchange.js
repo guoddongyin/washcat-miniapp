@@ -22,11 +22,6 @@ Page({
         title: '兑换码不能为空',
         icon: 'none',
       })
-    // } else if (code2 != that.code){
-    //   wx.showToast({
-    //     title: '兑换码错误',
-    //     icon: 'none',
-    //   })
     }else{
       var data = {
         code: code2,

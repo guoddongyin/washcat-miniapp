@@ -6,8 +6,6 @@
           <view class='phont' bindtap='choosephoto'>
            <image src="{{userinfo.avatar==null?'../../images/icon_moren.png':portrait}}" mode='aspectFill' binderror="errorFunction"></image>
           </view>
-          <!-- <view class="weui_cell_bd weui_cell_bd_p">{{item.dec}}dddd</view> -->
-         <!-- <view class="with_arrow"></view> -->
       </view>
   </view>
   <view class="info_list">
@@ -19,7 +17,9 @@
     <view class="info_list">
     <view class="weui_cell">
       <view class="weui_cell_hd">性别</view>
-      <view class="weui_cell_bd weui_cell_bd_p">男</view>
+      <view class="weui_cell_bd weui_cell_bd_p" wx:if="{{userinfo.gender==0}}">未知</view>
+      <view class="weui_cell_bd weui_cell_bd_p" wx:elif="{{userinfo.gender==1}}">男</view>
+      <view class="weui_cell_bd weui_cell_bd_p" wx:else>女</view>
       <view class="with_arrow"></view>
     </view>
   </view>
@@ -33,14 +33,15 @@
     <view class="info_list">
     <view class="weui_cell">
       <view class="weui_cell_hd">地区</view>
-        <view class="weui_cell_bd weui_cell_bd_p">{{userinfo.city}}</view>
+        <view class="weui_cell_bd weui_cell_bd_p">{{userinfo.province}} {{userinfo.city}}</view>
       <view class="with_arrow"></view>
     </view>
   </view>
+  <form bindsubmit="formSubmit">
     <view class="info_list">
     <view class="weui_cell">
       <view class="weui_cell_hd">生日</view>
-        <view class="weui_cell_bd weui_cell_bd_p" bindtap="showDatePicker">{{date}}</view>
+        <view class="weui_cell_bd weui_cell_bd_p" bindtap="showDatePicker">{{userinfo.birthday}}</view>
       <view class="with_arrow"></view>
       <date-picker
             id="date-picker"
@@ -50,6 +51,7 @@
             bindcancelclick="datePickerOnCancelClick" />
     </view>
   </view>
+  </form>
     <view class="info_list">
     <view class="weui_cell" bindtap='invoicemanage'>
       <view class="weui_cell_hd">发票信息</view>
@@ -57,4 +59,5 @@
       <view class="with_arrow"></view>
     </view>
   </view>
+  <view class='vision'>v1.0.8</view>
 </view>

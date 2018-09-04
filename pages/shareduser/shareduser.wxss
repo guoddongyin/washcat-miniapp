@@ -12,6 +12,16 @@
   height: 80rpx; 
    margin-right: 10rpx; 
 }
+.top-banner{
+  position: relative;
+  height: 30%;
+  top: 0;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+}
 .weui_cell_hd image{
   width: 80rpx;
   height: 80rpx;
@@ -24,7 +34,7 @@
 }
 .weui_cell_bd_p{
   font-size: 30rpx;
-  color: #ee86a1;
+  color: #e35274;
   padding-bottom: 10rpx;
 }
 .weui_cell_bd_dec{
@@ -51,7 +61,7 @@
   height: 100%;
 }
 .btn{
-  background-color: #ee86a1;
+  background-color: #e35274;
   color: #fff;
 }
 .form-sub{

@@ -1,0 +1,2 @@
+/* pages/paypablic/paypablic.wxss */
+@import'../paynow/paynow.wxss';

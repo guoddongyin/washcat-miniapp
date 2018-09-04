@@ -8,14 +8,22 @@ Page({
   data: {
     carddatainfo:'',//，猫卡信息
     carddata:'',
+    carid:'',
+    status:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var id = options.id
-    this.requestdata();
+    var that = this
+    var id = options.cardid
+    var status = options.status
+    console.log(status)
+    that.setData({
+      status: status
+    })
+    that.requestdata();
   },
   requestdata: function () {
     var that = this
@@ -35,6 +43,11 @@ Page({
     //     carddata: res.data.data
     //   })
     // })
+  },
+  returnindex:function(){
+    wx.navigateTo({
+      url: '/pages/index/index',
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

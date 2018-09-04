@@ -1,5 +1,15 @@
 /* pages/enterpriseuser/enterpriseuser.wxss */
 @import'../balancelist/balancelist.wxss';
+.top-banner{
+  position: relative;
+  height: 30%;
+  top: 0;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+}
 .weui_cell_bd_p{
   color: #ee86a1;
 }
@@ -24,7 +34,7 @@
 }
 .weui_cell_bd_p{
   font-size: 30rpx;
-  color: #e9ba67;
+  color: #1a3064;
   padding-bottom: 10rpx;
 }
 .weui_cell_bd_dec{
@@ -51,7 +61,7 @@
   height: 100%;
 }
 .btn{
-  background-color: #e9ba67;
+  background-color: #1a3064;
   color: #fff;
 }
 .form-sub{
@@ -75,9 +85,18 @@
 .image-cell{
   width: 30%;
   height: 150rpx;
+  position: relative;
+  margin-right: 20rpx
 
 }
 .image-cell image{
   width: 100%;
   height: 100%;
+}
+.delete-btn{
+ width:40rpx;
+height:40rpx;
+position:absolute;
+top:-10rpx;
+right:-10rpx;
 }

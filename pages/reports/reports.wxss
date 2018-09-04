@@ -1,0 +1,5 @@
+/* pages/reports/reports.wxss */
+.weui_cell_bd{
+color: #1a3064;
+/* font-size: 28rpx; */
+}

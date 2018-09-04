@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 30,
+			"current": 49,
 			"list": [
 				{
 					"id": -1,
@@ -218,7 +218,121 @@
 				{
 					"id": -1,
 					"name": "orderinfo",
-					"pathName": "pages/orderinfo/orderinfo"
+					"pathName": "pages/orderinfo/orderinfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "paysuccess",
+					"pathName": "pages/paysuccess/paysuccess",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "choosecard",
+					"pathName": "pages/choosecard/choosecard",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "paypablic",
+					"pathName": "pages/paypablic/paypablic",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "invoicetype",
+					"pathName": "pages/invoicetype/invoicetype",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "type",
+					"pathName": "pages/typedetail/typedetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "carwashing",
+					"pathName": "pages/carwashing/carwashing",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "washfinish",
+					"pathName": "pages/washfinish/washfinish",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "askinvoice",
+					"pathName": "pages/askinvoice/askinvoice",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "invoicedetail",
+					"pathName": "pages/invoicedetail/invoicedetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "noinvoicemes",
+					"pathName": "pages/noinvoicemes/noinvoicemes",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mycardlq",
+					"pathName": "pages/mycardlq/mycardlq",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bh",
+					"pathName": "pages/paysucesscard/paysucesscard",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bh",
+					"pathName": "pages/buycard/buycard",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "stationditu",
+					"pathName": "pages/stationditu/stationditu",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "buycard",
+					"pathName": "pages/buycard/buycard",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "reports",
+					"pathName": "pages/reports",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "reports",
+					"pathName": "pages/reports/reports",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "tongjibaobiao",
+					"pathName": "pages/tongjibaobiao/tongjibaobiao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/my/my"
 				}
 			]
 		}

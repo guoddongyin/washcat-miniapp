@@ -5,21 +5,6 @@
 var util = require('../../utils/util.js')
  var app = getApp()
 Page({
-  integral: function () {
-    wx.navigateTo({
-      url: '/pages/integrallist/integrallist',
-    })
-  },
-  balance: function () {
-    wx.navigateTo({
-      url: '/pages/balancelist/balancelist',
-    })
-  },
-  information:function () {
-    wx.navigateTo({
-      url: '/pages/myinformation/myinformation',
-    })
-  },
   data: {
     islogin: true,
     isvisible: false,
@@ -34,7 +19,7 @@ Page({
       isunread: true,
       url:'/pages/mycard/mycard'
     }, {
-      icon: '../../images/ding-icon.png',
+      icon: '../../images/ding1-icon.png',
       text: '我的订单',
       isunread: false,
       url: '/pages/mylist/mylist'
@@ -54,7 +39,11 @@ Page({
       icon: '../../images/bz-icon.png',
       text: '帮助中心',
       url: '/pages/helpcenter/helpcenter'
-    }]
+      }, {
+        icon: '../../images/ding-icon.png',
+        text: '统计报表',
+        url: '/pages/tongjibaobiao/tongjibaobiao'
+      }]
   },
 
     onLoad: function () {
@@ -72,7 +61,7 @@ Page({
         console.log(res)
         that.setData({
           userinfo: res.data.data,
-         portrait:res.data.data.avatar.slice(42)
+         portrait:res.data.data.avatar
           //portrait: res.data.data.avatar
         })
       })
@@ -89,5 +78,28 @@ Page({
         })
       }
     },
+  paycard:function(){
+    wx.navigateTo({
+      url: '/pages/paidcard/paidcard',
+    })
+  },
+  integral: function () {
+    var integral = this.data.userinfo.integral
+    //console.log(integral)
+      wx.navigateTo({
+        url: '/pages/integrallist/integrallist?integral=' + integral,
+      })
+  },
+  balance: function () {
+    var money = this.data.userinfo.money
+    wx.navigateTo({
+      url: '/pages/balancelist/balancelist?money=' + money,
+    })
+  },
+  information: function () {
+    wx.navigateTo({
+      url: '/pages/myinformation/myinformation',
+    })
+  },
 })
  

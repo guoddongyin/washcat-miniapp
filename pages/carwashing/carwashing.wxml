@@ -1,0 +1,59 @@
+<!--pages/carwashing/carwashing.wxml-->
+<view class='pagebody'>
+    <image class='imagess' src='/images/xiangq.png'></image>
+<view class='userlist'>
+  <view class='item2 row'>
+    <text class='item-jifen'></text>
+  </view> 
+  <!-- 加载 -->
+<view class="spinner">
+  <view class="bounce1"></view>
+  <view class="bounce2"></view>
+  <view class="bounce3"></view>
+</view>
+<view class="progress_text">
+  <text class='progress_info'> {{progress_txt}}</text>
+  <!-- <image src='/images/hdj-icon.png'></image> -->
+ </view> 
+<!-- <view class="container">
+ <view class='progress_box'>
+  <canvas class="progress_bg" canvas-id="canvasProgressbg"> </canvas> 
+  <canvas class="progress_canvas" canvas-id="canvasProgress"> </canvas> 
+  <view class="progress_text">
+  <text class='progress_info'> {{progress_txt}}</text>
+  <image src='/images/hdj-icon.png'></image>
+ </view> 
+ </view>
+</view> -->
+ 
+  <view class='item2 row'>
+    <text class='item-jifen'>洗车信息</text>
+  </view> 
+  <view class="info_list">
+    <view class="weui_cell">
+        <view class="weui_cell_bd">服务车辆</view>
+        <view class="weui_cell_ft">{{getstationdata.chepai?'getstationdata.chepai':'渝A----'}}</view>
+    </view>
+    <view class="weui_cell">
+        <view class="weui_cell_bd">服务站点</view>
+        <view class="weui_cell_ft">{{stationlist.devName}}</view>
+    </view>
+    <view class="weui_cell">
+        <view class="weui_cell_bd">服务时间</view>
+        <view class="weui_cell_ft">{{time}}</view>
+    </view>
+    <view class="weui_cell">
+        <view class="weui_cell_bd">服务金额</view>
+        <view class="weui_cell_ft">{{stationlist.washPrice}}</view>
+    </view>
+  </view>
+  <view class='line'></view>
+  <view class='item2 row'>
+    <text class='item-jifen'>注意事项</text>
+  </view> 
+  <view class="weui_cell">
+        <view class="weui_cell_hd"><image src='/images/icon-zyss.png'></image></view>
+        <view class="weui_cell_bd">洗车期间严禁上下车或伸出窗外张望，因机器移动容易发生危险</view>
+    </view>
+</view>
+</view>

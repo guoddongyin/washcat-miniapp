@@ -1,39 +1,71 @@
 <!--pages/stationdetail/stationdetail.wxml-->
 <view class='container'>
   <view class='pagebody'>
-    <image class='imagess' src='/images/xiangq.png'></image>
+    <!-- <image class='imagess' src='/images/xiangq.png'></image> -->
+  <!-- 轮播图 -->
+  <swiper class="imagess" indicator-dots="{{true}}"
+    autoplay="{{true}}" interval="{{3000}}" duration="{{1000}}">
+    <block wx:for="{{imgurls}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item.imgUrl}}" mode="aspectFill" class="slide-image imagess"/>
+      </swiper-item>
+    </block>
+  </swiper>
     <view class='userlist'>
       <view class='item2 row'>
-        <view class='row-4' bindtap='integral'>
-          <text class='item-jifen'>两江新区创富中心店</text>
+        <view class='row-5' bindtap='integral'>
+          <text class='item-jifen'>{{stationlist.devName}}</text>
         </view>
-        <view class='row-1' bindtap='balance'>
-          <image src='/images/sp-icon.png'></image>
+        <view class='shiping' bindtap='shipin'>
+          <image src='/images/icon-sp.png'></image>
         </view>
-        <view class='row-1' bindtap='balance'>
-          <image src='/images/fx-icon.png'></image>
+        <view class='fenxiang' bindtap='balance' style='width:35rpx' bindtap="powerDrawer" data-statu="open">
+          <image src='/images/icon-fx.png' style='height:90%'></image>
         </view>
       </view>
+      <view class="weui_cell" style='padding: 0rpx;' bindtap='stationditu'>
+       <view class="weui_cell_hd" style='width:auto'>{{stationlist.devAddr}}</view>
+       <view class="with_arrow"></view>
+      </view>
+       <view class="haoma">联系方式：{{stationlist.phone}}</view>
+       <!-- 用户评论 -->
       <view class='item-hui'></view>
-       <view class='row-4' bindtap='integral'>
-          <text class='item-jifen'>用户评论 <text class='tiaoshu'>(20)</text></text>
-        </view>
+      <view class='item-jifen'>用户评论 <text class='tiaoshu'>({{total}})</text>
+            <!-- <view class="with_arrow"></view> -->
+      </view>
+      <view class='dianhua'>
+        <image src='/images/dianhua.png'></image>
+      </view>
+      <view wx:for="{{reviewlist}}" wx:key="reviewlist">
         <view class='weui_cell'>
-          <view class="weui_cell_hd"><image src="/images/icon-toux.png"></image></view>
-          <view class="weui_cell_bd"><view class="weui_cell_bd_p">低调的自由者</view> </view>
-          <view class="with_arrows">09:09</view>
+          <view class="weui_cell_hd"><image src="{{item.avatar}}"></image></view>
+          <view class="weui_cell_bd"><view class="weui_cell_bd_p">{{item.nickname}}</view> </view>
+          <view class="with_arrows">{{item.createTime}}</view>
         </view>
-        <view class='pinglun'>不错不错，车洗的很干净</view>
+        <view class='pinglun'>{{item.content}}</view>
         <view class='pinglun-row'>
-          <view class='row-2 pinglun-ima'><image                                  src='/images/xiangq.png'></image></view>
-          <view class='row-2 pinglun-ima'><image src='/images/xiangq.png'></image></view>
-          <view class='row-2 pinglun-ima'><image src='/images/xiangq.png'></image></view>
+          <view class='row-2 pinglun-ima' wx:for="{{item.imgUrl}}" wx:key="images"><image src='{{item.imgUrl}}'></image></view>
+          <!-- <view class='row-2 pinglun-ima'><image src='/images/xiangq.png'></image></view>
+          <view class='row-2 pinglun-ima'><image src='/images/xiangq.png'></image></view> -->
         </view>
+      </view>
       <view class='row btn-buttom'>
-        <view class='row-3'>
-        <button class='btn1'>公益基金</button></view>
-        <view class='row-3'><button class='btn2' bindtap='attention'>普通洗车</button></view>
+        <view class='row-2 grid' bindtap='publicpay'>
+        <view class='weui-icon'>
+          <image src='/images/icon-gyjj.png'></image>
+        </view>
+        <text class='btn-ji'>公益基金</text></view>
+        <view class='row-4'><button class='btn2' bindtap='attention'>普通洗车</button></view>
       </view>
     </view>
   </view>
 </view>
+
+<!--mask-->  
+<view class="drawer_screen"  wx:if="{{showModalStatus}}" bindtap='powerDrawer' data-statu="close"></view>  
+<!--content-->  
+<view animation="{{animationData}}" class='drawer' wx:if="{{showModalStatus}}">   
+  <image src='/images/tanchu1.png' bindtap='powerDrawer' data-statu="close"></image>
+</view> 
+<!-- <view class="btn_ok" bindtap="powerDrawer" data-statu="close"></view>  -->
+

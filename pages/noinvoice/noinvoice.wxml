@@ -1,10 +1,8 @@
 <!--pages/noinvoice/noinvoice.wxml-->
-<view class='box'>
-  <view class='dot'>
-     <view class='panel'>
-        <image src='/images/icon-mao.png'></image>
-         <view class='zhu'>您当前还没有发票哦</view> 
-         <view class='shuoqu'>立即索取发票</view>
-     </view> 
-  </view>
+<view>
+<view class='viewclass'>
+   <image src='/images/icon-mao.png'></image>
+    <view class='zhu'>您当前还没有发票哦</view> 
+    <view class='shuoqu'>立即索取发票</view>
+</view>
 </view>

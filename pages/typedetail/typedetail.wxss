@@ -1,0 +1,14 @@
+/* pages/typedetail/typedetail.wxss */
+.btn-buttom{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #64c4c7;
+  color: #fff;
+}
+.dd-info{
+  width: auto;
+  font-size: 30rpx;
+  padding: 30rpx;
+  height: auto;
+}

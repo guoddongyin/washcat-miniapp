@@ -1,0 +1,27 @@
+<!--pages/mycardlq/mycardlq.wxml-->
+
+<scroll-view class='content'>
+  <view class="my-card" wx:for="{{carddata}}" wx:key="item.id" bindtap='choosecard' data-id="{{index}}">
+    <view class='cell-hd'>
+      <text class='cell-hd-text'>{{item.name}}</text>
+      <text class='cell-hd-dec'>最近到期 {{item.expireTime}}</text>
+    </view>
+    <view class='cell-ft'>
+      <text class='cell-hd-num'>{{item.nums}}<text class='chi'>次</text></text>
+      <view  bindtap="powerDrawer" data-statu="open" data-id="{{index}}"><image src='/images/zz-icon.png'></image></view>
+    </view>
+  </view>
+  <view class='row btn-buttom'>
+   <view class='row-3'><button class='btn1' bindtap='cardexchange'>猫卡兑换</button></view>
+   <view class='row-3'><button class='btn2' bindtap='paidcard'>充值猫卡</button></view>
+  </view>
+</scroll-view>
+
+<!--mask-->  
+<view class="drawer_screen" bindtap="powerDrawer" wx:if="{{status}}"></view>  
+<!--content-->                                       
+<!--使用animation属性指定需要执行的动画-->                           
+<view  class="drawer_box">   
+  <view class="drawer_title">恭喜获得{{nums}}张优惠券</view> 
+  <view class='queding' bindtap='queding'></view>
+</view>  

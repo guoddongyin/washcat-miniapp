@@ -1,5 +1,7 @@
 <!--index.wxml-->
-
+<!-- <view class="drawer_screen">
+  <image src='{{startimg}}'></image>
+</view> -->
 <view class='container'>
   <map
       id="myMap"
@@ -7,9 +9,12 @@
       longitude="{{longitude}}"
       markers="{{markers}}"
       covers="{{covers}}"
+      controls="{{controls}}"
+      bindmarkertap="clickmarker"
+      bindcontroltap='clickcontrols'
       show-location>
      <cover-view class="image-bnt" bindtap='stationlist'>
-        <cover-image class="cover-image" src="/images/bottom2.png" />
+        <cover-image class="cover-image" src="/images/bottom.png" />
      </cover-view>
   </map>
   <cover-image src="/images/ge-icon.png" class='image-lnt' bindtap='personal'></cover-image>

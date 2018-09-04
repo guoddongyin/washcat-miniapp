@@ -1,13 +1,14 @@
 <!--pages/evaluation/evaluation.wxml-->
+<form bindsubmit="formSubmit">
 <view>
-<view class='my-card'>
+  <view class='my-card'>
     <view class='cell-hd' bindtap='carddetail'>
       <text class='cell-hd-text'>洗车猫玩美卡</text>
-      <text class='cell-hd-dec'>最近到期 2018-07-17</text>
+      <!-- <text class='cell-hd-dec'>f</text> -->
     </view>
     <view class='cell-ft'>
       <text class='cell-hd-num'>50<text class='chi'>次</text></text>
-      <view><image src='/images/zz-icon.png'></image></view>
+      <view bindtap='purchase'><image src='/images/ljqg.png'></image></view>
     </view>
   </view>
   <view class='line'></view>
@@ -21,10 +22,18 @@
         <view class="starsHas  {{starFlag>=5? '': 'starNo'}}"  bindtap="changeFive"></view>
     </view>
 </view>
-<view class='pinglun'>不错不错，车洗的很干净</view>
-        <view class='pinglun-row'>
-          <view class='row-2 pinglun-ima'><image                                  src='/images/xiangq.png'></image></view>
-          <view class='row-2 pinglun-ima'><image src='/images/xiangq.png'></image></view>
-          <view class='row-2 pinglun-ima'><image src='/images/xiangq.png'></image></view>
-        </view>
+<view class='pinglun'>
+  <textarea type='text' placeholder='您的爱车已经洗好，请对我们做出评价吧~~~' value="{{mem_IDnum}}" bindchange="content"  name="content1"></textarea>
 </view>
+<view class="uploader" bindtap="chooseImage"><image src='/images/shangc.png'></image></view>
+  <view class='pinglun-row'>
+     <view class='row-2 pinglun-ima'  wx:for="{{pics}}" wx:for-item="image" wx:key="pics">
+        <image src="{{image}}" data-src="{{image}}" data-list="{{pics}}" bindtap="previewImage"></image>
+        <view class="delete-btn" data-index="{{index}}" catchtap="deleteImg">
+          <image src='/images/shanchu.png'></image>
+        </view>
+     </view>
+  </view>
+</view>
+<button  class="btn" form-type="submit" hover-class="none">立即评价</button>
+</form>

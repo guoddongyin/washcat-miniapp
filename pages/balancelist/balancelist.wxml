@@ -3,12 +3,12 @@
   <view class='pagebody'>
     <view class='top-banner'>
       <image class='imagess' src='/images/bgg2.png'></image>
-      <view class='integral'>1234</view>
+      <view class='integral'>{{money}}</view>
     </view>
     <view class='userlist'>
       <view class='item2 row'>
         <view class='row-5'>
-          <text class='item-jifen'>积分记录</text>
+          <text class='item-jifen'>余额明细</text>
         </view>
         <view class='row-1'>
           <image src='/images/rili-icon.png' bindtap="showDatePicker"></image>

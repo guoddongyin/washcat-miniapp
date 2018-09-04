@@ -25,7 +25,7 @@
   font-size: 26rpx;
   color: #666;
   text-align: left;
-  padding-bottom:10rpx;
+  padding-bottom:20rpx;
   padding-left: 20rpx; 
 }
  .weui_cell{
@@ -77,6 +77,28 @@
   position: absolute;
   top:30rpx;
   right: 30rpx;
-  color: #64c4c7;
+  color: #e35274;
   font-size: 60rpx;
+}
+.xieyi{
+  display: flex;
+  flex-direction: row;
+  margin: 39rpx 29rpx
+}
+.yanse{
+  color: #e35274
+}
+
+.xuanzhong{
+  width: 31rpx;
+  height: 30rpx;
+  margin: auto
+}
+
+.xuantxt{
+  padding-left:10rpx; 
+  color: #333333;
+  font-size: 25rpx;
+   margin: auto;
+   flex: 1
 }

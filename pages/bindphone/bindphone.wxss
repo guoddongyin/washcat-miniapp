@@ -3,8 +3,8 @@
   width: 90%;
   margin: auto;
   border-radius: 50rpx;
-  background-color: #64c7c4;
-  color: #fff;
+  background-color: #9ad7e8;
+  color: #1a3064;
   margin-top: 100rpx;
 }
 .txt{
@@ -15,8 +15,8 @@
 .sendmsg{
     /* right: 10px; */
     /* top:4rpx; */
-    background-color: #64c7c4;
-    color: #fff;
+    background-color: #9ad7e8;
+    color: #1a3064;
     border-radius: 50rpx;
     border: none;
     font-size: 20rpx;
@@ -34,4 +34,5 @@
   }
   .txt2{
     min-height: 0;
+    width: 170rpx
   }

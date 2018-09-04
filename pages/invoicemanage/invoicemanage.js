@@ -7,12 +7,15 @@ Page({
    */
   data: {
     invoiceInfo: '',
+    isFirst:true
+    //data: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setStorageSync('ISFIRST', true)
     this.invoiceInfo();
   },
   //获取发票信息
@@ -30,8 +33,11 @@ Page({
         invoiceInfo[i].createTime = util.DateHelper(invoiceInfo[i].createTime, 'yyyy-MM-dd')
       }
       that.setData({
-        invoiceInfo: invoiceInfo
+        invoiceInfo: invoiceInfo,
+        isFirst:false
       })
+     
+      wx.setStorageSync('ISFIRST', false)
       //console.log(res.data.data.list.createTime)
     })
   },
@@ -55,8 +61,50 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this;
+    console.log(that.data.isFirst)
+    var state=wx.getStorageSync('ISFIRST')
+    console.log(state)
+    if (!state){
+      var list = that.data.invoiceInfo
+      console.log('22222')
+      console.log(list)
+      console.log('33333')
+      var choosedata = wx.getStorageSync('invoidata')
+
+      for (var i = 0; i < choosedata.length; i++) {
+        var model = {
+          createTime: choosedata[i].createTime,
+          id: choosedata[i].id,
+          status: 0,
+          money: choosedata[i].payPrice,
+          userId: choosedata[i].userId,
+          invoiceId: choosedata[i].invoiceId
+        }
+        list.push(model)
+      }
+      that.setData({
+        invoiceInfo: list
+      })
+    }
   },
+  //判断是否已选中
+  // setStorg: function (arr) {
+  //   var appAll = [];
+  //   this.setData({
+  //     invoiceInfo: arr,
+  //   });
+  //   for (var i = 0; i < arr.length; i++) {
+  //     appAll.push(arr[i]);
+  //   }
+  //   wx.setStorage({
+  //     key: 'invoidata',
+  //     data: appAll,
+  //     success: function (e) {
+  //       //console.log(e, '更新存储完成')
+  //     }
+  //   })
+  // },
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -92,9 +140,12 @@ Page({
   onShareAppMessage: function () {
   
   },
+
   askinvoice:function(){
     wx.navigateTo({
       url: '/pages/askinvoice/askinvoice',
     })
+    var that = this;
+    console.log(that.data.isFirst)
   }
 })
