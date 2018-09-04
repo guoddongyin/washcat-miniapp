@@ -12,7 +12,8 @@ Page({
     total:'',//评论总数
     images:'',//评论图片
     //showfxStatus: false,
-    showModalStatus: false
+    showModalStatus: false,
+    // videoUrl: ''
   },
 
   /**
@@ -27,6 +28,7 @@ Page({
     wx.showShareMenu({
       withShareTicket: true //要求小程序返回分享目标信息
     })
+  
   },
   //获取轮播图
   requestimg: function () {

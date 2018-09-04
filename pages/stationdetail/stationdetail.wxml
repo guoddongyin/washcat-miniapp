@@ -64,8 +64,14 @@
 <!--mask-->  
 <view class="drawer_screen"  wx:if="{{showModalStatus}}" bindtap='powerDrawer' data-statu="close"></view>  
 <!--content-->  
-<view animation="{{animationData}}" class='drawer' wx:if="{{showModalStatus}}">   
-  <image src='/images/tanchu1.png' bindtap='powerDrawer' data-statu="close"></image>
-</view> 
-<!-- <view class="btn_ok" bindtap="powerDrawer" data-statu="close"></view>  -->
+<view>
+  <view animation="{{animationData}}" class='drawer' wx:if="{{showModalStatus}}" >   
+    <image src='/images/tanchu1.png' bindtap='powerDrawer' data-statu="close"></image>
+  </view> 
+  <!-- <view animation="{{animationData}}" class='drawer' wx:if="{{showModalStatus}}">   
 
+  </view>  -->
+</view>
+
+<!-- <view class="btn_ok" bindtap="powerDrawer" data-statu="close"></view>  -->
+ 

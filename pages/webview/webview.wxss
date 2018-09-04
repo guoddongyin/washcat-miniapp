@@ -1,1 +1,15 @@
 /* pages/webview/webview.wxss */
+.vidio{
+  width: 90%;
+  height: 50%;
+  margin: auto
+}
+.vidio video{
+ width: 100%
+}
+.page-body-button{
+  width: 90%;
+  margin: auto;
+  background-color: #97d5e6;
+  color: #fff
+}

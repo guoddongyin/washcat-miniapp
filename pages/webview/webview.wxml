@@ -1,3 +1,3 @@
 <!--pages/webview/webview.wxml-->
 <web-view src="{{videoUrl}}"></web-view>
-
+    <!-- <video id="myVideo" src="{{stationlist.videoUrl}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video> -->
