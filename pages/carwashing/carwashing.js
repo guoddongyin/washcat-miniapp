@@ -31,7 +31,13 @@ Page({
     })
     that.getstationdata()
     const backgroundAudioManager = wx.getBackgroundAudioManager()
-    backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/washcar.mp3' // 设置了 src 之后会自动播放
+    player()
+    function player() {
+      backgroundAudioManager.title = '此时此刻'
+      backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/washcar.mp3'
+    }
+    // const backgroundAudioManager = wx.getBackgroundAudioManager()
+    // backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/washcar.mp3' // 设置了 src 之后会自动播放
     //that.countInterval()
   },
   //获取支付信息

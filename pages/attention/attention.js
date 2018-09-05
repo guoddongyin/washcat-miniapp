@@ -35,7 +35,13 @@ Page({
     this.data.devId = devId
     this.gethelpList();
     const backgroundAudioManager = wx.getBackgroundAudioManager()
-    backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/becareful.mp3' // 设置了 src 之后会自动播放 
+    player()
+    function player() {
+      backgroundAudioManager.title = '此时此刻'
+      backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/becareful.mp3'
+    }
+    // const backgroundAudioManager = wx.getBackgroundAudioManager()
+    // backgroundAudioManager.src = '' // 设置了 src 之后会自动播放 
   },
   //获取帮助信息
   gethelpList: function () {

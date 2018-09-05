@@ -19,6 +19,7 @@
         <view class='shiping' bindtap='shipin'>
           <image src='/images/icon-sp.png'></image>
         </view>
+            <!-- <video id="myVideo" src="{{stationlist.videoUrl}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video> -->
         <view class='fenxiang' bindtap='balance' style='width:35rpx' bindtap="powerDrawer" data-statu="open">
           <image src='/images/icon-fx.png' style='height:90%'></image>
         </view>
@@ -68,9 +69,6 @@
   <view animation="{{animationData}}" class='drawer' wx:if="{{showModalStatus}}" >   
     <image src='/images/tanchu1.png' bindtap='powerDrawer' data-statu="close"></image>
   </view> 
-  <!-- <view animation="{{animationData}}" class='drawer' wx:if="{{showModalStatus}}">   
-
-  </view>  -->
 </view>
 
 <!-- <view class="btn_ok" bindtap="powerDrawer" data-statu="close"></view>  -->
