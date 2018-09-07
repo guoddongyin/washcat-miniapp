@@ -52,11 +52,11 @@ Page({
         paySign: paydata.paySign,
         success: function (res) {
           console.log('成功')
-          wx.showToast({
-            title: '支付成功',
-            icon: 'none',
-            duration: 1500
-          })
+          // wx.showToast({
+          //   title: '支付成功',
+          //   icon: 'none',
+          //   duration: 1500
+          // })
           // console.log('成功')
           wx.navigateTo({
             url: '/pages/paysuccess/paysuccess',

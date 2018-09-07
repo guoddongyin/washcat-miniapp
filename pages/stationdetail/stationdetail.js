@@ -13,7 +13,7 @@ Page({
     images:'',//评论图片
     //showfxStatus: false,
     showModalStatus: false,
-    // videoUrl: ''
+    phone:''
   },
 
   /**
@@ -44,6 +44,7 @@ Page({
       })
     })
   },
+
   //获取站点详情信息
   getstationdata:function (e) {
     var that = this
@@ -54,10 +55,18 @@ Page({
       console.log(res)
       var stationlist = res.data.data
       var washPriceSign = stationlist.washPriceSign
+      var phone = stationlist.phone
       var washSign = wx.setStorageSync('washPriceSign', washPriceSign)
       that.setData({
         stationlist: stationlist,
+        phone: phone
       })
+    })
+  },
+  //点击拨打电话
+  callme: function (e) {
+    wx.makePhoneCall({
+      phoneNumber: this.data.phone
     })
   },
   //获取地理位置

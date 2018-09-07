@@ -1,6 +1,5 @@
 <!--pages/xieyi/xieyi.wxml-->
 
 <view class='content'>
-  <view class='title'>服务协议</view>
-  <view class='text'>{{xieyiinfo.content}}</view>
+  <rich-text nodes="{{content}}"></rich-text>
 </view>

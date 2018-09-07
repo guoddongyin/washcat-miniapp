@@ -1,7 +1,4 @@
 <!--index.wxml-->
-<!-- <view class="drawer_screen">
-  <image src='{{startimg}}'></image>
-</view> -->
 <view class='container'>
   <map
       id="myMap"

@@ -36,7 +36,7 @@
           <view class="blank-distance">
             <text class="number-display">{{cardnum}}</text>
           </view>
-        <image src="/images/add_05.png" data-index="{{index}}" class="number-add-btn"  bindtap='numberAdd'></image>
+        <image src="/images/jia.png" data-index="{{index}}" class="number-add-btn"  bindtap='numberAdd'></image>
       </view>
     </view>  
    <!-- <view class="btn_ok" bindtap="powerDrawer" data-statu="close"></view>  -->

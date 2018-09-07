@@ -21,7 +21,7 @@
         </view>
          <view class="weui_cell">
             <view class="weui_cell_bd">一个月内到期次数</view>
-            <view class="weui_cell_ft">{{}}</view>
+            <view class="weui_cell_ft">{{carddatainfo.top.nums}}</view>
         </view>
          <view class="weui_cell" wx:if="{{status}}">
             <view class="weui_cell_bd" style='color:#e35274'>为避免猫卡过期,请尽快使用</view>

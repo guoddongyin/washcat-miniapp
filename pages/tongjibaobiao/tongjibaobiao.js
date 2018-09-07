@@ -29,21 +29,11 @@ Page({
   },
   onLoad: function (options) {
     this.getalldata();
-    this.isBranch();
+    //this.isBranch();
     this.getmendian()
   },
 
-  //判断是否是加盟商
-  isBranch: function () {
-    var that = this;
-    var data = {
-      phone: wx.getStorageSync('mobile'),
-    }
-    util.request_data("branch/isBranch", 'POST', data, function (res) {
-      console.log(res)
-
-    })
-  },
+ 
   //获取加盟商门店列表
   getmendian: function () {
     var that = this;

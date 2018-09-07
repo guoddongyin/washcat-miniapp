@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/startfigure/startfigure",
     "pages/index/index",
     "pages/logs/logs",
     "pages/stationlist/stationlist",

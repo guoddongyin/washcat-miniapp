@@ -49,11 +49,11 @@ Page({
         paySign: paydata.paySign,
         success: function (res) {
           console.log('成功')
-          wx.showToast({
-            title: '支付成功',
-            icon: 'none',
-            duration: 1500
-          })
+          // wx.showToast({
+          //   title: '支付成功',
+          //   icon: 'none',
+          //   duration: 1500
+          // })
           // console.log('成功')
           wx.navigateTo({
             url: '/pages/carddetail/carddetail',
@@ -90,9 +90,12 @@ Page({
       }
     }
     console.log(list);
-
     var money1 = mumarr[list[0]].money
-    var money='(￥'+money1*num+')'
+    if (money==null){
+      var money = '(无此次数)'
+    }else{
+      var money = '(￥' + money1 * num + ')'
+    }
     console.log(money1)
     that.setData({
       money:money
@@ -141,11 +144,11 @@ Page({
           paySign: paydata.paySign,
           success: function (res) {
             console.log('成功')
-            wx.showToast({
-              title: '支付成功',
-              icon: 'none',
-              duration: 1500
-            })
+            // wx.showToast({
+            //   title: '支付成功',
+            //   icon: 'none',
+            //   duration: 1500
+            // })
             // console.log('成功')
             wx.navigateBack({
               url: '/pages/mycard/mycard',

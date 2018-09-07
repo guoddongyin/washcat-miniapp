@@ -41,7 +41,7 @@
     <view class="info_list">
     <view class="weui_cell">
       <view class="weui_cell_hd">生日</view>
-        <view class="weui_cell_bd weui_cell_bd_p" bindtap="showDatePicker">{{userinfo.birthday}}</view>
+        <view class="weui_cell_bd weui_cell_bd_p" bindtap="showDatePicker">{{userinfo.birthday==null?date:userinfo.birthday}}</view>
       <view class="with_arrow"></view>
       <date-picker
             id="date-picker"

@@ -12,7 +12,7 @@ Page({
     portrait:'',//头像
     defaultImg: "../../images/icon_moren.png", //默认图片
     //remark: '',//用户留言
-
+    isBranch:'',
     userListInfo: [{
       icon: '../../images/dingdan-icon.png',
       text: '我的猫卡',
@@ -39,17 +39,33 @@ Page({
       icon: '../../images/bz-icon.png',
       text: '帮助中心',
       url: '/pages/helpcenter/helpcenter'
-      }, {
-        icon: '../../images/ding-icon.png',
-        text: '统计报表',
-        url: '/pages/tongjibaobiao/tongjibaobiao'
+      // }, {
+      //   icon: '../../images/ding-icon.png',
+      //   text: '统计报表',
+      //   url: '/pages/tongjibaobiao/tongjibaobiao'
       }]
   },
 
     onLoad: function () {
       //获取个人信息
       this.requestdata();
+      this.isBranch();
     },
+  //判断是否是加盟商
+  isBranch: function () {
+    var that = this;
+    var data = {
+      phone: wx.getStorageSync('mobile'),
+    }
+    util.request_data("branch/isBranch", 'POST', data, function (res) {
+      console.log(res)
+      var isBranch = res.data.errcode
+      that.setData({
+        isBranch: isBranch
+      })
+
+    })
+  },
     //获取个人信息
     requestdata: function () {
       var that = this

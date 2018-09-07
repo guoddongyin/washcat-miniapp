@@ -5,19 +5,19 @@
     <view class="with_arrow"></view>
   </view>
   <view class='line' ></view>
-  <view class='my-card'>
+  <view class='my-card' style='margin:50rpx auto;'>
     <view class='cell-hd'>
-      <text class='cell-hd-text'>{{qycarddata.name}}</text>
+      <text class='cell-hd-text'>共享用户卡</text>
       <text class='cell-hd-dec'>有效期{{qycarddata.effectiveTime}}</text>
     </view>
     <view class='cell-ft'>
-      <text class='cell-hd-num'>{{qycarddata.nums}}<text class='chi'>次</text></text>
+      <text class='cell-hd-num'>{{qycarddata.washNums}}<text class='chi'>次</text></text>
        <view><image ></image></view> 
     </view>
   </view>
   <view class='money-cell'>
     <text  class='money'>￥{{qycarddata.money}}</text>
-    <text class='zhang'>{{qycarddata.numsReceive}}/{{qycarddata.washNums}}张</text>
+    <text class='zhang'>{{qycarddata.numsReceive}}/{{qycarddata.nums}}张</text>
   </view>
   <view class='money-cell'>
     <image src='/images/yuan-icon.png'></image>

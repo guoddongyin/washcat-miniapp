@@ -1,0 +1,5 @@
+<!--pages/startfigure/startfigure.wxml-->
+
+<view class="drawer_screen">
+  <image src='{{startimg}}'></image>
+</view>

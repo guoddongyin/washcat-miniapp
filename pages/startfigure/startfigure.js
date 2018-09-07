@@ -1,4 +1,4 @@
-// pages/xieyi/xieyi.js
+// pages/startfigure/startfigure.js
 var util = require('../../utils/util.js');
 Page({
 
@@ -6,52 +6,40 @@ Page({
    * 页面的初始数据
    */
   data: {
-    xieyiinfo:'',
-    content:''
+    startimg:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getxieyiinfo()
+    this.getphotodata()
+    this.countInterval()
   },
-  getxieyiinfo:function(e){
+  //获取启动页图片
+  getphotodata: function () {
     var that = this
     var data = {
-      types: 1
+      mediaType: 2
     }
-    util.request_data("imagetext/getImagetext", 'POST', data, function (res) {
+    util.request_data("banner/startImg", 'POST', data, function (res) {
       console.log(res)
-      var xieyiinfo = res.data.data
-      var content = xieyiinfo.content
-      if (content) {
-        content = content.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
-      }
+      var startimg = res.data.data
       that.setData({
-        xieyiinfo: xieyiinfo,
-        content: content
+        startimg: startimg
       })
     })
   },
-  // gethelpList: function () {
-  //   var that = this;
-  //   var data = {
-  //     types: 2
-  //   }
-  //   util.request_data('imagetext/getImagetext', 'post', data, function (res) {
-  //     console.log(res);
-  //     var helplist = res.data.data
-  //     var content = helplist.content
-  //     if (content) {
-  //       content = content.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
-  //     }
-  //     that.setData({
-  //       helplist: helplist,
-  //       content: content
-  //     })
-  //   })
-  // },
+  // 设置倒计时 定时器 每10000毫秒执行一次
+  countInterval: function () {
+    var that = this
+    var Interval = setTimeout(function () {
+      wx.navigateTo({
+        url: '/pages/index/index',
+      })
+      clearTimeout(Interval); 
+    }, 3000)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

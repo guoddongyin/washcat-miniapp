@@ -28,7 +28,7 @@
        <view class="weui_cell_hd" style='width:auto'>{{stationlist.devAddr}}</view>
        <view class="with_arrow"></view>
       </view>
-       <view class="haoma">联系方式：{{stationlist.phone}}</view>
+       <view class="haoma" bindtap='callme'>联系方式：<text style='color:#97d5e6'>{{stationlist.phone}}</text></view>
        <!-- 用户评论 -->
       <view class='item-hui'></view>
       <view class='item-jifen'>用户评论 <text class='tiaoshu'>({{total}})</text>
@@ -43,7 +43,8 @@
           <view class="weui_cell_bd"><view class="weui_cell_bd_p">{{item.nickname}}</view> </view>
           <view class="with_arrows">{{item.createTime}}</view>
         </view>
-        <view class='pinglun'>{{item.content}}</view>
+        <view class='pinglun' wx:if="{{item.content==''}}">系统默认好评...</view>
+        <view class='pinglun' wx:else>{{item.content}}</view>
         <view class='pinglun-row'>
           <view class='row-2 pinglun-ima' wx:for="{{item.imgUrl}}" wx:key="images"><image src='{{item.imgUrl}}'></image></view>
           <!-- <view class='row-2 pinglun-ima'><image src='/images/xiangq.png'></image></view>

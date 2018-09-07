@@ -40,6 +40,14 @@
                   <view class="with_arrow"></view>
               </view></navigator>
           </block>
+           <navigator url='/pages/tongjibaobiao/tongjibaobiao' wx:if="{{isBranch==1}}">
+           <view class="weui_cell">
+                  <view class="weui_cell_hd"><image src="../../images/ding-icon.png"></image></view>
+                  <view class="weui_cell_bd">
+                      <view class="weui_cell_bd_p"> 统计报表 </view>
+                  </view>
+                  <view class="with_arrow"></view>
+            </view></navigator>
       </view>
     </view>
   </view>

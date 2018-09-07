@@ -17,7 +17,7 @@ Page({
       },
       clickable: true
     }],
-    startimg:''
+    // startimg:''
   },
   onLoad: function (options) {
     if (wx.getStorageSync('openid') == null || wx.getStorageSync('openid') == ''){
@@ -27,7 +27,7 @@ Page({
     } 
     var that = this
     
-    that.getphotodata()
+    //that.getphotodata()
     wx.getLocation({
       success: function (res) {
         console.log(res)
@@ -46,20 +46,7 @@ Page({
     //wx.setStorageSync('IDID', '1')
     //wx.setStorageSync('openid', 'aabbcc')
   },
-  //获取启动页图片
-  getphotodata :  function () {
-    var that = this
-    var data = {
-      mediaType : 2
-    }
-    util.request_data("banner/startImg", 'POST', data, function (res) {
-      console.log(res)
-      var startimg = res.data.data
-      that.setData({
-        startimg: startimg
-      })
-    })
-  },
+
   //获取范围内设备信息
   requestdata: function (latitude, longitude) {
     var that = this
