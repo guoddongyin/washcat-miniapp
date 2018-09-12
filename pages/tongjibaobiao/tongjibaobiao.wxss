@@ -36,7 +36,10 @@ flex-shrink: 0;
 }
 
 .wrap{
-    position: relative;
+  position:fixed;
+  height:100%;
+  padding-top:30rpx;
+  width:100%;
 }
 
 .wrap .spinner{
@@ -61,6 +64,7 @@ height: 90rpx;
 line-height: 90rpx;
 color: #777;
 font-size: 30rpx;
+text-align:center;
 
 }
 
@@ -103,4 +107,16 @@ font-size: 30rpx;
 }
 .active{
   color: #1a3064
+}
+.zhu{
+  font-size: 36rpx;
+  color: #333;
+  text-align: center;
+  margin-top: 60rpx;
+}
+.shuoqu{
+  color: #666;
+  font-size: 26rpx;
+  text-align: center;
+  margin-top: 10rpx;
 }

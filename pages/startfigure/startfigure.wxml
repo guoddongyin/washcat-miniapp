@@ -2,4 +2,5 @@
 
 <view class="drawer_screen">
   <image src='{{startimg}}'></image>
+  <view class='daojishi'>跳过：{{second}}S</view>
 </view>

@@ -31,15 +31,56 @@
        <view class='item-hui'></view>
 
       <view class="info_list">
-          <block wx:for="{{userListInfo}}" wx:key="userInfoListId">
-              <navigator url='{{item.url}}'><view class="weui_cell">
-                  <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
+          <navigator url='/pages/mycard/mycard'>
+           <view class="weui_cell">
+                  <view class="weui_cell_hd"><image src="../../images/dingdan-icon.png"></image></view>
                   <view class="weui_cell_bd">
-                      <view class="weui_cell_bd_p"> {{item.text}} </view>
+                      <view class="weui_cell_bd_p"> 我的猫卡 </view>
                   </view>
                   <view class="with_arrow"></view>
-              </view></navigator>
-          </block>
+            </view></navigator>
+            <navigator url='/pages/mylist/mylist'>
+           <view class="weui_cell">
+                  <view class="weui_cell_hd"><image src="../../images/ding1-icon.png"></image></view>
+                  <view class="weui_cell_bd">
+                      <view class="weui_cell_bd_p"> 我的订单 </view>
+                  </view>
+                  <view class="with_arrow"></view>
+            </view></navigator>
+            <navigator url='/pages/invoicemanage/invoicemanage'>
+           <view class="weui_cell">
+                  <view class="weui_cell_hd"><image src="../../images/fapiao-icon.png"></image></view>
+                  <view class="weui_cell_bd">
+                      <view class="weui_cell_bd_p"> 发票管理 </view>
+                  </view>
+                  <view class="with_arrow"></view>
+            </view></navigator>
+            <view wx:if="{{userinfo.types==0}}">
+              <navigator url='/pages/enterpriseuser/enterpriseuser' wx:if="{{qyerrcode==1}}">
+                <view class="weui_cell">
+                        <view class="weui_cell_hd"><image src="../../images/qiye-icon.png"></image></view>
+                        <view class="weui_cell_bd">
+                            <view class="weui_cell_bd_p"> 企业用户 </view>
+                        </view>
+                        <view class="with_arrow"></view>
+                  </view></navigator>
+              <navigator url='/pages/shareduser/shareduser' wx:if="{{gxerrcode==1}}">
+                <view class="weui_cell">
+                        <view class="weui_cell_hd"><image src="../../images/yongfu-icon.png"></image></view>
+                        <view class="weui_cell_bd">
+                            <view class="weui_cell_bd_p">共享用户</view>
+                        </view>
+                        <view class="with_arrow"></view>
+                  </view></navigator>
+            </view>
+            <navigator url='/pages/helpcenter/helpcenter'>
+           <view class="weui_cell">
+                  <view class="weui_cell_hd"><image src="../../images/bz-icon.png"></image></view>
+                  <view class="weui_cell_bd">
+                      <view class="weui_cell_bd_p">帮助中心  </view>
+                  </view>
+                  <view class="with_arrow"></view>
+            </view></navigator>
            <navigator url='/pages/tongjibaobiao/tongjibaobiao' wx:if="{{isBranch==1}}">
            <view class="weui_cell">
                   <view class="weui_cell_hd"><image src="../../images/ding-icon.png"></image></view>

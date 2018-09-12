@@ -13,13 +13,16 @@
   </view>
   <view class='wrap'>
     <scroll-view class='scroller' style="width:{{width}}px;" scroll-y="true" lower-threshold="800" bindscrolltolower="loadmore">
-    <view class='baobiaolist'>
-      <!-- <view class='nian'>2018年7月</view> -->
-      <view class='baobiao' wx:for= "{{allreport}}" wx:key="{{allreport}}" bindtap='reportdetail' data-id='{{index}}'>
-        <text class='title'>{{item.devName}}统计报表</text> 
-        <view class='shijian'>{{item.createTime}}</view>
+     <view wx:if="{{allreport.length==0}}">
+        <image src='/images/icon-mao.png' style='display:block;width:354rpx;height:281rpx;margin:100rpx auto 50rpx;'></image>
+          <view class='zhu'>暂无统计报表</view> 
       </view>
-    </view>
+      <view class='baobiaolist' wx:else>
+        <view class='baobiao' wx:for= "{{allreport}}" wx:key="{{allreport}}" bindtap='reportdetail' data-id='{{index}}'>
+          <text class='title'>{{item.devName}}统计报表</text> 
+          <view class='shijian'>{{item.createTime}}</view>
+        </view>
+      </view>
     </scroll-view>
     <view class='spinner' wx:if='{{showspinner}}'>
       <view class='items'>

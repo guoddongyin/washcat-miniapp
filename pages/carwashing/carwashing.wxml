@@ -2,15 +2,20 @@
 <view class='pagebody' style='height:300rpx'>
     <image class='imagess' src='/images/xiangq.png'></image>
 <view class='userlist'>
-  <view class='item2 row'>
+  <!-- <view class='item2 row'>
     <text class='item-jifen'></text>
-  </view> 
+  </view>  -->
   <!-- 加载 -->
-<view class="spinner">
+<!-- <view class="spinner">
   <view class="bounce1"></view>
   <view class="bounce2"></view>
   <view class="bounce3"></view>
-</view>
+</view> -->
+<view class='content'> 
+  <canvas canvas-id='bgCanvas' id='canvas-one'  class='canvasI'></canvas>
+  <canvas canvas-id="runCanvas" class='canvasII'></canvas>
+  <cover-image class="img" src="/images/hdj.png" />
+ </view>  
 <view class="progress_text">
   <text class='progress_info'> {{progress_txt}}</text>
   <!-- <image src='/images/hdj-icon.png'></image> -->

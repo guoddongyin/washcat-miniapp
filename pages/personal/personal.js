@@ -11,45 +11,17 @@ Page({
     userinfo: '',//用户信息
     portrait:'',//头像
     defaultImg: "../../images/icon_moren.png", //默认图片
-    //remark: '',//用户留言
     isBranch:'',
-    userListInfo: [{
-      icon: '../../images/dingdan-icon.png',
-      text: '我的猫卡',
-      isunread: true,
-      url:'/pages/mycard/mycard'
-    }, {
-      icon: '../../images/ding1-icon.png',
-      text: '我的订单',
-      isunread: false,
-      url: '/pages/mylist/mylist'
-    }, {
-      icon: '../../images/fapiao-icon.png',
-      text: '发票管理',
-      url: '/pages/invoicemanage/invoicemanage'
-    }, {
-      icon: '../../images/qiye-icon.png',
-      text: '企业用户',
-      url: '/pages/enterpriseuser/enterpriseuser'
-    }, {
-      icon: '../../images/yongfu-icon.png',
-      text: '共享用户',
-      url: '/pages/shareduser/shareduser'
-    }, {
-      icon: '../../images/bz-icon.png',
-      text: '帮助中心',
-      url: '/pages/helpcenter/helpcenter'
-      // }, {
-      //   icon: '../../images/ding-icon.png',
-      //   text: '统计报表',
-      //   url: '/pages/tongjibaobiao/tongjibaobiao'
-      }]
+    qyerrcode:'',
+    gxerrcode:''
   },
 
     onLoad: function () {
       //获取个人信息
       this.requestdata();
       this.isBranch();
+      this.isgxcard();
+      this.isqycard();
     },
   //判断是否是加盟商
   isBranch: function () {
@@ -57,13 +29,44 @@ Page({
     var data = {
       phone: wx.getStorageSync('mobile'),
     }
-    util.request_data("branch/isBranch", 'POST', data, function (res) {
-      console.log(res)
-      var isBranch = res.data.errcode
-      that.setData({
-        isBranch: isBranch
-      })
+    if(data.phone==''){
 
+    }else{
+      util.request_data("branch/isBranch", 'POST', data, function (res) {
+        console.log(res)
+        var isBranch = res.data.errcode
+        that.setData({
+          isBranch: isBranch
+        })
+      })
+    } 
+  },
+  //判断是否有共享卡
+  isgxcard: function () {
+    var that = this
+    var data = {
+      cardTypes: 2
+    }
+    util.request_data('washcarCardCoupon/getWashcarCardCoupon', 'POST', data, function (res) {
+      console.log(res)
+      var gxerrcode = res.data.errcode
+      that.setData({
+        gxerrcode: gxerrcode
+      })
+    })
+  },
+  //判断是否有企业卡
+  isqycard: function () {
+    var that = this
+    var data = {
+      cardTypes: 3
+    }
+    util.request_data('washcarCardCoupon/getWashcarCardCoupon', 'POST', data, function (res) {
+      console.log(res)
+      var qyerrcode = res.data.errcode
+      that.setData({
+        qyerrcode: qyerrcode
+      })
     })
   },
     //获取个人信息

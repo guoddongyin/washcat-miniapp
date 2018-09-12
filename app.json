@@ -48,7 +48,7 @@
     "pages/webview/webview",
     "pages/reports/reports",
     "pages/tongjibaobiao/tongjibaobiao",
-    "pages/my/my"
+    "pages/circularPro/circularPro"
   ],
   "window": {
     "backgroundTextStyle": "light",

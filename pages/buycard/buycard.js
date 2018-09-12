@@ -67,15 +67,10 @@ Page({
         paySign: paydata.paySign,
         success: function (res) {
           console.log('成功')
-          wx.showToast({
-            title: '支付成功',
-            icon: 'none',
-            duration: 1500
-          })
-          // console.log('成功')
-          wx.navigateBack({
+          wx.navigateTo({
             url: '/pages/mycard/mycard',
           })
+          
         },
         fail: function (res) {
           // console.log('失败')

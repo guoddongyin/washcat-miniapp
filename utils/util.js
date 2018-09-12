@@ -116,12 +116,6 @@ function request_data(url, method, data, success) { //封装请求方式
         }) // 向用户提示需要升级微信
       } else {
         console.log('我来了333')
-        wx.showToast({
-          title: res.data.errmsg,
-          icon: 'loading',
-          // image: '../../images/err_icon.png',  //自定义图标的本地路径，image 的优先级高于 icon  
-          duration: 1500
-        })
       }
 
     }, 

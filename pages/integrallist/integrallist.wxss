@@ -1,6 +1,6 @@
 /* pages/integrallist/integrallist.wxss */
 @import'../balancelist/balancelist.wxss';
-.viewclass{
+/* .viewclass{
   position: fixed;
   height: 50%;
   width: 100%;
@@ -10,10 +10,10 @@
   justify-content: center;
   }
 .viewclass image{
-  width: 400rpx;
-  height: 250rpx;
+  width: 350rpx;
+  height: 280rpx;
   padding:20rpx 0;
 }
 .zhu{
   font-size: 30rpx;
-}
+} */

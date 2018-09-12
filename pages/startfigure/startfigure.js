@@ -1,12 +1,28 @@
 // pages/startfigure/startfigure.js
 var util = require('../../utils/util.js');
+function countdown(that) {
+  var second = that.data.second
+  if (second == 0) {
+    wx.redirectTo({
+        url: '/pages/index/index',
+    })
+    return;
+  }
+  var time = setTimeout(function () {
+    that.setData({
+      second: second - 1
+    });
+    countdown(that);
+  } , 1000)
+}
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    startimg:''
+    startimg:'',
+    second:3
   },
 
   /**
@@ -14,7 +30,8 @@ Page({
    */
   onLoad: function (options) {
     this.getphotodata()
-    this.countInterval()
+    countdown(this);
+    // this.daojishi()
   },
   //获取启动页图片
   getphotodata: function () {
@@ -30,16 +47,7 @@ Page({
       })
     })
   },
-  // 设置倒计时 定时器 每10000毫秒执行一次
-  countInterval: function () {
-    var that = this
-    var Interval = setTimeout(function () {
-      wx.navigateTo({
-        url: '/pages/index/index',
-      })
-      clearTimeout(Interval); 
-    }, 3000)
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,0 +1,10 @@
+<!--pages/circularPro/circularPro.wxml-->
+<!-- <view class='content'> 
+  <canvas canvas-id='bgCanvas' id='canvas-one'  class='canvasI'></canvas>
+  <canvas canvas-id="runCanvas" class='canvasII'></canvas>
+  <cover-image class="img" src="/images/hdj.png" />
+ </view>   -->
+<!--index.wxml-->
+<view class="container">
+ <text>倒计时: {{second}} </text>
+</view>

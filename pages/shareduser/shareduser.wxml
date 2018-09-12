@@ -1,6 +1,6 @@
 <!--pages/shareduser/shareduser.wxml-->
 <view class='container'>
-  <view class='pagebody'>
+  <view class='pagebody' style='height:360rpx'>
     <view class='top-banner'>
       <image class='imagess' src='/images/banner-gx.png'></image>
     </view>
@@ -48,7 +48,7 @@
           <view class="txt2">申请人</view>
          <view  class="txt3"><input cursor-spacing='100' placeholder="请输入姓名"  class="txt3" bindchange="name" name="name2"/></view>
          </view>
-        <view class="txt">
+        <view class="txt" style='margin-bottom:30rpx'>
           <!-- <view class="ima"></view> -->
           <view class="txt2">联系电话</view>
           <view  class="txt3"><input cursor-spacing='50' type="idcard" placeholder="请输入联系电话" bindchange="ID_num"                           maxlength="11" name="ID_num2"/></view>

@@ -20,17 +20,23 @@
             bindcancelclick="datePickerOnCancelClick" />
         </view>
       </view>
-      <view class="info_list">
-          <block wx:for="{{userListInfo}}">
-            <navigator url='{{item.url}}'><view class="weui_cell">
-              <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
-                <view class="weui_cell_bd">
-                  <view class="weui_cell_bd_p"> {{item.text}} </view>
-                  <view class="weui_cell_bd_dec"> {{item.dec}} </view>
-                </view>
-              <view class="with_arrows">+10</view>
-            </view></navigator>
-          </block>
+      <view>
+       <view class='viewclass' wx:if="{{integrallist.length==0}}">
+          <image src='/images/icon-mao.png'></image>
+          <view class='zhu'>您当前还没有余额哦</view> 
+        </view>
+        <view class="info_list" wx:else>
+            <block wx:for="{{userListInfo}}">
+              <navigator url='{{item.url}}'><view class="weui_cell">
+                <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
+                  <view class="weui_cell_bd">
+                    <view class="weui_cell_bd_p"> {{item.text}} </view>
+                    <view class="weui_cell_bd_dec"> {{item.dec}} </view>
+                  </view>
+                <view class="with_arrows">+10</view>
+              </view></navigator>
+            </block>
+          </view>
         </view>
       </view>
   </view>

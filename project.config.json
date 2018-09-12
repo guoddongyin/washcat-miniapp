@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 50,
+			"current": 52,
 			"list": [
 				{
 					"id": -1,
@@ -338,7 +338,20 @@
 				{
 					"id": -1,
 					"name": "startfigure",
-					"pathName": "pages/startfigure/startfigure"
+					"pathName": "pages/startfigure/startfigure",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "circularPro",
+					"pathName": "pages/circularPro/circularPro",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "FF",
+					"pathName": "pages/carwashing/carwashing",
+					"query": "devId=2"
 				}
 			]
 		}

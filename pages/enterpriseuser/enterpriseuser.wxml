@@ -1,6 +1,6 @@
 <!--pages/enterpriseuser/enterpriseuser.wxml-->
 <view class='container'>
-  <view class='pagebody'>
+  <view class='pagebody' style='height:360rpx'>
     <view class='top-banner'>
       <image class='imagess' src='/images/banner-qy.png'></image>
     </view>

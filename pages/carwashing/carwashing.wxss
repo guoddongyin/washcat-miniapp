@@ -35,8 +35,8 @@
 }
 .progress_info{ 
  font-size: 26rpx;
- padding-left: 16rpx;
- letter-spacing: 2rpx
+ /* padding-left: 16rpx; */
+ letter-spacing: 2rpx;
 } 
 .progress_dot{
  width:16rpx;
@@ -46,7 +46,7 @@
 }
 
 /* 加载动画 */
-.spinner {
+/* .spinner {
   margin: 30rpx auto;
   width: 300rpx;
   text-align: center;
@@ -88,4 +88,51 @@
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }
+} */
+
+/* 加载动画 */
+.content{
+  width: 90%;
+  height: 450rpx;
+  background-color: #fff;
+  margin: 0 auto;
+  /* margin-top: 100rpx; */
+  position: relative;
+}
+.canvasI{
+  width: 400rpx;
+  height: 400rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto auto;
+}
+.canvasII{
+  width: 400rpx;
+  height: 400rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto auto;
+}
+.btn{
+  position: absolute;
+  width: 200rpx;
+  bottom: 30rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+.content .img{
+      width: 120rpx;
+      height: auto;
+      position: absolute;
+      bottom: 80rpx;
+      left: 270rpx;
+     
 }

@@ -6,30 +6,52 @@ Page({
     datePickerIsShow: false,
     money:'',
     userInfo: {},
-    // userListInfo: [{
-    //   icon: '../../images/icon-card.png',
-    //   text: '充值猫卡',
-    //   dec: '2018-10-01',
-    // }, {
-    //   icon: '../../images/icon-gx.png',
-    //   text: '共享用户返利',
-    //   dec: '2018-10-01',
-    // }, {
-    //   icon: '../../images/icon-card.png',
-    //   text: '充值猫卡',
-    //   dec: '2018-10-01',
-    // }]
+    integrallist:''
   },
 
   onLoad: function (options) {
     var that = this
     var money = options.money
     that.data.money = money
+    this.gitintegral()
     this.setData({
       money:money
     })
   },
-
+  //获取余额明细
+  gitintegral: function () {
+    var that = this;
+    var data = {
+      userId: wx.getStorageSync('IDID'),
+      pageNo: that.data.pageNo,
+      pageSize: that.data.pageSize,
+      time: that.data.date
+    }
+    console.log("参数", data);
+    util.request_data("userIntegral/getUserIntegral", 'POST', data, function (res) {
+      console.log(res)
+      var integrallist = res.data.data.list
+      var numtotal = res.data.data.total
+      for (var i = 0; i < integrallist.length; i++) {
+        integrallist[i].createTime = util.DateHelper(integrallist[i].createTime, 'yyyy-MM-dd')
+      }
+      if (that.data.pageNo == 1) {
+        that.setData({
+          integrallist: integrallist,
+          numtotal: numtotal
+        })
+      } else {
+        var new_page_cont = that.data.integrallist;
+        var current_guide_list = res.data.data.list;
+        for (var i = 0; i < current_guide_list.length; i++) {
+          new_page_cont.push(current_guide_list[i])
+        }
+        that.setData({
+          integrallist: new_page_cont,
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
