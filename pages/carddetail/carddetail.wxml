@@ -29,7 +29,18 @@
         </view>
   </view>
   <view class='btn-padd'>
-    <button  class="btnone" form-type="submit" hover-class="none">推荐给朋友</button>
+    <button  class="btnone" form-type="submit" hover-class="none" bindtap="powerDrawer" data-statu="open">推荐给朋友</button>
     <button  class="btntwo" form-type="submit" hover-class="none" bindtap='numberdetail'>次数明细</button>
   </view>
 </view>
+
+<!--mask-->  
+<view class="drawer_screen"  wx:if="{{showModalStatus}}" bindtap='powerDrawer' data-statu="close"></view>  
+<!--content-->  
+<view>
+  <view animation="{{animationData}}" class='drawer' wx:if="{{showModalStatus}}" >   
+    <image src='/images/tanc.png' bindtap='powerDrawer' data-statu="close"></image>
+  </view> 
+</view>
+
+<!-- <view class="btn_ok" bindtap="powerDrawer" data-statu="close"></view>  -->

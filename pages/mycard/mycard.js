@@ -112,18 +112,25 @@ Page({
       nums: that.data.cardnum
     }
     console.log("anshu", data)
-    util.request_data("userCardNumsShare/shareCardUrl", 'POST', data, function (res) {
-      console.log(res)
-      var cardnumdata = res.data.data
-      that.setData({
-        cardnumdata:cardnumdata
+    if (that.data.cardnum==0){
+      wx.showToast({
+        title: '请选择转赠次数',
+        icon:'none'
       })
-      success:{
+    }else{
+      util.request_data("userCardNumsShare/shareCardUrl", 'POST', data, function (res) {
+        console.log(res)
+        var cardnumdata = res.data.data
         that.setData({
-          showfxStatus: true
+          cardnumdata: cardnumdata
         })
-      }  
-    })
+        success: {
+          that.setData({
+            showfxStatus: true
+          })
+        }
+      })
+    } 
   },
   util: function (currentStatu) {
     /* 动画部分 */

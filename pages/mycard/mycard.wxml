@@ -4,7 +4,6 @@
 <view class='viewclass' wx:if="{{carddata.length==0}}">
    <image src='/images/icon-mao.png'></image>
     <view class='zhu'>当前暂无猫卡哟~</view> 
-    <!-- <navigator url='/pages/askinvoice/askinvoice'><view class='shuoqu'>立即索取发票</view></navigator> -->
 </view>
 <view class='content' wx:else>
   <view class="my-card {{currentid == index ? 'active':''}}" wx:for="{{carddata}}" wx:key="item.id" bindtap='choosecard' data-id="{{index}}" >

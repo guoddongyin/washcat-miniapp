@@ -1,28 +1,16 @@
 // pages/startfigure/startfigure.js
 var util = require('../../utils/util.js');
-function countdown(that) {
-  var second = that.data.second
-  if (second == 0) {
-    wx.redirectTo({
-        url: '/pages/index/index',
-    })
-    return;
-  }
-  var time = setTimeout(function () {
-    that.setData({
-      second: second - 1
-    });
-    countdown(that);
-  } , 1000)
-}
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    startimg:'',
-    second:3
+    startimg:'',//启动图片
+    second:3,//倒计时
+    time:'',//定时器
+    sign :''//
   },
 
   /**
@@ -30,9 +18,24 @@ Page({
    */
   onLoad: function (options) {
     this.getphotodata()
-    countdown(this);
-    // this.daojishi()
+    this.countdown(this);
   },
+  //跳过
+  countdown : function(that) {
+    var second = that.data.second
+    if(second == 0) {
+    wx.redirectTo({
+      url: '/pages/index/index',
+    })
+    return;
+  }
+  var time = setTimeout(function () {
+    that.setData({
+      second: second - 1
+    });
+    that.countdown(that);
+  }, 1000)
+},
   //获取启动页图片
   getphotodata: function () {
     var that = this
@@ -47,7 +50,13 @@ Page({
       })
     })
   },
-
+  //点击跳过
+  tiaoguo : function () {
+    clearTimeout(this.data.time)
+    wx.redirectTo({
+      url: '/pages/index/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -73,7 +82,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    this.tiaoguo()
   },
 
   /**

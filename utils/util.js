@@ -60,7 +60,6 @@ function download_File(url, success) {
   wx.downloadFile({
     src: url,
     success: function (res) {
-
       success(res.path)
     }
   })
@@ -70,9 +69,12 @@ function download_File(url, success) {
 function request_data(url, method, data, success) { //封装请求方式
   var newdata = [];
   var token = '';
+  // 显示的false 不显示为true
+  var maskstatus = data.masknomsg ? data.masknomsg : false //判断是否显示弹框
   wx.showLoading({
     title: '加载中',
-  })
+  }) 
+  delete data.c
   try {
     var value = wx.getStorageSync('token')//调用API从本地缓存中获取数据
     console.log(value)
@@ -116,9 +118,16 @@ function request_data(url, method, data, success) { //封装请求方式
         }) // 向用户提示需要升级微信
       } else {
         console.log('我来了333')
+        if (!maskstatus){
+          wx.showToast({
+            title: res.data.errmsg,
+            icon: 'none', 
+            duration: 1500
+          })
+        }
       }
 
-    }, 
+    },
     fail: function (fail) {
       console.log(fail)
       wx.hideLoading()

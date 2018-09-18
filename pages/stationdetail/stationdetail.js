@@ -11,7 +11,6 @@ Page({
     reviewlist:'',//评论信息
     total:'',//评论总数
     images:'',//评论图片
-    //showfxStatus: false,
     showModalStatus: false,
     phone:''
   },
@@ -29,7 +28,7 @@ Page({
       withShareTicket: true //要求小程序返回分享目标信息
     })
     const backgroundAudioManager = wx.getBackgroundAudioManager()
-    backgroundAudioManager.stop()
+    // backgroundAudioManager.stop()
   
   },
   //获取轮播图

@@ -20,7 +20,7 @@
           <image src='/images/icon-sp.png'></image>
         </view>
             <!-- <video id="myVideo" src="{{stationlist.videoUrl}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video> -->
-        <view class='fenxiang' bindtap='balance' style='width:35rpx' bindtap="powerDrawer" data-statu="open">
+        <view class='fenxiang' style='width:35rpx' bindtap="powerDrawer" data-statu="open">
           <image src='/images/icon-fx.png' style='height:90%'></image>
         </view>
       </view>
@@ -47,8 +47,6 @@
         <view class='pinglun' wx:else>{{item.content}}</view>
         <view class='pinglun-row'>
           <view class='row-2 pinglun-ima' wx:for="{{item.imgUrl}}" wx:key="images"><image src='{{item.imgUrl}}'></image></view>
-          <!-- <view class='row-2 pinglun-ima'><image src='/images/xiangq.png'></image></view>
-          <view class='row-2 pinglun-ima'><image src='/images/xiangq.png'></image></view> -->
         </view>
       </view>
       <view class='row btn-buttom'>
@@ -68,7 +66,7 @@
 <!--content-->  
 <view>
   <view animation="{{animationData}}" class='drawer' wx:if="{{showModalStatus}}" >   
-    <image src='/images/tanchu1.png' bindtap='powerDrawer' data-statu="close"></image>
+    <image src='/images/tanc.png' bindtap='powerDrawer' data-statu="close"></image>
   </view> 
 </view>
 

@@ -2,5 +2,5 @@
 
 <view class="drawer_screen">
   <image src='{{startimg}}'></image>
-  <view class='daojishi'>跳过：{{second}}S</view>
+  <view class='daojishi' bindtap='tiaoguo'>跳过：{{second}}S</view>
 </view>

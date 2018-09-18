@@ -19,7 +19,19 @@
   border: solid 10rpx #79d3d9;
   border-radius: 50%;
 }
-.info-left .info image{
+.info-left .infoqy{
+  width: 120rpx;
+  height: 120rpx;
+  border: solid 10rpx #1a3064;
+  border-radius: 50%;
+}
+.info-left .infogx{
+  width: 120rpx;
+  height: 120rpx;
+  border: solid 10rpx #e5537c;
+  border-radius: 50%;
+}
+.info-left image{
   width: 100%;
   height: 100%;
   border-radius:50%;
@@ -37,6 +49,28 @@
   padding: 12rpx 16rpx;
   text-align: center;
   color: #79d3d9;
+  background-color:#cdfdff;
+  width: 110rpx;
+  border-radius: 50rpx;
+}
+.info-dec1{
+  display: block;
+  font-size: 22rpx;
+  margin: 10rpx 20rpx;
+  padding: 12rpx 16rpx;
+  text-align: center;
+  color: #1a3064;
+  background-color:#cdfdff;
+  width: 110rpx;
+  border-radius: 50rpx;
+}
+.info-dec2{
+  display: block;
+  font-size: 22rpx;
+  margin: 10rpx 20rpx;
+  padding: 12rpx 16rpx;
+  text-align: center;
+  color: #e5537c;
   background-color:#cdfdff;
   width: 110rpx;
   border-radius: 50rpx;

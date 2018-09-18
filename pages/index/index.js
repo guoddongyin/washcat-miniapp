@@ -79,13 +79,16 @@ Page({
       })
      // console.log(markers + "ddd")
     })
-
-    const backgroundAudioManager = wx.getBackgroundAudioManager()
-    player()
-    function player() {
-      backgroundAudioManager.title = '此时此刻'
-      backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/map.mp3'
+    var openid = wx.getStorageSync('openid')
+    if (openid){
+      const backgroundAudioManager = wx.getBackgroundAudioManager()
+      player()
+      function player() {
+        backgroundAudioManager.title = '此时此刻'
+        backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/map.mp3'
+      }
     }
+  
   },
   clickcontrols:function (){
     var that = this;

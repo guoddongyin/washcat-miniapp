@@ -40,8 +40,7 @@ Page({
       backgroundAudioManager.title = '此时此刻'
       backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/becareful.mp3'
     }
-    // const backgroundAudioManager = wx.getBackgroundAudioManager()
-    // backgroundAudioManager.src = '' // 设置了 src 之后会自动播放 
+  
   },
   //获取帮助信息
   gethelpList: function () {
@@ -79,14 +78,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+    wx.stopBackgroundAudio()
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    wx.stopBackgroundAudio()
   },
 
   /**

@@ -26,8 +26,10 @@ Page({
   //判断是否是加盟商
   isBranch: function () {
     var that = this;
+    //var masknomsg = 
     var data = {
       phone: wx.getStorageSync('mobile'),
+      masknomsg:true
     }
     if(data.phone==''){
 

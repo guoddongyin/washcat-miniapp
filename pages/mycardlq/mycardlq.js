@@ -64,7 +64,7 @@ Page({
       toOpenid: wx.getStorageSync('openid'),
       sign:that.data.sign
     }
-    // console.log("anshu",data)
+     console.log("anshu",data)
     util.request_data("userCardNumsShare/getCardNumsShare", 'POST', data, function (res) {
       console.log(res)
       that.setData({
