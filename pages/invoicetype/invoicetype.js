@@ -76,14 +76,7 @@ Page({
     var data = Object.assign(typearray, value1)
     util.request_data('userInvoice/saveUserInvoice', 'post', data, function (res) {
       console.log(res);
-      // var invoiceInfo = res.data.data.list
-      // for (var i = 0; i < invoiceInfo.length; i++) {
-      //   invoiceInfo[i].createTime = util.DateHelper(invoiceInfo[i].createTime, 'yyyy-MM-dd')
-      // }
-      // that.setData({
-      //   invoiceInfo: invoiceInfo
-      // })
-      //console.log(res.data.data.list.createTime)
+    
     })
   },
   /**
@@ -156,6 +149,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    var that = this
+    return {
+      title: '',
+      success(res) {
+        console.log(res.shareTickets[0])
+      }
+    }
   }
 })

@@ -47,7 +47,8 @@ Page({
   isgxcard: function () {
     var that = this
     var data = {
-      cardTypes: 2
+      cardTypes: 2,
+      masknomsg: true
     }
     util.request_data('washcarCardCoupon/getWashcarCardCoupon', 'POST', data, function (res) {
       console.log(res)
@@ -61,7 +62,8 @@ Page({
   isqycard: function () {
     var that = this
     var data = {
-      cardTypes: 3
+      cardTypes: 3,
+      masknomsg: true
     }
     util.request_data('washcarCardCoupon/getWashcarCardCoupon', 'POST', data, function (res) {
       console.log(res)
@@ -82,8 +84,7 @@ Page({
         console.log(res)
         that.setData({
           userinfo: res.data.data,
-         portrait:res.data.data.avatar
-          //portrait: res.data.data.avatar
+          portrait:res.data.data.avatar
         })
       })
     },
@@ -122,5 +123,17 @@ Page({
       url: '/pages/myinformation/myinformation',
     })
   },
+  /**
+  * 用户点击右上角分享
+  */
+  onShareAppMessage: function () {
+    var that = this
+    return {
+      title: '',
+      success(res) {
+        console.log(res.shareTickets[0])
+      }
+    }
+  }
 })
  

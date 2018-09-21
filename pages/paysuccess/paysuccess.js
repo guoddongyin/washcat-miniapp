@@ -15,16 +15,7 @@ Page({
     // var devId = options.devId
     // this.data.devId = devId
   },
-  // carwashing:function(){
-  //   var that = this;
-  //   var id = that.data.devId
-  //   wx.navigateTo({
-  //     url: '/pages/carwashing/carwashing?devId=' + id,
-  //   })
-  //   wx.navigateTo({
-  //     url: '/pages/carwashing/carwashing',
-  //   })
-  // },
+ 
   //前往我的订单
   mylist:function () {
     wx.navigateTo({
@@ -77,6 +68,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    var that = this
+    return {
+      title: '',
+      success(res) {
+        console.log(res.shareTickets[0])
+      }
+    }
   }
 })

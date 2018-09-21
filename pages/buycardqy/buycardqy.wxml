@@ -1,30 +1,38 @@
-<!--pages/buycardqy/buycardqy.wxml-->
 <view class='content'>
-  <view class="weui_cell" style='padding:15rpx 0;' bindtap='stationlist'>
-    <view class="weui_cell_hd">{{qycarddata.devName?qycarddata.devName:'请选择购卡站点'}}</view>
+   <view class="weui_cell" style='padding:15rpx 0;' bindtap='toggle'>
+    <view class="weui_cell_hd">{{devn?devn:'请选择购卡站点'}}</view>
     <view class="with_arrow"></view>
   </view>
+  <view>
+  <!-- 下拉框 -->
+  <view id="box" class="{{first_click?'show':'hide'}} {{state?'open':'close'}}" style='position:absolute'>
+      <view id="item_list">
+            <view wx:for="{{qycarddata}}" data-index='{{index}}' bindtap='choosesttaion' wx:key="{{key}}">{{item.DevName}}</view>
+      </view>
+  </view>
+</view>
+<view >
   <view class='line' ></view>
   <view class='my-card' style='margin:50rpx auto;'>
     <view class='cell-hd'>
       <text class='cell-hd-text'>企业用户卡</text>
-      <text class='cell-hd-dec'>有效期 {{qycarddata.effectiveTime}}</text>
+      <text class='cell-hd-dec'>有效期：{{effectiveTime?effectiveTime:2018-09-21}}</text>
     </view>
     <view class='cell-ft'>
-      <text class='cell-hd-num'>{{qycarddata.washNums}}<text class='chi'>次</text></text>
+      <text class='cell-hd-num'>{{washNums?washNums:0}}<text class='chi'>次</text></text>
        <view><image ></image></view> 
     </view>
   </view>
   <view class='money-cell'>
-    <text  class='money'>￥{{qycarddata.money}}</text>
-    <text class='zhang' style='margin-left:10rpx'>{{qycarddata.numsReceive}}/{{qycarddata.nums}}张</text>
+    <text  class='money'>￥{{numsmoney?numsmoney:0}}</text>
+    <text class='zhang'>{{numsReceive?numsReceive:0}}/{{nums?nums:0}}张</text>
   </view>
   <view class='money-cell'>
-    <image src='/images/tuo-icon.png'></image>
+    <image src='/images/yuan-icon.png'></image>
     <text class='zhang'>购买后不可退</text>
   </view>
   <view class='money-cell' style='padding-bottom:30rpx;'>
-    <image src='/images/tuo-icon.png'></image>
+    <image src='/images/yuan-icon.png'></image>
     <text class='zhang'>购买后可分次转赠给好友</text>
   </view>
   <view class='line'></view>
@@ -36,7 +44,7 @@
       <view class="txt2">推荐人</view>
       <view  class="txt3"><input placeholder="输入我的推荐人（非必填）"  class="txt3" value="{{mem_name}}"                              bindchange="name" name="name2"/></view>
       </view>
-        <!-- <view style="clear:both"></view> -->
     <button  class="btn" form-type="submit" hover-class="none">立即支付</button>
   </form>
+</view>
 </view>

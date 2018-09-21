@@ -189,7 +189,6 @@ function upload_img(url, data, success) {
             wx.showToast({
               title: data.msg,
               icon: 'loading',
-              // image: '../../images/err_icon.png',  //自定义图标的本地路径，image 的优先级高于 icon  
               duration: 1500
             })
           }
@@ -199,7 +198,6 @@ function upload_img(url, data, success) {
           wx.showToast({
             title: '请求异常',
             icon: 'loading',
-            image: '../../images/err_icon.png',  //自定义图标的本地路径，image 的优先级高于 icon  
             duration: 1500
           })
         }

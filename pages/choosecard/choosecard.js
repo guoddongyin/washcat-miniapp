@@ -107,6 +107,16 @@ Page({
       url: '/pages/carddetail/carddetail?cardid=' + cardid,
     })
   },
+  paidcard: function () {
+    wx.navigateTo({
+      url: '/pages/paidcard/paidcard',
+    })
+  },
+  cardexchange: function () {
+    wx.navigateTo({
+      url: '/pages/cardexchange/cardexchange',
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -146,17 +156,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
-  },
-
-  paidcard: function () {
-    wx.navigateTo({
-      url: '/pages/paidcard/paidcard',
-    })
-  },
-  cardexchange: function () {
-    wx.navigateTo({
-      url: '/pages/cardexchange/cardexchange',
-    })
-  },
+    var that = this
+    return {
+      title: '',
+      success(res) {
+        console.log(res.shareTickets[0])
+      }
+    }
+  }
 })

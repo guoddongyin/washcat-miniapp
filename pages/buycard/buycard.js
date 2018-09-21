@@ -7,7 +7,16 @@ Page({
    */
   data: {
     qycarddata: '',//卡劵信息
-    status:2
+    status:2,
+    state: false,
+    first_click: false,
+    devn:'',
+    name:'',
+    washNums: '',
+    numsmoney: '',
+    numsReceive: '',
+    nums: '',
+    effectiveTime:''
   },
 
   /**
@@ -15,8 +24,51 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-
     this.getcardinfo()
+  },
+  //选择站点信息
+  choosesttaion:function(e){
+    var that = this
+    console.log(e)
+    var stationid = e.currentTarget.dataset.index;
+    console.log(stationid)
+    var devn = that.data.qycarddata[stationid].DevName
+    var name = that.data.qycarddata[stationid].name
+    var washNums = that.data.qycarddata[stationid].washNums
+    var numsmoney = that.data.qycarddata[stationid].money
+    var numsReceive = that.data.qycarddata[stationid].numsReceive
+    var nums = that.data.qycarddata[stationid].nums
+    var effectiveTime = that.data.qycarddata[stationid].effectiveTime
+    console.log(devn)
+    that.setData({
+      devn: devn,
+      name:name,
+      washNums: washNums,
+      numsmoney: numsmoney,
+      numsReceive:numsReceive,
+      nums:nums,
+      effectiveTime: effectiveTime,
+      state: false
+    })
+   
+  },
+  toggle: function () {
+    var list_state = this.data.state,
+      first_state = this.data.first_click;
+    if (!first_state) {
+      this.setData({
+        first_click: true
+      });
+    }
+    if (list_state) {
+      this.setData({
+        state: false
+      });
+    } else {
+      this.setData({
+        state: true
+      });
+    }
   },
    //获取姓名输入的值
   name2: function (e) {  
@@ -34,8 +86,10 @@ Page({
     util.request_data('washcarCardCoupon/getWashcarCardCoupon', 'POST', data, function (res) {
       console.log(res)
       var qycarddata = res.data.data
-      qycarddata.createTime = util.DateHelper(qycarddata.createTime, 'yyyy-MM-dd')
-      qycarddata.effectiveTime = util.DateHelper(qycarddata.effectiveTime, 'yyyy-MM-dd')
+      console.log(qycarddata)
+      for (var i = 0; i < qycarddata.length;i++){
+        qycarddata[i].effectiveTime = util.DateHelper(qycarddata[i].effectiveTime, 'yyyy-MM-dd')
+      }
       that.setData({
         qycarddata: qycarddata
       })
@@ -135,6 +189,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    var that = this
+    return {
+      title: '',
+      success(res) {
+        console.log(res.shareTickets[0])
+      }
+    }
   }
 })

@@ -18,10 +18,10 @@
 </scroll-view>
 
 <!--mask-->  
-<view class="drawer_screen" bindtap="powerDrawer" wx:if="{{status}}"></view>  
+<view class="drawer_screen" wx:if="{{status}}"></view>  
 <!--content-->                                       
 <!--使用animation属性指定需要执行的动画-->                           
-<view  class="drawer_box">   
+<view  class="drawer_box" wx:if="{{status}}">   
   <view class="drawer_title">恭喜获得{{nums}}张猫卡</view> 
   <view class='queding' bindtap='queding'></view>
 </view>  

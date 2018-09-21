@@ -34,24 +34,7 @@ Page({
       })
     })
   },
-  // gethelpList: function () {
-  //   var that = this;
-  //   var data = {
-  //     types: 2
-  //   }
-  //   util.request_data('imagetext/getImagetext', 'post', data, function (res) {
-  //     console.log(res);
-  //     var helplist = res.data.data
-  //     var content = helplist.content
-  //     if (content) {
-  //       content = content.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
-  //     }
-  //     that.setData({
-  //       helplist: helplist,
-  //       content: content
-  //     })
-  //   })
-  // },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -95,9 +78,15 @@ Page({
   },
 
   /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
+    * 用户点击右上角分享
+    */
+  onShareAppMessage: function (e) {
+    var that = this
+    return {
+      // path: '/pages/',
+      success(res) {
+        console.log(res.shareTickets[0])
+      }
+    }
+  },
 })

@@ -119,11 +119,17 @@ Page({
   },
 
   /**
-   * 用户点击右上角分享
-   */
+  * 用户点击右上角分享
+  */
   onShareAppMessage: function () {
-  
-  },
+    var that = this
+    return {
+      title: '',
+      success(res) {
+        console.log(res.shareTickets[0])
+      }
+    }
+  }
   // buycard:function(){
   //   wx.navigateTo({
   //     url: '/pages/buycard/buycard',

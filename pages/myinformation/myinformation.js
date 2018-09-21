@@ -20,6 +20,18 @@ Page({
     this.requestdata();
     //this.datePickerOnSureClick()
   },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    var that = this
+    return {
+      title: '',
+      success(res) {
+        console.log(res.shareTickets[0])
+      }
+    }
+  },
   //获取个人信息
   requestdata: function () {
     var that = this

@@ -47,8 +47,7 @@
     "pages/stationditu/stationditu",
     "pages/webview/webview",
     "pages/reports/reports",
-    "pages/tongjibaobiao/tongjibaobiao",
-    "pages/circularPro/circularPro"
+    "pages/tongjibaobiao/tongjibaobiao"
   ],
   "window": {
     "backgroundTextStyle": "light",

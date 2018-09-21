@@ -17,8 +17,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     var nums = options.nums
     var sign = options.sign
+    console.log(sign)
     var openid = options.openid
     this.data.nums = nums
     this.data.sign = sign
@@ -29,7 +31,6 @@ Page({
       openid:openid
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -60,7 +61,7 @@ Page({
   queding:function (){
     var that = this
     var data = {
-      formOpenid:this.data.openid,
+      formOpenid:that.data.openid,
       toOpenid: wx.getStorageSync('openid'),
       sign:that.data.sign
     }

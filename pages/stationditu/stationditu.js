@@ -91,7 +91,18 @@ Page({
       url: '../../pages/stationdetail/stationdetail?devId=' + id,
     })
   },
-
+  /**
+     * 用户点击右上角分享
+     */
+  onShareAppMessage: function (e) {
+    var that = this
+    return {
+      // path: '/pages/',
+      success(res) {
+        console.log(res.shareTickets[0])
+      }
+    }
+  },
   onReady: function (e) {
     // this.mapCtx = wx.createMapContext('myMap')
   },

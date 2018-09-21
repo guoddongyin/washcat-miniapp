@@ -36,7 +36,6 @@ Page({
       openId: wx.getStorageSync('openid'),
       cardId: id,
       payType:1,
-      //nums:2
     }
     util.request_data("pay/unifiedCard", 'POST', data, function (res) {
       console.log(res)
@@ -49,12 +48,6 @@ Page({
         paySign: paydata.paySign,
         success: function (res) {
           console.log('成功')
-          // wx.showToast({
-          //   title: '支付成功',
-          //   icon: 'none',
-          //   duration: 1500
-          // })
-          // console.log('成功')
           wx.navigateTo({
             url: '/pages/carddetail/carddetail',
           })
@@ -86,11 +79,21 @@ Page({
       var num1 = mumarr[i].nums[0];
       var num2 = mumarr[i].nums[1];
       if (parseInt(num2) > parseInt(num)){
-        list.push(i)
+        list.push(i) 
       }
     }
     console.log(list);
+    if (list.length == 0) {
+      var money = '(￥' + mumarr[mumarr.length - 1].money * num + ')'
+      that.setData({
+        money: money
+      })
+    }
+    if (list.length == 0){
+      return
+    }
     var money1 = mumarr[list[0]].money
+    console.log(money1)
     if (money==null){
       var money = '(无此次数)'
     }else{
@@ -222,6 +225,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    var that = this
+    return {
+      title: '',
+      success(res) {
+        console.log(res.shareTickets[0])
+      }
+    }
   }
 })

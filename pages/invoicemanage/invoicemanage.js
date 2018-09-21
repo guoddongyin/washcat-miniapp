@@ -89,22 +89,7 @@ Page({
     }
   },
   //判断是否已选中
-  // setStorg: function (arr) {
-  //   var appAll = [];
-  //   this.setData({
-  //     invoiceInfo: arr,
-  //   });
-  //   for (var i = 0; i < arr.length; i++) {
-  //     appAll.push(arr[i]);
-  //   }
-  //   wx.setStorage({
-  //     key: 'invoidata',
-  //     data: appAll,
-  //     success: function (e) {
-  //       //console.log(e, '更新存储完成')
-  //     }
-  //   })
-  // },
+
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -138,7 +123,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    var that = this
+    return {
+      title: '',
+      success(res) {
+        console.log(res.shareTickets[0])
+      }
+    }
   },
 
   askinvoice:function(){

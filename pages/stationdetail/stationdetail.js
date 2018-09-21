@@ -195,7 +195,6 @@ Page({
   onShareAppMessage: function (e) {
     var that = this
     return {
-      title: '页面分享标题',
       // path: '/pages/',
       success(res) {
         console.log(res.shareTickets[0])
