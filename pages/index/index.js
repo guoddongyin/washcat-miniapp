@@ -12,8 +12,8 @@ Page({
       position: {
         left: 20,
         top:400,
-        width: 30,
-        height: 30
+        width: 50,
+        height: 50
       },
       clickable: true
     }],
@@ -85,7 +85,7 @@ Page({
       player()
       function player() {
         backgroundAudioManager.title = '此时此刻'
-        backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/map.mp3'
+        backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/index.mp3'
       }
     }
   

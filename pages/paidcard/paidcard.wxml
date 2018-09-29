@@ -13,9 +13,9 @@
         <view class="txt">
           <view class="txt2">次</view>
           <view  class="txt3">
-            <input type='number' placeholder="输入您想充值的金额" class="txt3" bindchange="name" bindinput='nums2' name="nums2"/>
+            <input type='number' placeholder="输入您想充值的次数" class="txt3" bindchange="name" bindinput='nums2' name="nums2"/>
           </view>
-          <view style='color:#333'>{{money}}</view>
+          <view style='color:#333'>{{money}}</view>   
         </view>
         <button  class="btn" form-type="submit" hover-class="none">确认支付</button>
       </form>

@@ -18,6 +18,12 @@ Page({
     var devId = options.devId
     this.data.devId = devId
     this.getstationdata()
+    const backgroundAudioManager = wx.getBackgroundAudioManager()
+    player()
+    function player() {
+      backgroundAudioManager.title = '此时此刻'
+      backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/zhifu.mp3'
+    }
   },
   //获取支付信息
   getstationdata: function (e) {
@@ -104,14 +110,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+  wx.stopBackgroundAudio()
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    wx.stopBackgroundAudio()
   },
 
   /**

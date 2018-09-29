@@ -1,5 +1,5 @@
 <!--pages/invoicedetail/invoicedetail.wxml-->
-<view class="info_list" wx:for="{{invoiceList}}" wx:key="invoiceList">
+<view class="info_list" >
     <text class='dd-info'>发票信息</text> 
    <view class="weui_cell">
       <view class="weui_cell_bd">开具类型</view>

@@ -7,7 +7,7 @@
 </view>
 <view class='content' wx:else>
   <view class="my-card {{currentid == index ? 'active':''}}" wx:for="{{carddata}}" wx:key="item.id" bindtap='choosecard' data-id="{{index}}" >
-    <view class='cell-hd' bindtap='carddetail'>
+    <view class='cell-hd' bindtap='carddetail' data-index="{{index}}">
       <text class='cell-hd-text'>{{item.name}}</text>
       <text class='cell-hd-dec'>最近到期 {{item.expireTime}}</text>
     </view>
@@ -44,9 +44,9 @@
 </view> 
 
 <!--mask-->  
-<view class="drawer_screen"  wx:if="{{showfxStatus}}" bindtap='powerDrawer' data-status="close"></view>  
+<view class="drawer_screen"  wx:if="{{showfxStatus}}" bindtap='' data-statu="close"></view>  
 <!--content-->  
-<view animation="{{animationData}}" class='drawer' wx:if="{{showfxStatus}}">   
+<view animation="{{animationData}}" class='drawer' wx:if="{{showfxStatus}}" data-statu="close">   
   <image src='/images/tanchu1.png'></image>
 </view> 
  

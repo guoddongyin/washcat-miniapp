@@ -15,11 +15,7 @@
   <view class='item2 row'><text class='item-jifen'>您的评价</text></view> 
   <view class="star" style="display:flex;">
     <view  class="star-content" style="display:flex;">
-        <view class="starsHas  {{starFlag>=1? '': 'starNo'}}"  bindtap="changeOne"></view>
-        <view class="starsHas  {{starFlag>=2? '': 'starNo'}}"  bindtap="changeTwo"></view>
-        <view class="starsHas  {{starFlag>=3? '': 'starNo'}}"  bindtap="changeThree"></view>
-        <view class="starsHas  {{starFlag>=4? '': 'starNo'}}"  bindtap="changeFour"></view>
-        <view class="starsHas  {{starFlag>=5? '': 'starNo'}}"  bindtap="changeFive"></view>
+        <view class="starsHas  {{starFlag>=index? '': 'starNo'}}" bindtap="change" data-index="{{index}}"  wx:for="{{5}}"></view>
     </view>
 </view>
 <view class='pinglun'>

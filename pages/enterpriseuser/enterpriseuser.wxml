@@ -60,7 +60,7 @@
           <view class="txt2">上传营业执照</view>
           <view class="uploader" bindtap="chooseImage"><image src='/images/shang-icon.png'></image></view>
         </view>
-        <view class="cell">
+        <view class="cell" style='padding:20rpx'>
           <view class="image-cell"  wx:for="{{pics}}" wx:for-item="image" wx:key="pics" data-index='{{index}}'>
             <image  src="{{image}}" data-src="{{image}}" data-list="{{pics}}" bindtap="previewImage"></image>
             <view class="delete-btn" data-index="{{index}}" catchtap="deleteImg">

@@ -16,7 +16,9 @@ Page({
     numsmoney: '',
     numsReceive: '',
     nums: '',
-    effectiveTime:''
+    effectiveTime:'',
+    devId:'',
+    id:''
   },
 
   /**
@@ -39,6 +41,8 @@ Page({
     var numsReceive = that.data.qycarddata[stationid].numsReceive
     var nums = that.data.qycarddata[stationid].nums
     var effectiveTime = that.data.qycarddata[stationid].effectiveTime
+    var devId = that.data.qycarddata[stationid].devId
+    var id = that.data.qycarddata[stationid].id
     console.log(devn)
     that.setData({
       devn: devn,
@@ -48,6 +52,8 @@ Page({
       numsReceive:numsReceive,
       nums:nums,
       effectiveTime: effectiveTime,
+      devId: devId,
+      id:id,
       state: false
     })
    
@@ -105,36 +111,43 @@ Page({
     }
     var data = {
       openId: wx.getStorageSync('openid'),
-      devId: that.data.qycarddata.devId,
-      couponId: that.data.qycarddata.id,
+      devId: that.data.devId,
+      couponId: that.data.id,
       cardTypes: 2,
       userName: name2
     }
     util.request_data("pay/unifiedCardCoupon", 'POST', data, function (res) {
       console.log(res)
-      var paydata = res.data.data;
-      wx.requestPayment({
-        timeStamp: paydata.timeStamp,
-        nonceStr: paydata.nonceStr,
-        package: paydata.package,
-        signType: paydata.signType,
-        paySign: paydata.paySign,
-        success: function (res) {
-          console.log('成功')
-          wx.navigateTo({
-            url: '/pages/mycard/mycard',
-          })
-          
-        },
-        fail: function (res) {
-          // console.log('失败')
-          wx.showToast({
-            title: '支付失败',
-            icon: 'none',
-            duration: 1500
-          })
-        }
-      })
+      // if (res.data.errcode==0){
+      //   wx.showToast({
+      //     title: '请选择购卡站点',
+      //     icon: 'none'
+      //   })
+      // }else{
+        var paydata = res.data.data;
+        wx.requestPayment({
+          timeStamp: paydata.timeStamp,
+          nonceStr: paydata.nonceStr,
+          package: paydata.package,
+          signType: paydata.signType,
+          paySign: paydata.paySign,
+          success: function (res) {
+            console.log('成功')
+            wx.navigateTo({
+              url: '/pages/personal/personal',
+            })
+
+          },
+          fail: function (res) {
+            // console.log('失败')
+            wx.showToast({
+              title: '支付失败',
+              icon: 'none',
+              duration: 1500
+            })
+          }
+        })
+      // }
     })
   },
   stationlist: function () {

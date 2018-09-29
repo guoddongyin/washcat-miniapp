@@ -7,13 +7,18 @@ Page({
     datePickerValue: ['', '', ''],
     datePickerIsShow: false,
     getnumberlist: {},
-  
+    carid:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    var carid = options.carid
+    this.setData({
+      carid: carid
+    })
     this.getnumber()
   },
 
@@ -49,7 +54,8 @@ Page({
       userId: wx.getStorageSync('IDID'),
       pageNo: 1,
       pageSize: 20,
-      time: that.data.date
+      time: that.data.date,
+      userCardId: that.data.carid
     }
     console.log("参数", data);
     util.request_data("userCardNumsDetails/getUserCardNumsDetails", 'POST', data, function (res) {

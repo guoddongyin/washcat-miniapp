@@ -99,7 +99,6 @@ Page({
     var currentid
     var id = e.currentTarget.dataset.id
     var currentStatu = e.currentTarget.dataset.statu;
-    //var currentStatus = e.currentTarget.dataset.status;
     var cardnum
     console.log(id)
     // 弹出遮罩层
@@ -115,7 +114,6 @@ Page({
       // cardnum: that.data.cardnum
     }
     that.util(currentStatu)
-    //that.util(currentStatus)
     console.log(currentid)
     console.log(that.data.carddata[currentid].nums)
     var maxnum = that.data.carddata[currentid].nums
@@ -125,16 +123,12 @@ Page({
       cardId: cardId,
       cardnum: that.data.cardnum,
       currentStatu: currentStatu,
-      //currentStatus: currentStatus
     })
   },
 
   //提交转赠次数
   formcardnum : function () {
     var that = this;
-    that.setData({
-      showfxStatus: true
-    })
     var data = {
       formOpenid: wx.getStorageSync('openid'),
       cardId: that.data.cardId,
@@ -167,38 +161,30 @@ Page({
         title: '请选择转赠次数',
         icon:'none'
       })
+       that.setData({
+         showfxStatus: false
+       })
     }
-    else{
-      // that.setData({
-      //   showfxStatus: false
-      // })
-    } 
+    // else{
+    //   that.setData({
+    //     showfxStatus: true
+    //   })
+    // } 
   },
   util: function (currentStatu) {
-    /* 动画部分 */
-    // 第1步：创建动画实例   
+    /* 动画部分 */  
     var animation = wx.createAnimation({
       duration: 200,  //动画时长  
       timingFunction: "linear", //线性  
       delay: 0  //0则不延迟  
-    });
-
-    // 第2步：这个动画实例赋给当前的动画实例  
+    }); 
     this.animation = animation;
-
-    // 第3步：执行第一组动画  
-    animation.opacity(0).rotateX(-100).step();
-
-    // 第4步：导出动画对象赋给数据对象储存  
+    animation.opacity(0).rotateX(-100).step(); 
     this.setData({
       animationData: animation.export()
     })
-
-    // 第5步：设置定时器到指定时候后，执行第二组动画  
-    setTimeout(function () {
-      // 执行第二组动画  
-      animation.opacity(1).rotateX(0).step();
-      // 给数据对象储存的第一组动画，更替为执行完第二组动画的动画对象  
+    setTimeout(function () { 
+      animation.opacity(1).rotateX(0).step();  
       this.setData({
         animationData: animation
       })
@@ -207,11 +193,12 @@ Page({
       if (currentStatu == "close") {
         this.setData(
           {
-            showModalStatus: false
+            showModalStatus: false,
+            // showfxStatus: false
           }
         );
       } 
-      else if (currentStatu == "close"){
+      else if (currentStatu == "open"){
         this.setData(
           {
             showfxStatus: false
@@ -225,10 +212,11 @@ Page({
       this.setData(
         {
           showModalStatus: true,
+          // showfxStatus: true
         }
       );
     }
-     else if (currentStatu == "open"){
+     else if (currentStatu == "close"){
       this.setData(
         {
           showfxStatus: true
@@ -276,10 +264,14 @@ Page({
       url: '/pages/cardexchange/cardexchange',
     })
   },
-  carddetail: function () {
+  carddetail: function (e) {
+    console.log(e)
+    var currentid = e.currentTarget.dataset.index
+      var cardId = this.data.carddata[currentid].id
     var status = this.data.status
+    console.log(cardId)
     wx.navigateTo({
-      url: '/pages/carddetail/carddetail?status='+status,
+      url: '/pages/carddetail/carddetail?status=' + status + '&cardId=' + cardId,
     })
   },
   /**

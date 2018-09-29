@@ -12,6 +12,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const backgroundAudioManager = wx.getBackgroundAudioManager()
+    player()
+    function player() {
+      backgroundAudioManager.title = '此时此刻'
+      backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/jieshu.mp3'
+    }
   
   },
   evaluation:function(){
@@ -37,14 +43,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+  wx.stopBackgroundAudio()
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    wx.stopBackgroundAudio()
   },
 
   /**

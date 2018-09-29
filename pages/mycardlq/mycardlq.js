@@ -17,6 +17,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // if (wx.getStorageSync('openid') == null || wx.getStorageSync('openid') == '') {
+    //   wx.navigateTo({
+    //     url: '/pages/authorization/authorization',
+    //   })
+    // } 
     console.log(options)
     var nums = options.nums
     var sign = options.sign

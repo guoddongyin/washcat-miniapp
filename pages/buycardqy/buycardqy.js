@@ -16,7 +16,9 @@ Page({
     numsmoney: '',
     numsReceive: '',
     nums: '',
-    effectiveTime: ''
+    effectiveTime: '',
+    devId: '',
+    id: ''
   },
 
   /**
@@ -39,6 +41,8 @@ Page({
     var numsReceive = that.data.qycarddata[stationid].numsReceive
     var nums = that.data.qycarddata[stationid].nums
     var effectiveTime = that.data.qycarddata[stationid].effectiveTime
+    var devId = that.data.qycarddata[stationid].devId
+    var id = that.data.qycarddata[stationid].id
     console.log(devn)
     that.setData({
       devn: devn,
@@ -48,6 +52,8 @@ Page({
       numsReceive: numsReceive,
       nums: nums,
       effectiveTime: effectiveTime,
+      devId: devId,
+      id: id,
       state: false
     })
 
@@ -105,9 +111,9 @@ Page({
     }
     var data = {
       openId: wx.getStorageSync('openid'),
-      devId: that.data.qycarddata.devId,
-      couponId: that.data.qycarddata.id,
-      cardTypes: 2,
+      devId: that.data.devId,
+      couponId: that.data.id,
+      cardTypes: 3,
       userName: name2
     }
     util.request_data("pay/unifiedCardCoupon", 'POST', data, function (res) {
@@ -122,7 +128,7 @@ Page({
         success: function (res) {
           console.log('成功')
           wx.navigateTo({
-            url: '/pages/mycard/mycard',
+            url: '/pages/personal/personal',
           })
 
         },
@@ -137,7 +143,12 @@ Page({
       })
     })
   },
-
+  stationlist: function () {
+    var statu = this.data.status
+    wx.navigateTo({
+      url: '/pages/stationlist/stationlist?status=' + statu,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

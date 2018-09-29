@@ -28,7 +28,11 @@ Page({
       withShareTicket: true //要求小程序返回分享目标信息
     })
     const backgroundAudioManager = wx.getBackgroundAudioManager()
-    // backgroundAudioManager.stop()
+    player()
+    function player() {
+      backgroundAudioManager.title = '此时此刻'
+      backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/stationdel.mp3'
+    }
   
   },
   //获取轮播图
@@ -219,14 +223,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    wx.stopBackgroundAudio()
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    wx.stopBackgroundAudio()
   },
 
   /**

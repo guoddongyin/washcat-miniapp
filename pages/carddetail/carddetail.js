@@ -17,19 +17,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     var that = this
-    var id = options.cardid
     var status = options.status
+    var carid = options.cardId
     console.log(status)
     that.setData({
-      status: status
+      status: status,
+      carid: carid
     })
     that.requestdata();
   },
+  //获取猫卡详情数据
   requestdata: function () {
     var that = this
     var data = {
-      userId: wx.getStorageSync('IDID')
+      userId: wx.getStorageSync('IDID'),
+      userCardId: that.data.carid
     }
 
     util.request_data("userCardNums/getUserCardNums", 'POST', data, function (res) {
@@ -173,7 +177,7 @@ Page({
   },
   numberdetail:function(){
     wx.navigateTo({
-      url: '/pages/numberdetail/numberdetail',
+      url: '/pages/numberdetail/numberdetail?carid=' + this.data.carid,
     })
   }
 })

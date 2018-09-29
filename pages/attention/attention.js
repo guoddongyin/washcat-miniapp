@@ -9,24 +9,10 @@ Page({
     devId: '',
     helplist: '',
     content: '',
-    backgroundAudioManager:''
+    backgroundAudioManager:'',
+    errcodest:''
   },
-  paidnow:function () {
-    var that = this;
-    var id = that.data.devId
-    var data = {
-      devId: that.data.devId
-    }
-    const backgroundAudioManager = wx.getBackgroundAudioManager()
-    backgroundAudioManager.stop()
-    util.request_data("washCarcmd/getWashcarcmd", 'POST', data, function (res) {
-      console.log(res)
-      wx.navigateTo({
-        url: '/pages/paynow/paynow?devId=' + id,
-      })
-    })
-    
-  },
+ 
   /**
    * 生命周期函数--监听页面加载
    */
@@ -41,6 +27,35 @@ Page({
       backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/becareful.mp3'
     }
   
+  },
+  //确认车子已停到位
+  paidnow: function () {
+    var that = this;
+    var id = that.data.devId
+    var data = {
+      devId: that.data.devId
+    }
+    const backgroundAudioManager = wx.getBackgroundAudioManager()
+    backgroundAudioManager.stop()
+    util.request_data("washCarcmd/getWashcarcmd", 'POST', data, function (res) {
+      console.log(res)
+      var errcodest = res.data.errcode
+      that.setData({
+        errcodest: errcodest
+      })
+      if (this.data.errcodest == 0) {
+        const backgroundAudioManager = wx.getBackgroundAudioManager()
+        player()
+        function player() {
+          backgroundAudioManager.title = '此时此刻'
+          backgroundAudioManager.src = 'https://www.catcarwasher.com/washcar-admin/wx/chaochuwz.mp3'
+        }
+      }
+      wx.navigateTo({
+        url: '/pages/paynow/paynow?devId=' + id,
+      })
+    })
+
   },
   //获取帮助信息
   gethelpList: function () {

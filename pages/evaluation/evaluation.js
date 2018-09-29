@@ -40,7 +40,6 @@ Page({
     var content1 = e.detail.value.content1; 
     var imgs = []
     if (that.data.saveimglist==''){
-      // imgUrl:''
     }else{
       for (var i = 0; i < that.data.saveimglist.length; i++) {
         var img = { imgUrl: that.data.saveimglist[i] }
@@ -173,34 +172,11 @@ Page({
       })
   },
   //评论星级选择
-  changeOne: function () {
+  change: function (e) {
     var that = this;
+    var index = e.currentTarget.dataset.index
     that.setData({
-      starFlag: 1
-    });
-  },
-  changeTwo: function () {
-    var that = this;
-    that.setData({
-      starFlag: 2
-    });
-  },
-  changeThree: function () {
-    var that = this;
-    that.setData({
-      starFlag: 3
-    });
-  },
-  changeFour: function () {
-    var that = this;
-    that.setData({
-      starFlag: 4
-    });
-  },
-  changeFive: function () {
-    var that = this;
-    that.setData({
-      starFlag: 5
+      starFlag: index
     });
   },
   /**
